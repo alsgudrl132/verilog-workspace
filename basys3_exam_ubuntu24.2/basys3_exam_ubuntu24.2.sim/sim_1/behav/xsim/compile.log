@@ -3,3 +3,8 @@ INFO: [VRFC 10-311] analyzing module and_gate
 INFO: [VRFC 10-311] analyzing module half_adder_structural
 INFO: [VRFC 10-311] analyzing module half_adder_behavioral
 INFO: [VRFC 10-311] analyzing module half_adder_dataflow
+INFO: [VRFC 10-311] analyzing module full_adder_behavioral
+INFO: [VRFC 10-311] analyzing module full_adder_structural
+INFO: [VRFC 10-311] analyzing module full_adder_dataflow
+INFO: [VRFC 10-311] analyzing module fadder_4bit_dataflow
+INFO: [VRFC 10-311] analyzing module fadder_4bit_structural

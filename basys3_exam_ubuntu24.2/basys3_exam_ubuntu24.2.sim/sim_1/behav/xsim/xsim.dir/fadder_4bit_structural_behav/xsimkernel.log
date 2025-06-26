@@ -1,0 +1,7 @@
+Running: xsim.dir/fadder_4bit_structural_behav/xsimk -simmode gui -wdb fadder_4bit_structural_behav.wdb -simrunnum 0 -socket 52527
+Design successfully loaded
+Design Loading Memory Usage: 181628 KB (Peak: 181748 KB)
+Design Loading CPU Usage: 1700 ms
+Simulation completed
+Simulation Memory Usage: 263364 KB (Peak: 320896 KB)
+Simulation CPU Usage: 1710 ms
