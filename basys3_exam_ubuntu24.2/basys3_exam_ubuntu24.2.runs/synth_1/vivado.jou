@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Jun  7 06:54:51 2025
+# Process ID         : 24185
+# Current directory  : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1
+# Command line       : vivado -log and_gate.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source and_gate.tcl
+# Log file           : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/and_gate.vds
+# Journal file       : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/vivado.jou
+# Running On         : min
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
+# CPU Frequency      : 3300.000 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16395 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20690 MB
+# Available Virtual  : 15253 MB
+#-----------------------------------------------------------
+source and_gate.tcl -notrace
