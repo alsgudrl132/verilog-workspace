@@ -1,5 +1,5 @@
 module and_gate(
-    input A,
+    input A,C
     input B,
     output F
     );
