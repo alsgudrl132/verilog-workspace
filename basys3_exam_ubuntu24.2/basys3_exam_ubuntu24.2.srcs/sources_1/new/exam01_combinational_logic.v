@@ -152,3 +152,138 @@ module fadder_4bit_structural(
     
 endmodule
 
+module mux_2_1(         // 2:1 멀티플렉서 모듈 정의
+    input [1:0] d,      // 2비트 입력 (d[1], d[0])
+    input s,            // 선택 신호 (1비트)
+    output f            // 출력 신호
+    );
+
+    assign f = s ? d[1] : d[0];  // s가 1이면 d[1] 출력, s가 0이면 d[0] 출력
+
+endmodule
+
+module mux_4_1(         // 2:1 멀티플렉서 모듈 정의
+    input [3:0] d,      // 2비트 입력 (d[1], d[0])
+    input [1:0] s,            // 선택 신호 (1비트)
+    output f            // 출력 신호
+    );
+
+    assign f = d[s];
+
+endmodule
+
+module mux_8_1(         
+    input [7:0] d,      
+    input [2:0] s,      
+    output f            
+    );
+
+    assign f = d[s];
+
+endmodule
+
+// 1-to-4 디멀티플렉서 (demux) 모듈 정의
+module demux_1_4_d(
+    input d,              // 입력 신호 (1비트)
+    input [1:0] s,        // 선택 신호 (2비트)
+    output [3:0] f        // 4비트 출력 (4개 중 하나만 d로 설정됨)
+    );
+    
+    // 선택 신호 s에 따라 d를 해당 위치에 출력하고 나머지는 0
+    assign f = (s == 2'b00) ? {3'b000, d} :         // s = 00 → f[0] = d
+               (s == 2'b01) ? {2'b00, d, 1'b0} :     // s = 01 → f[1] = d
+               (s == 2'b10) ? {1'b0, d, 2'b00} :     // s = 10 → f[2] = d
+                             {d, 3'b000};           // s = 11 → f[3] = d
+    
+endmodule
+
+// mux와 demux를 함께 테스트하는 모듈
+module mux_demux_test(
+    input [3:0] d,            // 4비트 입력 데이터 (mux에 연결)
+    input [1:0] mux_s,        // 멀티플렉서 선택 신호
+    input [1:0] demux_s,      // 디멀티플렉서 선택 신호
+    output [3:0] f            // 디멀티플렉서 출력
+    );
+    
+    wire mux_f;               // 멀티플렉서 출력과 디멀티플렉서 입력을 연결할 중간 와이어
+    
+    // 4:1 멀티플렉서 인스턴스
+    mux_4_1 mux_4(
+        .d(d),                // 4비트 입력 데이터
+        .s(mux_s),            // 선택 신호
+        .f(mux_f)             // 출력 (1비트)
+    );
+    
+    // 1:4 디멀티플렉서 인스턴스
+    demux_1_4_d demux4(
+        .d(mux_f),            // 입력 신호 (mux 출력)
+        .s(demux_s),          // 선택 신호
+        .f(f)                 // 출력 (4비트)
+    );
+endmodule
+
+module encoder_4_2(
+    input [3:0] signal,     // 4비트 입력 신호
+    output reg [1:0] code        // 2비트 출력 코드
+    );
+
+    // 아래 코드는 단순 매핑 방식으로,
+    // 입력 신호가 특정 값일 때 그에 대응되는 출력을 하도록 구성되어 있음
+    // 즉, "이 값이 들어오면 이 값을 출력한다"는 방식
+
+//    assign code = (signal == 4'b1000) ? 2'b11 :  // 입력이 1000이면 출력은 11
+//                  (signal == 4'b0100) ? 2'b10 :  // 입력이 0100이면 출력은 10
+//                  (signal == 4'b0010) ? 2'b01 :  // 입력이 0010이면 출력은 01
+//                                        2'b00;   // 그 외 (또는 0001일 경우 등)엔 00 출력
+    
+//    always @(signal)begin
+//        if(signal == 4'b1000) code = 2'b11;
+//        else if(signal == 4'b0100) code = 2'b10;
+//        else if(signal == 4'b0010) code = 2'b01;
+//        else code = 2'b00;
+//    end
+
+    always @(signal)begin
+        case(signal)
+            4'b0001: code = 2'b00;
+            4'b0010: code = 2'b01;
+            4'b0100: code = 2'b10;
+            4'b1000: code = 2'b11;
+            default: code = 2'b00;
+        endcase
+    end
+endmodule
+
+module decoder_2_4(
+    input [1:0] code,       // 2비트 입력 값 (인코딩된 신호)
+    output reg [3:0] signal     // 4비트 출력 신호 (디코딩된 결과)
+    );
+
+    // 아래 assign 문은 2:4 디코더 역할을 합니다.
+    // 입력 code 값에 따라 출력 signal의 한 비트만 1로 설정됩니다.
+    // 즉, "이 값이 들어오면 이 신호를 출력한다"는 방식입니다.
+
+//    assign signal = (code == 2'b00) ? 4'b0001 :  // code가 00이면 signal은 0001
+//                    (code == 2'b01) ? 4'b0010 :  // code가 01이면 signal은 0010
+//                    (code == 2'b10) ? 4'b0100 :  // code가 10이면 signal은 0100
+//                                     4'b1000;    // 나머지(11)면 signal은 1000
+
+//    always @(code)begin
+//        if(code == 2'b00) signal = 4'b0001;
+//        else if(code == 2'b01) signal = 4'b0010;
+//        else if(code == 2'b10) signal = 4'b0100;
+//        else signal = 4'b1000;    
+//    end
+
+    always @(code)begin
+        case(code)
+            2'b00: signal = 4'b0001;
+            2'b01: signal = 4'b0010;
+            2'b10: signal = 4'b0100;
+            default: signal = 4'b1000;    
+        endcase
+    end
+
+endmodule
+
+

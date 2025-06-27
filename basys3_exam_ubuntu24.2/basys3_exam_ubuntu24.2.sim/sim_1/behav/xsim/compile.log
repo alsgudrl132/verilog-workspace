@@ -8,3 +8,10 @@ INFO: [VRFC 10-311] analyzing module full_adder_structural
 INFO: [VRFC 10-311] analyzing module full_adder_dataflow
 INFO: [VRFC 10-311] analyzing module fadder_4bit_dataflow
 INFO: [VRFC 10-311] analyzing module fadder_4bit_structural
+INFO: [VRFC 10-311] analyzing module mux_2_1
+INFO: [VRFC 10-311] analyzing module mux_4_1
+INFO: [VRFC 10-311] analyzing module mux_8_1
+INFO: [VRFC 10-311] analyzing module demux_1_4_d
+INFO: [VRFC 10-311] analyzing module mux_demux_test
+INFO: [VRFC 10-311] analyzing module encoder_4_2
+INFO: [VRFC 10-311] analyzing module decoder_2_4

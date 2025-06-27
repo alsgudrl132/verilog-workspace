@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log full_adder_behavioral.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source full_adder_behavioral.tcl" );
+         "-log mux_2_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux_2_1.tcl" );
 
 
 
