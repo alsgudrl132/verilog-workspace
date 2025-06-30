@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log mux_2_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux_2_1.tcl
+vivado -log up_counter_p.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source up_counter_p.tcl

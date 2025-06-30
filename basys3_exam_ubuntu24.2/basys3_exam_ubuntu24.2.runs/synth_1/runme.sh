@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log mux_2_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux_2_1.tcl
+EAStep vivado -log up_counter_p.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source up_counter_p.tcl

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/mux_2_1.tcl"
+  variable script "/home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/up_counter_p.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-515403-min/incrSyn
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -76,7 +77,7 @@ set_property ip_output_repo /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ub
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.srcs/sources_1/new/exam01_combinational_logic.v
+read_verilog -library xil_defaultlib /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.srcs/sources_1/new/exam02_sequential_logic.v
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -92,7 +93,7 @@ read_checkpoint -auto_incremental -incremental /home/psh/work/basys3_exam_ubuntu
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top mux_2_1 -part xc7a35tcpg236-1
+synth_design -top up_counter_p -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -102,10 +103,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef mux_2_1.dcp
+write_checkpoint -force -noxdef up_counter_p.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file mux_2_1_utilization_synth.rpt -pb mux_2_1_utilization_synth.pb"  } 
+generate_parallel_reports -reports { "report_utilization -file up_counter_p_utilization_synth.rpt -pb up_counter_p_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

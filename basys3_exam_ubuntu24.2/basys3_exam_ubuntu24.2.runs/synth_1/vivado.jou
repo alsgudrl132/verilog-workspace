@@ -3,22 +3,22 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Jun 27 09:37:24 2025
-# Process ID         : 335083
+# Start of session at: Mon Jun 30 15:34:20 2025
+# Process ID         : 528310
 # Current directory  : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1
-# Command line       : vivado -log mux_2_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mux_2_1.tcl
-# Log file           : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/mux_2_1.vds
+# Command line       : vivado -log up_counter_p.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source up_counter_p.tcl
+# Log file           : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/up_counter_p.vds
 # Journal file       : /home/psh/work/basys3_exam_ubuntu24.2/basys3_exam_ubuntu24.2.runs/synth_1/vivado.jou
 # Running On         : min
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 3300.000 MHz
+# CPU Frequency      : 3161.552 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16395 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20690 MB
-# Available Virtual  : 12368 MB
+# Available Virtual  : 11436 MB
 #-----------------------------------------------------------
-source mux_2_1.tcl -notrace
+source up_counter_p.tcl -notrace

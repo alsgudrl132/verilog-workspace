@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1750984641" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and_gate.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="mux_2_1_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="mux_2_1.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="mux_2_1_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="mux_2_1_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="mux_2_1_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="mux_2_1.vds"/>
-  <File Type="REPORTS-TCL" Name="mux_2_1_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="mux_2_1_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="mux_2_1.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1751265255" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and_gate.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="up_counter_p_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="up_counter_p.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="up_counter_p_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="up_counter_p_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="up_counter_p_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="up_counter_p.vds"/>
+  <File Type="REPORTS-TCL" Name="up_counter_p_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="up_counter_p_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="up_counter_p.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/exam02_sequential_logic.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/exam01_combinational_logic.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,7 +28,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="mux_2_1"/>
+      <Option Name="TopModule" Val="up_counter_p"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
