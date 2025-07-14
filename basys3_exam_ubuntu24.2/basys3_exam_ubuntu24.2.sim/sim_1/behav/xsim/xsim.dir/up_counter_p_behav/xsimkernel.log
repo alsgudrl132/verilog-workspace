@@ -2,3 +2,6 @@ Running: xsim.dir/up_counter_p_behav/xsimk -simmode gui -wdb up_counter_p_behav.
 Design successfully loaded
 Design Loading Memory Usage: 181616 KB (Peak: 181736 KB)
 Design Loading CPU Usage: 1800 ms
+Simulation completed
+Simulation Memory Usage: 263352 KB (Peak: 320884 KB)
+Simulation CPU Usage: 1850 ms
