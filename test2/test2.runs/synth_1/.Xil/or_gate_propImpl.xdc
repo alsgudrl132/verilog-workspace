@@ -1,7 +1,0 @@
-set_property SRC_FILE_INFO {cfile:/home/psh/work/test2/test2.srcs/constrs_1/imports/work/Basys-3-Master.xdc rfile:../../../test2.srcs/constrs_1/imports/work/Basys-3-Master.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {a}]
-set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports {b}]
-set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS33 } [get_ports {q}]
