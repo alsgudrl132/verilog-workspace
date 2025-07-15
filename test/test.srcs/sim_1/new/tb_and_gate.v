@@ -26,10 +26,10 @@ module tb_and_gate;
     reg a, b;          // 테스트할 입력 신호 선언 (reg 타입은 값을 할당할 수 있음)
     wire q;            // 출력 신호 선언 (회로로부터 값을 읽어옴)
 
-    // 테스트할 모듈 연결 (동작적 모델링 and_gate_behavioral 모듈 사용)
+    // 테스트할 모듈 연결 (동작적 모델링 사용)
     and_gate_behavioral uut (.a(a), .b(b), .q(q));
     // and_gate_dataflow uut (.a(a), .b(b), .q(q));
-    // and_gate_structual uut (.a(a), .b(b), .q(q));
+    // and_gate_structural uut (.a(a), .b(b), .q(q));
 
     initial begin
         $display("Time\ta b | q");                      // 헤더 출력
@@ -42,6 +42,4 @@ module tb_and_gate;
 
         $finish;             // 시뮬레이션 종료
     end
-endmodule
-
 endmodule

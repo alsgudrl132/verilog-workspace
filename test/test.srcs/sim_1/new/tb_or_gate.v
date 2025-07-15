@@ -6,10 +6,10 @@ module tb_or_gate;
     reg a, b;          // 테스트 입력 신호
     wire q;            // 출력 신호
 
-    // 테스트할 DUT 선택 (동작적 모델링 or_gate_behavioral을 사용 중)
+    // 테스트할 DUT 선택 (동작적 모델링 사용)
     or_gate_behavioral uut (.a(a), .b(b), .q(q));
     // or_gate_dataflow uut(.a(a), .b(b), .q(q));       // 데이터플로우 모델
-    // or_gate_structual uut(.a(a), .b(b), .q(q));      // 구조적 모델
+    // or_gate_structural uut(.a(a), .b(b), .q(q));      // 구조적 모델
 
     initial begin
         $display("Time\t a b | q");                      // 헤더 출력

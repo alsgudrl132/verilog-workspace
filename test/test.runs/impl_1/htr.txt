@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log not_gate.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source not_gate.tcl -notrace
+vivado -log xnor_gate_structural.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source xnor_gate_structural.tcl -notrace

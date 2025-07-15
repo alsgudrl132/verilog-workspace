@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Jul 14 20:04:22 2025
+# Process ID         : 40250
+# Current directory  : /home/psh/work/test2/test2.runs/synth_1
+# Command line       : vivado -log or_gate.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source or_gate.tcl
+# Log file           : /home/psh/work/test2/test2.runs/synth_1/or_gate.vds
+# Journal file       : /home/psh/work/test2/test2.runs/synth_1/vivado.jou
+# Running On         : min
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
+# CPU Frequency      : 2998.545 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16395 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20690 MB
+# Available Virtual  : 14232 MB
+#-----------------------------------------------------------
+source or_gate.tcl -notrace

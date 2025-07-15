@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log not_gate.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source not_gate.tcl
+EAStep vivado -log xnor_gate_structural.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xnor_gate_structural.tcl
