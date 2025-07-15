@@ -150,6 +150,35 @@ module not_gate_dataflow (
     assign q = !a;           // 논리 NOT 연산
 endmodule
 
+/* --------------------------------------------------------------------------- */
+/* BUFFER 게이트 */
+/* --------------------------------------------------------------------------- */
+
+// BUFFER 게이트 (동작적 모델링 - if문 없이 단순 대입 방식)
+module buffer_gate_behavioral (
+    input a,               // 1비트 입력 a
+    output reg q           // 출력 q는 레지스터 타입
+);
+    always @(a) begin
+        q = a;             // 입력을 그대로 출력
+    end
+endmodule
+
+// BUFFER 게이트 (구조적 모델링)
+module buffer_gate_structural (
+    input a,               // 1비트 입력 a
+    output q               // 출력 q는 wire 타입
+);
+    buf U1(q, a);          // 내장 buf 게이트 사용
+endmodule
+
+// BUFFER 게이트 (데이터플로우 모델링)
+module buffer_gate_dataflow (
+    input a,               // 1비트 입력 a
+    output q               // 출력 q는 wire 타입
+);
+    assign q = a;          // 비트 그대로 전달
+endmodule
 
 /* --------------------------------------------------------------------------- */
 /* NAND 게이트 */
