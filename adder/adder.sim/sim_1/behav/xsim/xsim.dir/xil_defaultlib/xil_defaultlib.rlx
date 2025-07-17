@@ -1,0 +1,9 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/psh/work/adder/adder.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+/home/psh/work/adder/adder.srcs/sim_1/new/tb_full_adder.v,1752648019,verilog,,,,tb_fadd_sub_4bit;tb_fadder_4bit_structural;tb_fadder_sub_4bit;tb_full_adder;tb_full_adder_tb,,,,,,,,
+/home/psh/work/adder/adder.srcs/sim_1/new/tb_half_adder.v,1752558011,verilog,,,,tb_half_adder,,,,,,,,
+/home/psh/work/adder/adder.srcs/sim_1/new/tb_half_adder_N_bit.v,1752561964,verilog,,,,tb_half_adder_N_bit,,,,,,,,
+/home/psh/work/adder/adder.srcs/sources_1/new/adder.v,1752647844,verilog,,/home/psh/work/adder/adder.srcs/sim_1/new/tb_full_adder.v,,Half_adder_behavioral;fadder_4bit_structural;fadder_sub_4bit_behavioral;fadder_sub_4bit_dataflow;fadder_sub_4bit_structural;full_adder_behavioral;full_adder_dataflow;full_adder_structual;half_adder_N_bit;half_adder_dataflow;half_adder_structual,,,,,,,,

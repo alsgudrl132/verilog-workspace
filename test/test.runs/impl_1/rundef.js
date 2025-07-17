@@ -30,7 +30,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log xnor_gate_structural.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source xnor_gate_structural.tcl -notrace" );
+         "-log gates.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source gates.tcl -notrace" );
 
 
 

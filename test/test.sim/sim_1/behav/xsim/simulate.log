@@ -4,4 +4,4 @@ Time	a b | q
 10000	0 1 | 0
 20000	1 0 | 0
 30000	1 1 | 1
-$finish called at time : 40 ns : File "/home/psh/work/test/test.srcs/sim_1/new/tb_xnor_gate.v" Line 41
+$finish called at time : 40 ns : File "/home/psh/work/test/test.srcs/sim_1/new/tb_xnor_gate.v" Line 43

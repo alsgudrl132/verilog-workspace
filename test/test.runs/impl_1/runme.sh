@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log xnor_gate_structural.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source xnor_gate_structural.tcl -notrace
+EAStep vivado -log gates.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source gates.tcl -notrace
 
 

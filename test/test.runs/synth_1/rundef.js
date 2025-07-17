@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log xnor_gate_structural.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xnor_gate_structural.tcl" );
+         "-log gates.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source gates.tcl" );
 
 
 

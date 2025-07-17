@@ -329,3 +329,18 @@ module xnor_gate_dataflow (
 );
     assign q = !(a ^ b);     // XNOR = NOT(XOR)
 endmodule
+
+module gates (
+    input a, b,
+    output q0, q1, q2, q3, q4, q5, q6
+);
+
+    assign q0 = ~a;         // NOT
+    assign q1 = a & b;      // AND
+    assign q2 = a | b;      // OR
+    assign q3 = ~(a & b);   // NAND
+    assign q4 = ~(a | b);   // NOR
+    assign q5 = a ^ b;      // XOR
+    assign q6 = ~(a ^ b);   // XNOR
+    
+endmodule

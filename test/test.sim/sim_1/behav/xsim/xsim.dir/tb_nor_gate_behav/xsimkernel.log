@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_nor_gate_behav/xsimk -simmode gui -wdb tb_nor_gate_behav.wdb -simrunnum 0 -socket 41209
+Running: xsim.dir/tb_nor_gate_behav/xsimk -simmode gui -wdb tb_nor_gate_behav.wdb -simrunnum 0 -socket 37369
 Design successfully loaded
 Design Loading Memory Usage: 181624 KB (Peak: 181744 KB)
-Design Loading CPU Usage: 2440 ms
+Design Loading CPU Usage: 3570 ms
 Simulation completed
 Simulation Memory Usage: 263360 KB (Peak: 320892 KB)
-Simulation CPU Usage: 2440 ms
+Simulation CPU Usage: 3570 ms
