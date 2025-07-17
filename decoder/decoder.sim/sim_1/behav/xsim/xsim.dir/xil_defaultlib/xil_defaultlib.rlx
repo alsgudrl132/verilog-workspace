@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/psh/work/decoder/decoder.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+/home/psh/work/decoder/decoder.srcs/sim_1/new/tb_decoder.v,1752720343,verilog,,,,tb_decoder,,,,,,,,
+/home/psh/work/decoder/decoder.srcs/sim_1/new/tb_encoder.v,1752732988,verilog,,,,tb_encoder_4x2_behavioral,,,,,,,,
+/home/psh/work/decoder/decoder.srcs/sources_1/new/decoder.v,1752732426,verilog,,/home/psh/work/decoder/decoder.srcs/sim_1/new/tb_encoder.v,,decoder_2x4_behavioral;decoder_2x4_dataflow;decoder_2x4_dataflow_d;decoder_2x4_structual;decoder_7seg;encoder_4x2_behavioral,,,,,,,,

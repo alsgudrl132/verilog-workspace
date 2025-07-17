@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Jul 17 11:05:03 2025
+# Process ID         : 35365
+# Current directory  : /home/psh/work/comparator/comparator.runs/synth_1
+# Command line       : vivado -log comparator_test_4bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source comparator_test_4bit.tcl
+# Log file           : /home/psh/work/comparator/comparator.runs/synth_1/comparator_test_4bit.vds
+# Journal file       : /home/psh/work/comparator/comparator.runs/synth_1/vivado.jou
+# Running On         : min
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
+# CPU Frequency      : 1722.741 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16395 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20690 MB
+# Available Virtual  : 14061 MB
+#-----------------------------------------------------------
+source comparator_test_4bit.tcl -notrace

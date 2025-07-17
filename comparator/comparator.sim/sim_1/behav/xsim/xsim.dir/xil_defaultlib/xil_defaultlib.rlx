@@ -1,0 +1,7 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/psh/work/comparator/comparator.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+/home/psh/work/comparator/comparator.srcs/sim_1/new/tb_comparator.v,1752716520,verilog,,,,tb_comparator;tb_comparator_4bit_full,,,,,,,,
+/home/psh/work/comparator/comparator.srcs/sources_1/new/comparator.v,1752715973,verilog,,/home/psh/work/comparator/comparator.srcs/sim_1/new/tb_comparator.v,,comparator_Nbit;comparator_behavioral;comparator_dataflow;comparator_structural,,,,,,,,

@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+time = 0ns, signal = 0000, code = 11
+time = 10ns, signal = 0001, code = 00
+time = 20ns, signal = 0010, code = 01
+time = 30ns, signal = 0100, code = 10
+time = 40ns, signal = 1000, code = 11
+time = 50ns, signal = 0000, code = 11
+time = 60ns, signal = 0011, code = 11
+$finish called at time : 70 ns : File "/home/psh/work/decoder/decoder.srcs/sim_1/new/tb_encoder.v" Line 42
