@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+Time=                   0 | bin=000000000000 (0) -> BCD=0000000000000000 (BCD digits:0000)
+Time=               20000 | bin=000000000001 (1) -> BCD=0000000000000001 (BCD digits:0001)
+Time=               30000 | bin=000000001001 (9) -> BCD=0000000000001001 (BCD digits:0009)
+Time=               40000 | bin=000000010100 (20) -> BCD=0000000000100000 (BCD digits:0020)
+Time=               50000 | bin=000010111001 (185) -> BCD=0000000110000101 (BCD digits:0185)
+Time=               60000 | bin=101101101101 (2925) -> BCD=0010100100100101 (BCD digits:2925)
+Time=               70000 | bin=111111111111 (4095) -> BCD=0100000010010101 (BCD digits:4095)
+$stop called at time : 90 ns : File "/home/psh/work/bcd/bcd.srcs/sim_1/new/tb_bcd.v" Line 43

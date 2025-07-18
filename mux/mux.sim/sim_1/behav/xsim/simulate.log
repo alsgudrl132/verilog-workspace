@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+Time	d	mux_s	demux_s	|t\f
+                   0	1010	00	00	|0000
+               10000	1010	01	01	|0010
+               20000	1010	10	10	|0000
+               30000	1010	11	11	|1000
+               40000	1010	11	00	|0001
+               50000	1010	00	11	|0000
+$finish called at time : 60 ns : File "/home/psh/work/mux/mux.srcs/sim_1/new/tb_mux_2_1.v" Line 137

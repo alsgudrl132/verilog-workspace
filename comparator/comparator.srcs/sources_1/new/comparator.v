@@ -127,7 +127,7 @@ module comparator_Nbit_behavioral #(parameter N = 8) (
             greator = 1;
         end
         else if (a < b) begin
-            less = 1;
+            less = 1
         end
     end
 

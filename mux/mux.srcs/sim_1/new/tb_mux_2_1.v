@@ -81,3 +81,60 @@ module tb_mux_8_1;
         $finish;
     end
 endmodule
+
+// mux와 demux를 함께 테스트하는 테스트벤치
+module tb_mux_demux_test;
+
+    // 입력 신호: MUX 입력 (4비트), MUX 선택선, DEMUX 선택선
+    reg [3:0] d;             // MUX 입력 데이터: d[3:0]
+    reg [1:0] mux_s;         // MUX 선택 신호 (2비트)
+    reg [1:0] demux_s;       // DEMUX 선택 신호 (2비트)
+
+    // 출력 신호: DEMUX 출력 (4비트)
+    wire [3:0] f;            // DEMUX 출력 결과
+
+    // 테스트할 DUT (Device Under Test) 인스턴스화
+    mux_demux_test uut(
+        .d(d),
+        .mux_s(mux_s),
+        .demux_s(demux_s),
+        .f(f)
+    );
+
+    // 시뮬레이션 동작 정의
+    initial begin
+        // 헤더 출력
+        $display("Time\td\tmux_s\tdemux_s\t|t\f");
+
+        // 값이 바뀔 때마다 현재 상태 출력
+        $monitor("%4t\t%b\t%b\t%b\t|%b", $time, d, mux_s, demux_s, f);
+
+        // 초기 MUX 입력값 설정
+        // d[3] = 1, d[2] = 0, d[1] = 1, d[0] = 0
+        d = 4'b1010;
+
+        // MUX 선택선과 DEMUX 선택선을 바꿔가며 테스트
+
+        // d[0] → mux_s = 00 → mux_f = 0 → demux_s = 00 → f[0] = 0
+        mux_s = 2'b00; demux_s = 2'b00; #10;
+
+        // d[1] → mux_s = 01 → mux_f = 1 → demux_s = 01 → f[1] = 1
+        mux_s = 2'b01; demux_s = 2'b01; #10;
+
+        // d[2] → mux_s = 10 → mux_f = 0 → demux_s = 10 → f[2] = 0
+        mux_s = 2'b10; demux_s = 2'b10; #10;
+
+        // d[3] → mux_s = 11 → mux_f = 1 → demux_s = 11 → f[3] = 1
+        mux_s = 2'b11; demux_s = 2'b11; #10;
+
+        // d[3] → mux_s = 11 → mux_f = 1 → demux_s = 00 → f[0] = 1
+        mux_s = 2'b11; demux_s = 2'b00; #10;
+
+        // d[0] → mux_s = 00 → mux_f = 0 → demux_s = 11 → f[3] = 0
+        mux_s = 2'b00; demux_s = 2'b11; #10;
+
+        // 시뮬레이션 종료
+        $finish;
+    end
+endmodule
+

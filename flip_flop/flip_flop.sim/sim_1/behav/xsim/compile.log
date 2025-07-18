@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/psh/work/flip_flop/flip_flop.srcs/sim_1/new/tb_d_flip_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_d_flip_flop
+INFO: [VRFC 10-311] analyzing module tb_d_flip_flop_n

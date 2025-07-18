@@ -2,6 +2,15 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/psh/work/mux/mux.srcs/sources
 INFO: [VRFC 10-311] analyzing module mux_2_1
 INFO: [VRFC 10-311] analyzing module mux_4_1
 INFO: [VRFC 10-311] analyzing module mux_8_1
+INFO: [VRFC 10-311] analyzing module mux_2_1_behavioral
+INFO: [VRFC 10-311] analyzing module mux_2_1_structual
+INFO: [VRFC 10-311] analyzing module mux_4_1_behavioral
+INFO: [VRFC 10-311] analyzing module mux_4_1_structual
+INFO: [VRFC 10-311] analyzing module demux_1_to_2
+INFO: [VRFC 10-311] analyzing module demux_1_4_d
+INFO: [VRFC 10-311] analyzing module tb_demux_1_4
+INFO: [VRFC 10-311] analyzing module mux_demux_test
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/psh/work/mux/mux.srcs/sim_1/new/tb_mux_2_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_mux_2_1
 INFO: [VRFC 10-311] analyzing module tb_mux_8_1
+INFO: [VRFC 10-311] analyzing module tb_mux_demux_test
