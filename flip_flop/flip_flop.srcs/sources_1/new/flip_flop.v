@@ -47,3 +47,20 @@ module d_flip_flop_n (
             
     end
 endmodule
+
+module d_flip_flop_p (
+    input d,
+    input clk,
+    input reset_p,
+    input enable,
+    output reg q
+);
+
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p)
+            q <= 0;
+        else if(enable)
+            q <= d;
+    end
+    
+endmodule

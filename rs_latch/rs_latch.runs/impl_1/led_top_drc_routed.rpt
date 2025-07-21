@@ -1,0 +1,53 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Mon Jul 21 16:26:26 2025
+| Host         : min running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_drc -file led_top_drc_routed.rpt -pb led_top_drc_routed.pb -rpx led_top_drc_routed.rpx
+| Design       : led_top
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 2
++-------------+----------+-------------------------------------------------------------+--------+
+| Rule        | Severity | Description                                                 | Checks |
++-------------+----------+-------------------------------------------------------------+--------+
+| PDRC-153    | Warning  | Gated clock check                                           | 1      |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1      |
++-------------+----------+-------------------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net div_instance/U1/ed/ff_old_reg_0 is a gated clock net sourced by a combinational pin div_instance/U1/ed/count[9]_i_2__0/O, cell div_instance/U1/ed/count[9]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT div_instance/U1/ed/count[9]_i_2__0 is driving clock pin of 11 cells. This could lead to large hold time violations. Involved cells are:
+div_instance/U2/count_reg[0], div_instance/U2/count_reg[1],
+div_instance/U2/count_reg[2], div_instance/U2/count_reg[3],
+div_instance/U2/count_reg[4], div_instance/U2/count_reg[5],
+div_instance/U2/count_reg[6], div_instance/U2/count_reg[7],
+div_instance/U2/count_reg[8], div_instance/U2/count_reg[9]
+div_instance/U2/pulse_reg
+Related violations: <none>
+
+
