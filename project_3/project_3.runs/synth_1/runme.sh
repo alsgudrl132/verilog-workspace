@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log btn_led_blink.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source btn_led_blink.tcl
+EAStep vivado -log led_shift_debounce.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source led_shift_debounce.tcl

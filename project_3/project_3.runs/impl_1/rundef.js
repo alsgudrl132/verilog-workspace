@@ -30,7 +30,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log btn_led_blink.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source btn_led_blink.tcl -notrace" );
+         "-log led_shift_debounce.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source led_shift_debounce.tcl -notrace" );
 
 
 

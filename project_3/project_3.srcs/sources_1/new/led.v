@@ -161,6 +161,9 @@ module btn_led_blink (
 
     wire btn_L_clean;
     wire btn_R_clean;
+    
+    reg clk_1Hz;              // 내부적으로 만든 1Hz 클럭
+    reg [26:0] count;         // 카운터: 27비트 → 최대 약 1억까지 카운트 가능
 
     debounce U1(
         .clk(clk), .reset(reset),
@@ -174,15 +177,100 @@ module btn_led_blink (
         .clean_btn(btn_R_clean)     // 세탁된 버튼 출력
     );
 
+    // 1Hz 클럭 생성 로직
+    // 100MHz 입력 클럭 기준: 0.5초 동안 50,000,000 카운트 → 1Hz 주기 생성
     always @(posedge clk or posedge reset) begin
-        if (reset) begin
+        if(reset) begin
+            count <= 0;       // 리셋 시 카운터 초기화
+            clk_1Hz <= 0;     // 1Hz 클럭도 초기화
             led <= 8'b0000_0000;
+        end else begin
+            if(count == 49999999) begin
+                count <= 0;         // 카운터 초기화
+                clk_1Hz <= ~clk_1Hz; // 1Hz 클럭 토글
+            end
+            else begin
+                count <= count + 1; // 카운트 증가
+            end
         end
-        else begin
-            if (btn_L_clean)
-                led <= 8'b0000_0000;
-            else if (btn_R_clean)
-                led <= 8'b1111_1111;
+    end
+    
+    always @(posedge clk_1Hz or posedge reset) begin
+        if(reset) begin
+            led <= 8'b00000001; 
+        end else if (btn_L_clean) begin
+            led <= led << 1;
+        end else if (btn_R_clean) begin
+            led <= led >> 1;
+        end
+    end
+
+endmodule
+
+module led_shift_debounce (
+    input clk,                // 입력 클럭 (예: 100MHz)
+    input reset,              // 비동기 리셋
+    input btn_L,              // 왼쪽 버튼
+    input btn_R,              // 오른쪽 버튼
+    output reg [7:0] led      // 8비트 LED 출력
+    );
+
+    reg clk_1Hz;              // 내부적으로 만든 1Hz 클럭
+    reg [26:0] count;         // 카운터: 100MHz 기준 약 0.5초 주기
+    reg flag;                 // 방향 플래그 (1: left, 0: right)
+
+    wire btn_L_clean;         // 디바운싱된 왼쪽 버튼
+    wire btn_R_clean;         // 디바운싱된 오른쪽 버튼
+
+    // 디바운싱 모듈 인스턴스
+    debounce U1(
+        .clk(clk), .reset(reset),
+        .noise_btn(btn_L),
+        .clean_btn(btn_L_clean)
+    );
+
+    debounce U2(
+        .clk(clk), .reset(reset),
+        .noise_btn(btn_R),
+        .clean_btn(btn_R_clean)
+    );
+
+    // 1Hz 클럭 생성 (100MHz 입력 기준)
+    always @(posedge clk or posedge reset) begin
+        if(reset) begin
+            count <= 0;
+            clk_1Hz <= 0;
+        end else begin
+            if(count == 49999999) begin
+                count <= 0;
+                clk_1Hz <= ~clk_1Hz;
+            end else begin
+                count <= count + 1;
+            end
+        end
+    end
+
+    // 방향 설정: 버튼 누를 때마다 갱신
+    always @(posedge clk) begin
+        if(reset) begin
+            flag <= 1;  // 초기값: 왼쪽
+        end else begin
+            if(btn_L_clean)
+                flag <= 1;  // 왼쪽 이동
+            else if(btn_R_clean)
+                flag <= 0;  // 오른쪽 이동
+        end
+    end
+
+    // LED 이동: 1Hz 클럭 기준으로 주기적 이동
+    always @(posedge clk_1Hz or posedge reset) begin
+        if(reset) begin
+            led <= 8'b00000001;
+        end else begin
+            if(flag)
+                led <= led << 1;
+            else
+                led <= led >> 1;
         end
     end
 

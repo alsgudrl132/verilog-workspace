@@ -3,22 +3,22 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Jul 22 15:56:55 2025
-# Process ID         : 129020
+# Start of session at: Wed Jul 23 11:05:25 2025
+# Process ID         : 50854
 # Current directory  : /home/psh/work/project_3/project_3.runs/synth_1
-# Command line       : vivado -log btn_led_blink.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source btn_led_blink.tcl
-# Log file           : /home/psh/work/project_3/project_3.runs/synth_1/btn_led_blink.vds
+# Command line       : vivado -log led_shift_debounce.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source led_shift_debounce.tcl
+# Log file           : /home/psh/work/project_3/project_3.runs/synth_1/led_shift_debounce.vds
 # Journal file       : /home/psh/work/project_3/project_3.runs/synth_1/vivado.jou
 # Running On         : min
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 3000.000 MHz
+# CPU Frequency      : 2862.730 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16396 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20691 MB
-# Available Virtual  : 14073 MB
+# Available Virtual  : 11571 MB
 #-----------------------------------------------------------
-source btn_led_blink.tcl -notrace
+source led_shift_debounce.tcl -notrace

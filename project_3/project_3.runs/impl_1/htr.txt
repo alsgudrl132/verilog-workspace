@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log btn_led_blink.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source btn_led_blink.tcl -notrace
+vivado -log led_shift_debounce.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source led_shift_debounce.tcl -notrace

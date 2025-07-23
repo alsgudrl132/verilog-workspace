@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log btn_led_blink.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source btn_led_blink.tcl -notrace
+EAStep vivado -log led_shift_debounce.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source led_shift_debounce.tcl -notrace
 
 
