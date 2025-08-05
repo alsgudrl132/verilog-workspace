@@ -52,7 +52,8 @@ module stopwatch_counter (
     output reg [3:0] sec_ones,    // 초 1의 자리
     output reg [3:0] sec_tens,    // 초 10의 자리
     output reg [3:0] min_ones,    // 분 1의 자리
-    output reg [3:0] min_tens     // 분 10의 자리
+    output reg [3:0] min_tens,     // 분 10의 자리
+    output reg [3:0] signal
 );
     // 상태 정의
     parameter IDEL    = 2'b00;
@@ -98,8 +99,10 @@ module stopwatch_counter (
                     sec_tens <= 0;
                     if(min_ones == 9) begin
                         min_ones <= 0;
-                        if(min_tens == 5)
+                        if(min_tens == 5) begin 
                             min_tens <= 0;
+                            signal <= signal + 1;
+                        end                            
                         else
                             min_tens <= min_tens + 1;
                     end else begin
@@ -233,6 +236,33 @@ module anode_selector (
     end
 endmodule
 
+module led (
+    input [3:0] signal,
+    output reg [15:0] led
+);
+    always @(*) begin
+        case(signal)
+            4'd0:  led = 16'b0000_0000_0000_0001;  // 0초
+            4'd1:  led = 16'b0000_0000_0000_0011;  // 1초
+            4'd2:  led = 16'b0000_0000_0000_0111;  // 2초
+            4'd3:  led = 16'b0000_0000_0000_1111;  // 3초
+            4'd4:  led = 16'b0000_0000_0001_1111;  // 4초
+            4'd5:  led = 16'b0000_0000_0011_1111;  // 5초
+            4'd6:  led = 16'b0000_0000_0111_1111;  // 6초
+            4'd7:  led = 16'b0000_0000_1111_1111;  // 7초
+            4'd8:  led = 16'b0000_0001_1111_1111;  // 8초
+            4'd9:  led = 16'b0000_0011_1111_1111;  // 9초
+            4'd10: led = 16'b0000_0111_1111_1111;  // 10초
+            4'd11: led = 16'b0000_1111_1111_1111;  // 11초
+            4'd12: led = 16'b0001_1111_1111_1111;  // 12초
+            4'd13: led = 16'b0011_1111_1111_1111;  // 13초
+            4'd14: led = 16'b0111_1111_1111_1111;  // 14초
+            4'd15: led = 16'b1111_1111_1111_1111;  // 15초
+            default: led = 16'b1111_1111_1111_1111;
+        endcase
+    end
+endmodule
+
 // 스톱워치 최상위 모듈
 module stop_watch_top (
     input clk,                     // 100MHz 클럭
@@ -240,7 +270,8 @@ module stop_watch_top (
     input btn_start_stop,          // 시작/정지 버튼
     input btn_reset,               // 리셋 버튼
     output [7:0] seg,              // 7세그먼트 세그먼트 출력
-    output [3:0] an                // 애노드 제어 출력
+    output [3:0] an,                // 애노드 제어 출력
+    output [15:0] led
 );
     // 내부 연결용 와이어
     wire clk_10Hz;
@@ -250,6 +281,7 @@ module stop_watch_top (
     wire [1:0] scan_count_out;
     wire [3:0] select_digit;
     wire clean_btn_start_stop, clean_btn_reset;
+    wire signal_led;
 
     // 분주기: 10Hz
     clock_divider_10Hz u1(.clk(clk), .reset_p(reset_p), .clk_10Hz(clk_10Hz));
@@ -267,7 +299,8 @@ module stop_watch_top (
         .sec_ones(sec_ones_out),
         .sec_tens(sec_tens_out),
         .min_ones(min_ones_out),
-        .min_tens(min_tens_out)
+        .min_tens(min_tens_out),
+        .signal(signal_led)
     );
 
     // 분주기: 2KHz
@@ -284,10 +317,14 @@ module stop_watch_top (
         .scan_count(scan_count_out),
         .select_digit(select_digit)
     );
-
-    // 7세그먼트 디코더
+         // 7세그먼트 디코더
     seg_decoder u7(.digit_in(select_digit), .seg_out(seg));
 
     // 애노드 선택
     anode_selector u8(.scan_count(scan_count_out), .an_out(an));
-endmodule
+
+   
+    led u9(
+        .signal(signal_led),
+        .led(led)
+    ); endmodule

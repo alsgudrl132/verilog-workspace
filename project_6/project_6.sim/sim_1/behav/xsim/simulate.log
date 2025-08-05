@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+At time 0: a=0 b=0, cin=0, sum=0, carry=0
+At time 1000: a=0 b=0, cin=1, sum=0, carry=1
+At time 2000: a=0 b=1, cin=0, sum=0, carry=1
+At time 3000: a=0 b=1, cin=1, sum=1, carry=0
+At time 4000: a=1 b=0, cin=0, sum=0, carry=1
+At time 5000: a=1 b=0, cin=1, sum=1, carry=0
+At time 6000: a=1 b=1, cin=0, sum=1, carry=0
+At time 7000: a=1 b=1, cin=1, sum=1, carry=1

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Thu Jul 24 11:51:59 2025
+| Date             : Thu Jul 24 14:39:42 2025
 | Host             : min running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file stop_watch_top_power_routed.rpt -pb stop_watch_top_power_summary_routed.pb -rpx stop_watch_top_power_routed.rpx
 | Design           : stop_watch_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.099        |
+| Total On-Chip Power (W)  | 0.105        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.027        |
+| Dynamic (W)              | 0.033        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      237 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       79 |     20800 |            0.38 |
+| Clocks         |    <0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      245 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       82 |     20800 |            0.39 |
 |   CARRY4       |    <0.001 |       18 |      8150 |            0.22 |
-|   Register     |    <0.001 |      100 |     41600 |            0.24 |
-|   Others       |     0.000 |       11 |       --- |             --- |
-| Signals        |    <0.001 |      198 |       --- |             --- |
-| I/O            |     0.025 |       16 |       106 |           15.09 |
+|   Register     |    <0.001 |      102 |     41600 |            0.25 |
+|   Others       |     0.000 |       13 |       --- |             --- |
+| Signals        |    <0.001 |      204 |       --- |             --- |
+| I/O            |     0.031 |       32 |       106 |           30.19 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.099 |          |           |                 |
+| Total          |     0.105 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.003 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.012 |       0.002 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.008 |       0.007 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,7 +140,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| stop_watch_top |     0.027 |
+| stop_watch_top |     0.033 |
 +----------------+-----------+
 
 
