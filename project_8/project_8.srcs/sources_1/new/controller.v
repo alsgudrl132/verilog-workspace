@@ -43,6 +43,33 @@ module bin_to_dec(
     end
 endmodule
 
+module debounce (
+    input clk,
+    input btn_in,
+    output reg btn_out
+);
+
+    reg [15:0] count;
+    reg btn_sync_0, btn_sync_1;
+    wire stable = (count == 16'hFFFF);
+
+    always @(posedge clk) begin
+        btn_sync_0 <= btn_in;
+        btn_sync_1 <= btn_sync_0;
+    end
+
+    always @(posedge clk) begin
+        if(btn_sync_1 == btn_out) begin
+            count <= 0;
+        end else begin
+            count <= count + 1;
+            if(stable)
+                btn_out <= btn_sync_1;
+        end
+    end
+
+endmodule
+
 module fnd_cntr(
     input clk, reset_p,
     input [15:0] fnd_value,
@@ -83,4 +110,21 @@ module fnd_cntr(
 );
 endmodule
 
+module btn_cntr(
+    input clk, reset_p,
+    input btn,
+    output btn_pedge, btn_nedge);
+
+    wire debounced_btn;
+    debounce btn_0(
+        .clk(clk),
+        .btn_in(btn),
+        .btn_out(debounced_btn)
+    );
+    
+    edge_detector_p btn_ed(
+        .clk(clk), .reset_p(reset_p), .cp(debounced_btn), .p_edge(btn_pedge), .n_edge(btn_nedge)
+    );
+    
+endmodule
 

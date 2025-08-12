@@ -91,10 +91,29 @@ endmodule
 
 module watch_top(
     input clk, reset_p,
+    input [2:0] btn,
     output [7:0]seg_7,
-    output [3:0]com
+    output [3:0]com,
+    output [15:0] led
 );
+    wire btn_mode, inc_sec, inc_min;
+    
+    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
+    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
+    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
 
+    reg set_watch;
+    assign led[0] = set_watch;
+    
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            set_watch = 0; 
+        end
+        else if(btn_mode)begin
+            set_watch = ~set_watch;
+        end
+    end
+    
     reg [26:0] cnt_sysclk;
     reg [7:0] sec, min;
     always @(posedge clk, posedge reset_p) begin
@@ -104,16 +123,28 @@ module watch_top(
             min = 0;
         end
         else begin
-            if(cnt_sysclk >= 27'd100_000_000) begin
+            if(set_watch) begin
+                if(inc_sec)begin
+                    if(sec >= 59) sec = 0;
+                    else sec = sec + 1;
+                end
+                if(inc_min)begin
+                    if(min >= 59) min = 0;
+                    else min = min + 1;
+                end
+            end
+            else begin
+                if(cnt_sysclk >= 27'd100_000_000) begin
                 cnt_sysclk = 0;
                 if(sec >= 59) begin
                     sec = 0;
                     if(min >= 59) min = 0;
                     else min = min + 1;
                 end
-                else sec = sec + 1;
+                    else sec = sec + 1;
+                end
+                else cnt_sysclk = cnt_sysclk + 1;
             end
-            else cnt_sysclk = cnt_sysclk + 1;
         end
     end
     wire [15:0] sec_bcd, min_bcd;

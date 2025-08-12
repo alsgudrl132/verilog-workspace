@@ -80,6 +80,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v
+  /home/psh/work/project_8/project_8.srcs/sources_1/new/test.v
   /home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v
 }
 OPTRACE "Adding files" END { }

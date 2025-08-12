@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Aug 11 16:14:20 2025
-# Process ID         : 32849
+# Start of session at: Tue Aug 12 10:42:05 2025
+# Process ID         : 80118
 # Current directory  : /home/psh/work/project_8/project_8.runs/synth_1
 # Command line       : vivado -log watch_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source watch_top.tcl
 # Log file           : /home/psh/work/project_8/project_8.runs/synth_1/watch_top.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 3008.422 MHz
+# CPU Frequency      : 3238.642 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16396 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20691 MB
-# Available Virtual  : 15089 MB
+# Available Virtual  : 12268 MB
 #-----------------------------------------------------------
 source watch_top.tcl -notrace
