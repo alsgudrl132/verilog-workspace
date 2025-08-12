@@ -134,7 +134,7 @@ module watch_top(
                 end
             end
             else begin
-                if(cnt_sysclk >= 27'd100_000_000) begin
+                if(cnt_sysclk >= 27'd99_999_999) begin
                 cnt_sysclk = 0;
                 if(sec >= 59) begin
                     sec = 0;
@@ -161,3 +161,119 @@ module watch_top(
     );
 
 endmodule
+
+module cook_timer(
+    input clk, reset_p,
+    input [3:0] btn,
+    output [7:0] seg_7,
+    output [3:0] com,
+    output reg alarm,
+    output [14:0] led);
+
+    wire btn_mode, inc_sec, inc_min, alarm_off;
+    wire [15:0] cur_time = {min, sec};
+    reg start_set;
+    reg [7:0] set_sec, set_min;
+    reg [26:0] cnt_sysclk;
+    reg [7:0] sec, min;
+    wire [7:0] sec_bcd, min_bcd;
+    reg set_flag;
+
+    
+    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
+    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
+    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
+    btn_cntr alarm_off_btn(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_pedge(alarm_off));
+
+    
+    assign led[0] = start_set;
+    
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            start_set = 0;
+            alarm = 0;
+        end
+        else if(btn_mode && cur_time != 0 && start_set == 0) begin
+            start_set = 1;
+            set_sec = sec;
+            set_min = min;
+        end
+        else if(start_set && btn_mode)start_set = 0;
+        else if(start_set && min == 0 && sec == 0) begin
+            start_set = 0;
+            alarm = 1;
+        end
+        else if(alarm && (alarm_off || inc_sec || inc_min)) begin 
+            alarm = 0;
+            set_flag = 1;
+        end
+        else if(cur_time != 0) set_flag = 0;
+    end
+    
+
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            cnt_sysclk = 0;
+            sec = 0;
+            min = 0;
+        end
+        else begin
+            if(start_set)begin
+                if(cnt_sysclk >= 99_999_999) begin
+                    cnt_sysclk = 0;
+                    if(sec == 0) begin
+                        if(min)begin
+                            sec = 59;
+                            min = min - 1;
+                        end
+                    end 
+                    else sec = sec - 1;
+                end
+                else cnt_sysclk = cnt_sysclk + 1;
+            end
+            else begin
+                if(inc_sec) begin
+                    if(sec >= 59) sec = 0;
+                    else sec = sec + 1;
+                end
+                else if(inc_min) begin
+                    if(min >= 99) min = 0;
+                    else min = min + 1;
+                end
+                if(set_flag)begin
+                    sec = set_sec;
+                    min = set_min;
+                end
+            end
+        end
+    end
+    
+    bin_to_dec bcd_sec( .bin(sec), .bcd(sec_bcd));
+    bin_to_dec bcd_min( .bin(min), .bcd(min_bcd));
+    
+    fnd_cntr fnd(
+        .clk(clk),
+        .reset_p(reset_p),
+        .fnd_value({min_bcd[7:0], sec_bcd[7:0]}),
+        .hex_bcd(1),
+        .seg_7(seg_7),
+        .com(com)
+    );
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
