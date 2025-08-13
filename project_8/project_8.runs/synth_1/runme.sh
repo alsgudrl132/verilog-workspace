@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log cook_timer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cook_timer.tcl
+EAStep vivado -log top_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
