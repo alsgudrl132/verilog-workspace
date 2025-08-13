@@ -264,7 +264,7 @@ endmodule
 
 module stop_watch(
     input clk, reset_p,
-    input [2:0] btn,
+    input [3:0] btn,
     output [7:0] seg_7,
     output [3:0] com,
     output [15:0] led);
@@ -344,8 +344,9 @@ module stop_watch(
 endmodule
 
 module top_module(
-    input select_mode_btn, clk, reset_p,
-    input [2:0] btn,
+    input clk, reset_p,
+    input [1:0] sw,
+    input [3:0] btn,
     output reg [7:0] seg_7,
     output reg [3:0] com,
     output reg [13:0] led,
@@ -353,10 +354,12 @@ module top_module(
     output alarm
 );
 
+    // 하위 모듈들의 출력 신호를 연결하기 위한 wire 선언
     wire [7:0] seg_7_watch, seg_7_cook, seg_7_stop;
     wire [3:0] com_watch, com_cook, com_stop;
     wire [13:0] led_watch, led_cook, led_stop;
     
+    // 시계 모듈 인스턴스화
     watch_top watch_instance(
         .clk(clk),
         .reset_p(reset_p),
@@ -366,6 +369,7 @@ module top_module(
         .led(led_watch)
     );
     
+    // 타이머 모듈 인스턴스화
     cook_timer cook_timer_instance(
         .clk(clk),
         .reset_p(reset_p),
@@ -376,6 +380,7 @@ module top_module(
         .led(led_cook)
     );
     
+    // 스톱워치 모듈 인스턴스화
     stop_watch stop_watch_instance(
         .clk(clk),
         .reset_p(reset_p),
@@ -384,50 +389,47 @@ module top_module(
         .com(com_stop),
         .led(led_stop)
     );
+    
+    reg [1:0] mode; // 현재 모드를 저장하는 레지스터
+    assign mode_led[15:14] = mode[1:0]; // 현재 모드를 LED로 표시
 
-   
-    reg [1:0] mode;
-    wire btn_select;
-    
-    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(select_mode_btn), .btn_pedge(btn_select));
-    
-    assign mode_led[15:14] = mode[1:0];
-    
-    always @(posedge clk, posedge reset_p) begin
-        if(reset_p) mode = 0;
-        else if(btn_select) begin
-            if(mode == 2) mode = 0;
-            else mode = mode + 1;
+    // 스위치(sw) 입력에 따라 현재 모드(mode)를 결정
+    always @(posedge clk or posedge reset_p) begin
+        if (reset_p) 
+            mode <= 0;
+        else begin
+            case (sw)
+                2'b01: mode = 1; // 1번 모드: 타이머
+                2'b10: mode = 2; // 2번 모드: 스톱워치
+                default: mode = 0; // 기본 모드: 시계
+            endcase
         end
     end
     
+    // 모드(mode)에 따라 각 모듈의 출력을 최종 출력으로 선택 (멀티플렉서 역할)
     always @(posedge clk, posedge reset_p) begin
         if(reset_p) begin
             seg_7 = 0;
             com = 0;
             led = 0;
         end
-        else if(mode == 0) begin
+        else if(mode == 0) begin // 모드 0 (시계) 선택
             seg_7 = seg_7_watch;
             com = com_watch;
             led = led_watch;
         end
-        else if(mode == 1) begin
+        else if(mode == 1) begin // 모드 1 (타이머) 선택
             seg_7 = seg_7_cook;
             com = com_cook;
             led = led_cook;
         end
-        else if(mode == 2) begin
+        else if(mode == 2) begin // 모드 2 (스톱워치) 선택
             seg_7 = seg_7_stop;
             com = com_stop;
             led = led_stop;
         end
-        
     end
-    
-    
 endmodule
-
 
 
 
