@@ -178,31 +178,20 @@ module watch_top(
 
 endmodule
 
-module cook_timer_top(
+module cook_timer (
     input clk, reset_p,
-    input [3:0] btn,
-    output [7:0] seg_7,
-    output [3:0] com,
+    input btn_mode, inc_sec, inc_min, alarm_off,
+    output reg [7:0] sec, min,
     output reg alarm,
-    output [14:0] led);
-
-    wire btn_mode, inc_sec, inc_min, alarm_off;
+    output reg start_set
+);
+    
+    reg set_flag;
     wire [15:0] cur_time = {min, sec};
-    reg start_set;
     reg [7:0] set_sec, set_min;
     reg [26:0] cnt_sysclk;
-    reg [7:0] sec, min;
-    wire [7:0] sec_bcd, min_bcd;
-    reg set_flag;
-
     
-    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
-    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
-    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
-    btn_cntr alarm_off_btn(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_pedge(alarm_off));
 
-    
-    assign led[0] = start_set;
     
     always @(posedge clk, posedge reset_p) begin
         if(reset_p) begin
@@ -263,6 +252,30 @@ module cook_timer_top(
             end
         end
     end
+endmodule
+
+module cook_timer_top(
+    input clk, reset_p,
+    input [3:0] btn,
+    output [7:0] seg_7,
+    output [3:0] com,
+    output alarm,
+    output [15:0] led);
+
+    wire [7:0] sec, min;
+    wire [7:0] sec_bcd, min_bcd;
+    reg set_flag;
+    wire start_set;
+    
+    assign led[15] = alarm;
+    assign led[0] = start_set;
+
+    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
+    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
+    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
+    btn_cntr alarm_off_btn(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_pedge(alarm_off));
+    
+    cook_timer (.clk(clk), .reset_p(reset_p), .btn_mode(btn_mode), .inc_sec(inc_sec), .inc_min(inc_min), .alarm_off(alarm_off), .sec(sec), .min(min), .alarm(alarm), .start_set(start_set));
     
     bin_to_dec bcd_sec( .bin(sec), .bcd(sec_bcd));
     bin_to_dec bcd_min( .bin(min), .bcd(min_bcd));
@@ -277,8 +290,78 @@ module cook_timer_top(
     );
 endmodule
 
-
 module stop_watch(
+    input clk, reset_p,
+    input btn_start, btn_lap, btn_clear,
+    output [7:0] fnd_sec, fnd_csec,
+    output [15:0] led
+);
+
+    reg start_stop;
+    reg [7:0] sec, csec;
+    assign fnd_sec = lap ? lap_sec : sec;
+    assign fnd_csec = lap ? lap_csec : csec;
+
+    assign led[0] = start_stop;
+
+    always @(posedge clk, posedge reset_p) begin
+            if(reset_p) start_stop = 0;
+            else if(btn_start) start_stop = ~start_stop;
+            else if(btn_clear) start_stop = 0;
+        end
+        
+        reg lap;
+        assign led[1] = lap;
+        reg [7:0] lap_sec, lap_csec;
+        always @(posedge clk, posedge reset_p) begin
+            if(reset_p) begin
+                lap = 0;
+                lap_sec = 0;
+                lap_csec = 0;
+            end
+            else if(btn_lap) begin
+                lap = ~lap;
+                lap_sec = sec;
+                lap_csec = csec;
+            end
+            else if(btn_clear)begin
+                lap = 0;
+                lap_sec = 0;
+                lap_csec = 0;
+            end
+        end
+        
+        reg [26:0] cnt_sysclk;
+        always @(posedge clk, posedge reset_p) begin
+            if(reset_p) begin
+                sec = 0;
+                csec = 0;
+                cnt_sysclk = 0;
+            end
+            else begin
+                if(start_stop) begin
+                    if(cnt_sysclk >= 999_999) begin
+                        cnt_sysclk = 0;
+                        if(csec >= 99) begin
+                            csec = 0;
+                            if(sec >= 99) sec = 0;
+                            else sec = sec + 1;
+                        end
+                        else csec = csec + 1;
+                    end
+                    else cnt_sysclk = cnt_sysclk + 1;
+                end
+                if(btn_clear) begin
+                    sec = 0;
+                    csec = 0;
+                    cnt_sysclk = 0;
+                end
+            end
+        end
+
+endmodule
+
+module stop_watch_top(
     input clk, reset_p,
     input [3:0] btn,
     output [7:0] seg_7,
@@ -286,73 +369,17 @@ module stop_watch(
     output [15:0] led);
     
     wire btn_start, btn_lap, btn_clear;
-    reg [7:0] sec, csec;
     wire [7:0] sec_bcd, csec_bcd;
     
     btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_start));
     btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(btn_lap));
     btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(btn_clear));
     
-    reg start_stop;
-    assign led[0] = start_stop;
-    always @(posedge clk, posedge reset_p) begin
-        if(reset_p) start_stop = 0;
-        else if(btn_start) start_stop = ~start_stop;
-        else if(btn_clear) start_stop = 0;
-    end
-    
-    reg lap;
-    assign led[1] = lap;
-    reg [7:0] lap_sec, lap_csec;
-    always @(posedge clk, posedge reset_p) begin
-        if(reset_p) begin
-            lap = 0;
-            lap_sec = 0;
-            lap_csec = 0;
-        end
-        else if(btn_lap) begin
-            lap = ~lap;
-            lap_sec = sec;
-            lap_csec = csec;
-        end
-        else if(btn_clear)begin
-            lap = 0;
-            lap_sec = 0;
-            lap_csec = 0;
-        end
-    end
-    
-    reg [26:0] cnt_sysclk;
-    always @(posedge clk, posedge reset_p) begin
-        if(reset_p) begin
-            sec = 0;
-            csec = 0;
-            cnt_sysclk = 0;
-        end
-        else begin
-            if(start_stop) begin
-                if(cnt_sysclk >= 999_999) begin
-                    cnt_sysclk = 0;
-                    if(csec >= 99) begin
-                        csec = 0;
-                        if(sec >= 99) sec = 0;
-                        else sec = sec + 1;
-                    end
-                    else csec = csec + 1;
-                end
-                else cnt_sysclk = cnt_sysclk + 1;
-            end
-            if(btn_clear) begin
-                sec = 0;
-                csec = 0;
-                cnt_sysclk = 0;
-            end
-        end
-    end
-    
     wire [7:0] fnd_sec, fnd_csec;
-    assign fnd_sec = lap ? lap_sec : sec;
-    assign fnd_csec = lap ? lap_csec : csec;
+    
+    stop_watch stop_watch_instance(
+        .clk(clk), .reset_p(reset_p), .btn_start(btn_start), .btn_lap(btn_lap), .btn_clear(btn_clear), .fnd_sec(fnd_sec), .fnd_csec(fnd_csec), .led(led)
+    );
     
     bin_to_dec bcd_sec( .bin(fnd_sec), .bcd(sec_bcd));
     bin_to_dec bcd_min( .bin(fnd_csec), .bcd(csec_bcd));
@@ -397,7 +424,7 @@ module top_module(
     );
     
     // 스톱워치 모듈 인스턴스화
-    stop_watch stop_watch_instance(
+    stop_watch_top stop_watch_instance(
         .clk(clk),
         .reset_p(reset_p),
         .btn(btn),
@@ -446,9 +473,3 @@ module top_module(
         end
     end
 endmodule
-
-
-
-
-
-
