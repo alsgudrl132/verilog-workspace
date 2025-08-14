@@ -7,12 +7,12 @@
   **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Wed Aug 13 15:56:50 2025
+  **** Start of session at: Thu Aug 14 11:21:59 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1490.383 ; gain = 15.871 ; free physical = 2493 ; free virtual = 11665
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1486.062 ; gain = 47.840 ; free physical = 2299 ; free virtual = 12651
 Command: read_checkpoint -auto_incremental -incremental /home/psh/work/project_8/project_8.srcs/utils_1/imports/synth_1/ring_counter_led_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/psh/work/project_8/project_8.srcs/utils_1/imports/synth_1/ring_counter_led_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,31 +25,40 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 163102
+INFO: [Synth 8-7075] Helper process launched with PID 28507
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2089.379 ; gain = 428.770 ; free physical = 1664 ; free virtual = 10842
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2090.090 ; gain = 427.832 ; free physical = 1362 ; free virtual = 11743
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'sec_bcd', assumed default net type 'wire' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:81]
-WARNING: [Synth 8-6901] identifier 'min' is used before its declaration [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:174]
-WARNING: [Synth 8-6901] identifier 'sec' is used before its declaration [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:174]
-INFO: [Synth 8-6157] synthesizing module 'top_module' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:346]
-INFO: [Synth 8-6157] synthesizing module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:92]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'set_watch' is not allowed [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:99]
+INFO: [Synth 8-11241] undeclared symbol 'btn_mode', assumed default net type 'wire' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:153]
+INFO: [Synth 8-11241] undeclared symbol 'inc_sec', assumed default net type 'wire' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:154]
+INFO: [Synth 8-11241] undeclared symbol 'inc_min', assumed default net type 'wire' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:155]
+WARNING: [Synth 8-8895] 'btn_mode' is already implicitly declared on line 153 [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:156]
+WARNING: [Synth 8-8895] 'inc_sec' is already implicitly declared on line 154 [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:156]
+WARNING: [Synth 8-8895] 'inc_min' is already implicitly declared on line 155 [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:156]
+WARNING: [Synth 8-6901] identifier 'min' is used before its declaration [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:189]
+WARNING: [Synth 8-6901] identifier 'sec' is used before its declaration [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:189]
+INFO: [Synth 8-6157] synthesizing module 'top_module' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:361]
+INFO: [Synth 8-6157] synthesizing module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:145]
 INFO: [Synth 8-6157] synthesizing module 'btn_cntr' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:113]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:46]
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:46]
 INFO: [Synth 8-6157] synthesizing module 'edge_detector_p' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test.v:112]
 INFO: [Synth 8-6155] done synthesizing module 'edge_detector_p' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test.v:112]
 INFO: [Synth 8-6155] done synthesizing module 'btn_cntr' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:113]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:101]
-WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:101]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:102]
-WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:102]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:103]
-WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:103]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:153]
+WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:153]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:154]
+WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:154]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:155]
+WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:155]
+INFO: [Synth 8-6157] synthesizing module 'watch' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'watch' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:92]
 INFO: [Synth 8-6157] synthesizing module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'bin_to_dec' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:21]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:151]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:152]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:166]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:167]
 INFO: [Synth 8-6157] synthesizing module 'fnd_cntr' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:73]
 WARNING: [Synth 8-689] width (1) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:81]
 INFO: [Synth 8-6157] synthesizing module 'anode_selector' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:77]
@@ -60,42 +69,42 @@ INFO: [Synth 8-6157] synthesizing module 'seg_decoder' [/home/psh/work/project_8
 INFO: [Synth 8-226] default block is never used [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:54]
 INFO: [Synth 8-6155] done synthesizing module 'seg_decoder' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:49]
 INFO: [Synth 8-6155] done synthesizing module 'fnd_cntr' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'watch_top' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:92]
-WARNING: [Synth 8-689] width (4) of port connection 'btn' does not match port width (3) of module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:366]
-WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (16) of module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:369]
-INFO: [Synth 8-6157] synthesizing module 'cook_timer' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:165]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:183]
-WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:183]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:184]
-WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:184]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:185]
-WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:185]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'alarm_off_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:186]
-WARNING: [Synth 8-7023] instance 'alarm_off_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:186]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:251]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:251]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:252]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:252]
-INFO: [Synth 8-6155] done synthesizing module 'cook_timer' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:165]
-WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (15) of module 'cook_timer' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:380]
-INFO: [Synth 8-6157] synthesizing module 'stop_watch' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:265]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:276]
-WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:276]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:277]
-WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:277]
-WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:278]
-WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:278]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:341]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:341]
-WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:342]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:342]
-INFO: [Synth 8-6155] done synthesizing module 'stop_watch' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:265]
-WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (16) of module 'stop_watch' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:390]
-INFO: [Synth 8-6155] done synthesizing module 'top_module' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'watch_top' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:145]
+WARNING: [Synth 8-689] width (4) of port connection 'btn' does not match port width (3) of module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:381]
+WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (16) of module 'watch_top' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:384]
+INFO: [Synth 8-6157] synthesizing module 'cook_timer' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:180]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:198]
+WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:198]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:199]
+WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:199]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:200]
+WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:200]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'alarm_off_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:201]
+WARNING: [Synth 8-7023] instance 'alarm_off_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:201]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:266]
+WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:266]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:267]
+WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:267]
+INFO: [Synth 8-6155] done synthesizing module 'cook_timer' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:180]
+WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (15) of module 'cook_timer' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:395]
+INFO: [Synth 8-6157] synthesizing module 'stop_watch' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:280]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'mode_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:291]
+WARNING: [Synth 8-7023] instance 'mode_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:291]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_sec_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:292]
+WARNING: [Synth 8-7023] instance 'inc_sec_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:292]
+WARNING: [Synth 8-7071] port 'btn_nedge' of module 'btn_cntr' is unconnected for instance 'inc_min_btn' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:293]
+WARNING: [Synth 8-7023] instance 'inc_min_btn' of module 'btn_cntr' has 5 connections declared, but only 4 given [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:293]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:356]
+WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:356]
+WARNING: [Synth 8-689] width (8) of port connection 'bin' does not match port width (12) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:357]
+WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (16) of module 'bin_to_dec' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:357]
+INFO: [Synth 8-6155] done synthesizing module 'stop_watch' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:280]
+WARNING: [Synth 8-689] width (14) of port connection 'led' does not match port width (16) of module 'stop_watch' [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:405]
+INFO: [Synth 8-6155] done synthesizing module 'top_module' (0#1) [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:361]
 WARNING: [Synth 8-3848] Net bcd_value in module/entity fnd_cntr does not have driver. [/home/psh/work/project_8/project_8.srcs/sources_1/new/controller.v:80]
-WARNING: [Synth 8-7137] Register set_sec_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:198]
-WARNING: [Synth 8-7137] Register set_min_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:199]
-WARNING: [Synth 8-7137] Register set_flag_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:208]
+WARNING: [Synth 8-7137] Register set_sec_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:213]
+WARNING: [Synth 8-7137] Register set_min_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:214]
+WARNING: [Synth 8-7137] Register set_flag_reg in module cook_timer has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_8/project_8.srcs/sources_1/new/test_top.v:223]
 WARNING: [Synth 8-7129] Port led[15] in module stop_watch is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[14] in module stop_watch is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[13] in module stop_watch is either unconnected or has no load
@@ -141,18 +150,18 @@ WARNING: [Synth 8-7129] Port led[3] in module watch_top is either unconnected or
 WARNING: [Synth 8-7129] Port led[2] in module watch_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[1] in module watch_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2166.316 ; gain = 505.707 ; free physical = 1599 ; free virtual = 10770
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2166.027 ; gain = 503.770 ; free physical = 1284 ; free virtual = 11668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2184.129 ; gain = 523.520 ; free physical = 1599 ; free virtual = 10770
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2183.840 ; gain = 521.582 ; free physical = 1284 ; free virtual = 11668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2184.129 ; gain = 523.520 ; free physical = 1599 ; free virtual = 10770
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2183.840 ; gain = 521.582 ; free physical = 1284 ; free virtual = 11668
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2184.129 ; gain = 0.000 ; free physical = 1599 ; free virtual = 10770
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2183.840 ; gain = 0.000 ; free physical = 1284 ; free virtual = 11668
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -163,31 +172,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2328.879 ; gain = 0.000 ; free physical = 1590 ; free virtual = 10775
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2332.590 ; gain = 0.000 ; free physical = 1305 ; free virtual = 11705
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2328.879 ; gain = 0.000 ; free physical = 1590 ; free virtual = 10775
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2332.590 ; gain = 0.000 ; free physical = 1305 ; free virtual = 11705
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2328.879 ; gain = 668.270 ; free physical = 1620 ; free virtual = 10800
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2332.590 ; gain = 670.332 ; free physical = 1353 ; free virtual = 11757
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2336.883 ; gain = 676.273 ; free physical = 1620 ; free virtual = 10800
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2340.594 ; gain = 678.336 ; free physical = 1353 ; free virtual = 11757
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2336.883 ; gain = 676.273 ; free physical = 1619 ; free virtual = 10791
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2340.594 ; gain = 678.336 ; free physical = 1353 ; free virtual = 11757
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2336.883 ; gain = 676.273 ; free physical = 1605 ; free virtual = 10791
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2340.594 ; gain = 678.336 ; free physical = 1357 ; free virtual = 11762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -281,25 +290,25 @@ WARNING: [Synth 8-7129] Port led[3] in module watch_top is either unconnected or
 WARNING: [Synth 8-7129] Port led[2] in module watch_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[1] in module watch_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.883 ; gain = 676.273 ; free physical = 1607 ; free virtual = 10794
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2340.594 ; gain = 678.336 ; free physical = 1343 ; free virtual = 11754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2369.883 ; gain = 709.273 ; free physical = 1572 ; free virtual = 10743
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2368.594 ; gain = 706.336 ; free physical = 1254 ; free virtual = 11671
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2413.773 ; gain = 753.164 ; free physical = 1498 ; free virtual = 10684
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 2413.469 ; gain = 751.211 ; free physical = 1213 ; free virtual = 11632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2413.773 ; gain = 753.164 ; free physical = 1496 ; free virtual = 10689
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2413.469 ; gain = 751.211 ; free physical = 1213 ; free virtual = 11632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +326,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1357 ; free virtual = 10561
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1357 ; free virtual = 10561
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1355 ; free virtual = 10559
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1355 ; free virtual = 10559
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1355 ; free virtual = 10559
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1355 ; free virtual = 10559
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -368,9 +377,9 @@ Report Cell Usage:
 |3     |LUT1   |    13|
 |4     |LUT2   |   106|
 |5     |LUT3   |    39|
-|6     |LUT4   |    74|
-|7     |LUT5   |    52|
-|8     |LUT6   |   109|
+|6     |LUT4   |    72|
+|7     |LUT5   |    56|
+|8     |LUT6   |   110|
 |9     |MUXF7  |     1|
 |10    |FDCE   |   181|
 |11    |FDPE   |     1|
@@ -379,29 +388,29 @@ Report Cell Usage:
 |14    |OBUF   |    29|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.586 ; gain = 898.977 ; free physical = 1355 ; free virtual = 10559
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.281 ; gain = 896.023 ; free physical = 1098 ; free virtual = 11518
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 45 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2559.586 ; gain = 754.227 ; free physical = 1348 ; free virtual = 10551
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2559.594 ; gain = 898.977 ; free physical = 1350 ; free virtual = 10554
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2558.281 ; gain = 747.273 ; free physical = 1090 ; free virtual = 11510
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2558.289 ; gain = 896.023 ; free physical = 1090 ; free virtual = 11510
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2559.594 ; gain = 0.000 ; free physical = 1484 ; free virtual = 10688
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2558.289 ; gain = 0.000 ; free physical = 1089 ; free virtual = 11511
 INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 4 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.613 ; gain = 0.000 ; free physical = 1512 ; free virtual = 10683
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2614.309 ; gain = 0.000 ; free physical = 1254 ; free virtual = 11677
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ff6a9b90
+Synth Design complete | Checksum: 8ac791b4
 INFO: [Common 17-83] Releasing license: Synthesis
-47 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+52 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:39 . Memory (MB): peak = 2615.613 ; gain = 1122.262 ; free physical = 1512 ; free virtual = 10683
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1907.416; main = 1768.580; forked = 269.491
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3386.672; main = 2615.617; forked = 920.895
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2639.625 ; gain = 0.000 ; free physical = 1512 ; free virtual = 10685
+synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:56 . Memory (MB): peak = 2614.309 ; gain = 1121.309 ; free physical = 1254 ; free virtual = 11677
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1860.485; main = 1774.702; forked = 269.259
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3334.367; main = 2614.312; forked = 920.895
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2638.320 ; gain = 0.000 ; free physical = 1254 ; free virtual = 11677
 INFO: [Common 17-1381] The checkpoint '/home/psh/work/project_8/project_8.runs/synth_1/top_module.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 13 15:57:41 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 14 11:23:10 2025...

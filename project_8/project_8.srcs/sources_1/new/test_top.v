@@ -89,21 +89,14 @@ module anode_selector (
     end
 endmodule
 
-module watch_top(
+module watch(
     input clk, reset_p,
-    input [2:0] btn,
-    output [7:0]seg_7,
-    output [3:0]com,
-    output [15:0] led
+    input btn_mode, inc_sec, inc_min,
+    output reg [7:0] sec, min,
+    output reg set_watch
 );
-    wire btn_mode, inc_sec, inc_min;
-    
-    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
-    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
-    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
 
     reg set_watch;
-    assign led[0] = set_watch;
     
     always @(posedge clk, posedge reset_p) begin
         if(reset_p) begin
@@ -115,7 +108,6 @@ module watch_top(
     end
     
     reg [26:0] cnt_sysclk;
-    reg [7:0] sec, min;
     always @(posedge clk, posedge reset_p) begin
         if(reset_p) begin
             cnt_sysclk = 0;
@@ -147,7 +139,31 @@ module watch_top(
             end
         end
     end
+
+endmodule
+
+module watch_top(
+    input clk, reset_p,
+    input [2:0] btn,
+    output [7:0]seg_7,
+    output [3:0]com,
+    output [15:0] led
+);
+
+    wire btn_mode, inc_sec, inc_min;
+    wire [7:0] sec, min;
+    wire set_watch;
     wire [15:0] sec_bcd, min_bcd;
+    assign led[0] = set_watch;
+
+    btn_cntr mode_btn(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_mode));
+    btn_cntr inc_sec_btn(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(inc_sec));
+    btn_cntr inc_min_btn(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(inc_min));
+    
+    watch watch_instance(.clk(clk), .reset_p(reset_p), .btn_mode(btn_mode), .inc_sec(inc_sec), .inc_min(inc_min), .sec(sec), .min(min), .set_watch(set_watch));
+
+    assign led[0] = set_watch;
+    
     bin_to_dec bcd_sec( .bin(sec), .bcd(sec_bcd));
     bin_to_dec bcd_min( .bin(min), .bcd(min_bcd));
     
@@ -162,7 +178,7 @@ module watch_top(
 
 endmodule
 
-module cook_timer(
+module cook_timer_top(
     input clk, reset_p,
     input [3:0] btn,
     output [7:0] seg_7,
@@ -370,7 +386,7 @@ module top_module(
     );
     
     // 타이머 모듈 인스턴스화
-    cook_timer cook_timer_instance(
+    cook_timer_top cook_timer_instance(
         .clk(clk),
         .reset_p(reset_p),
         .btn(btn),
