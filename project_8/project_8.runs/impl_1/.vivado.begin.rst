@@ -23,3 +23,8 @@
     <Process Command="vivado" Owner="psh" Host="min" Pid="98551" HostCore="8" HostMemory="16011876">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="psh" Host="min" Pid="136445" HostCore="8" HostMemory="16011876">
+    </Process>
+</ProcessHandle>
