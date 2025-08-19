@@ -222,6 +222,11 @@ module dht11_cntr(
                 // MCU → High 유지 (20us)
                 //---------------------------------------------------
                 S_HIGH_20US: begin
+                    count_usec_e = 1;
+                    if(count_usec > 22'd100_100) begin
+                        count_usec_e = 0;
+                        next_state = S_IDLE;
+                    end
                     if(dht_nedge) begin
                         next_state = S_LOW_80US;
                         count_usec_e = 0;
@@ -232,16 +237,30 @@ module dht11_cntr(
                 // DHT11 응답 Low (80us)
                 //---------------------------------------------------
                 S_LOW_80US: begin
-                    if(dht_pedge) 
+                    count_usec_e = 1;
+                    if(count_usec > 22'd100_100) begin
+                        count_usec_e = 0;
+                        next_state = S_IDLE;
+                    end
+                    if(dht_pedge) begin
                         next_state = S_HIGH_80US;
+                        count_usec_e = 0;
+                    end
                 end
                 
                 //---------------------------------------------------
                 // DHT11 응답 High (80us)
                 //---------------------------------------------------
                 S_HIGH_80US: begin
-                    if(dht_nedge) 
+                    count_usec_e = 1;
+                    if(count_usec > 22'd100_100) begin
+                        count_usec_e = 0;
+                        next_state = S_IDLE;
+                    end
+                    if(dht_nedge) begin
                         next_state = S_READ_DATA;
+                        count_usec_e = 0;
+                    end
                 end
                 
                 //---------------------------------------------------
@@ -266,16 +285,25 @@ module dht11_cntr(
                                 else 
                                     temp_data = {temp_data[38:0], 1'b1};
                             end
-                            else 
+                            else begin
                                 count_usec_e = 1;
+                                if(count_usec > 22'd100_000) begin
+                                    count_usec_e = 0;
+                                    next_state = S_IDLE;
+                                    data_count = 0;
+                                    read_state = S_WAIT_PEDGE;
+                                end
+                            end
                         end
                     endcase
                     // 데이터 40bit 수신 완료
                     if(data_count >= 40) begin
                         next_state = S_IDLE;
                         data_count = 0;
-                        humidity = temp_data[39:32];
-                        temperature = temp_data[23:16];
+                        if(temp_data[39:32] + temp_data[31:24] + temp_data[23:16] + temp_data[15:8] == temp_data[7:0]) begin
+                            humidity = temp_data[39:32];
+                            temperature = temp_data[23:16];
+                        end
                     end
                 end
                 default: 
@@ -285,8 +313,104 @@ module dht11_cntr(
     end
 endmodule
 
-
-
+// ============================================
+// HC-SR04 거리 측정 모듈 (FND용)
+// ============================================
+module hc_sr04_cntr(
+    input clk,
+    input reset_p,
+    input echo,                  // HC-SR04 Echo 입력
+    output reg trig,             // HC-SR04 Trig 출력
+    output reg [7:0] distance_cm,// 측정된 거리 (cm)
+    output [15:0] led            // 디버깅용 LED 출력
+);
+    // FSM 상태 정의
+    localparam S_IDLE   = 4'b0001; // 대기 상태
+    localparam S_SEND   = 4'b0010; // Trig 신호 송신
+    localparam S_RECIVE = 4'b0100; // Echo 신호 수신
+    localparam S_END    = 4'b1000; // 거리 계산
+    
+    // 1us 단위 클럭 생성
+    wire clk_usec_pedge;
+    clock_div_100 us_clk(
+        .clk(clk),
+        .reset_p(reset_p),
+        .nedge_div_100(clk_usec_pedge)
+    );
+    
+    reg [21:0] count_usec;    // 마이크로초 카운터
+    reg count_usec_e;         // 카운터 enable
+    
+    // 마이크로초 카운터
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) count_usec <= 0;
+        else if(clk_usec_pedge && count_usec_e) count_usec <= count_usec + 1;
+        else if(!count_usec_e) count_usec <= 0;
+    end
+    
+    // FSM 상태 레지스터
+    reg [3:0] state, next_state;
+    reg [21:0] echo_width;    // Echo 신호 폭 저장
+    
+    assign led[3:0] = state;  // 하위 4비트: 상태 표시
+    assign led[15] = echo;    // Echo 입력 상태 표시
+    assign led[14] = trig;    // Trig 출력 상태 표시
+    
+    // 상태 전이
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) state <= S_IDLE;
+        else state <= next_state;
+    end
+    
+    // FSM 동작
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) begin
+            next_state <= S_IDLE;
+            trig <= 0;
+            count_usec_e <= 0;
+            distance_cm <= 0;
+        end
+        else begin
+            case(state)
+                S_IDLE: begin
+                    trig <= 0;
+                    count_usec_e <= 1;
+                    if(count_usec > 22'd60_000) begin   // 60ms 대기
+                        count_usec_e <= 0;
+                        next_state <= S_SEND;
+                    end
+                end
+                S_SEND: begin
+                    trig <= 1;
+                    count_usec_e <= 1;
+                    if(count_usec > 22'd12) begin       // 12us Trig 신호
+                        trig <= 0;
+                        count_usec_e <= 0;
+                        next_state <= S_RECIVE;
+                    end
+                end
+                S_RECIVE: begin
+                    if(count_usec > 22'd100_000) begin  // 100ms 타임아웃
+                        next_state <= S_IDLE;
+                    end
+                    if(echo) count_usec_e <= 1;         // Echo 신호 High
+                    else if(!echo && count_usec_e) begin// Echo 신호 Low
+                        echo_width <= count_usec;
+                        count_usec_e <= 0;
+                        next_state <= S_END;
+                    end 
+                end
+                S_END: begin
+                    // 거리 계산 (cm) : echo_width / 58
+                    if(echo_width < 22'd23200)          // 4m 이하만 유효
+                        distance_cm <= echo_width / 58;
+                    next_state <= S_IDLE;
+                end
+                default: next_state <= S_IDLE;
+            endcase
+        end
+    end
+endmodule
 
 
 

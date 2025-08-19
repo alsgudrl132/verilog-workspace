@@ -22,5 +22,8 @@ INFO: [VRFC 10-311] analyzing module ring_counter_led
 INFO: [VRFC 10-311] analyzing module edge_detector_n
 INFO: [VRFC 10-311] analyzing module edge_detector_p
 INFO: [VRFC 10-311] analyzing module edge_detector_pos
+INFO: [VRFC 10-311] analyzing module bin_to_dec
+INFO: [VRFC 10-311] analyzing module anode_selector
+INFO: [VRFC 10-311] analyzing module seg_decoder
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/psh/work/project_9/project_9.srcs/sim_1/new/tb_dht11_cntr.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_dht11_cntr

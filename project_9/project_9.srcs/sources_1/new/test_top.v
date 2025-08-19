@@ -528,10 +528,47 @@ module dht11_top(
 endmodule
 
 
-
-
-
-
+// ============================================
+// HC-SR04 Top 모듈 (FND 출력용)
+// ============================================
+module hc_sr04_top(
+    input clk,
+    input reset_p,
+    input echo,
+    output trig,
+    output [7:0] seg_7,
+    output [3:0] com,
+    output [15:0] led
+);
+    // HC-SR04 거리 측정
+    wire [7:0] distance_cm;
+    
+    hc_sr04_cntr hcsr04(
+        .clk(clk),
+        .reset_p(reset_p),
+        .echo(echo),
+        .trig(trig),
+        .distance_cm(distance_cm),
+        .led(led)
+    );
+    
+    // 거리 BCD 변환 - 이 부분만 수정!
+    wire [15:0] distance_bcd;  // 8비트 → 16비트로 변경
+    bin_to_dec bcd_conv(
+        .bin({4'b0000, distance_cm}),  // 8비트를 12비트로 확장
+        .bcd(distance_bcd)             // 16비트 BCD 출력
+    );
+    
+    // FND 표시 - 이 부분도 수정!
+    fnd_cntr fnd(
+        .clk(clk),
+        .reset_p(reset_p),
+        .fnd_value(distance_bcd),  // 8비트 → 16비트로 변경
+        .hex_bcd(1),
+        .seg_7(seg_7),
+        .com(com)
+    );
+endmodule
 
 
 

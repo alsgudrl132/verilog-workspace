@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log dht11_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dht11_top.tcl
+EAStep vivado -log hc_sr04_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hc_sr04_top.tcl

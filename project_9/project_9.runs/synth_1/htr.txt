@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log dht11_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dht11_top.tcl
+vivado -log hc_sr04_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hc_sr04_top.tcl

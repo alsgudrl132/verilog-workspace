@@ -11,6 +11,7 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.edge_detector_pos
 Compiling module xil_defaultlib.clock_div_100
+Compiling module xil_defaultlib.edge_detector_p
 Compiling module xil_defaultlib.dht11_cntr
 Compiling module xil_defaultlib.tb_dht11_cntr
 Compiling module xil_defaultlib.glbl

@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1755501273">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1755589499">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="dht11_top_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS" Name="dht11_top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="hc_sr04_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="hc_sr04_top_routed.rqs"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-BGN" Name="dht11_top.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="dht11_top.sysdef"/>
+  <File Type="BG-BGN" Name="hc_sr04_top.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="hc_sr04_top.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="dht11_top.ltx"/>
-  <File Type="RBD_FILE" Name="dht11_top.rbd"/>
-  <File Type="NPI_FILE" Name="dht11_top.npi"/>
-  <File Type="RNPI_FILE" Name="dht11_top.rnpi"/>
-  <File Type="CFI_FILE" Name="dht11_top.cfi"/>
-  <File Type="RCFI_FILE" Name="dht11_top.rcfi"/>
-  <File Type="PL-PDI-FILE" Name="dht11_top_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="dht11_top_boot.pdi"/>
-  <File Type="RDI-RDI" Name="dht11_top.vdi"/>
-  <File Type="PDI-FILE" Name="dht11_top.pdi"/>
-  <File Type="BITSTR-MMI" Name="dht11_top.mmi"/>
-  <File Type="BITSTR-BMM" Name="dht11_top_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="dht11_top.nky"/>
-  <File Type="BITSTR-RBT" Name="dht11_top.rbt"/>
-  <File Type="BITSTR-MSK" Name="dht11_top.msk"/>
-  <File Type="BG-BIN" Name="dht11_top.bin"/>
+  <File Type="BITSTR-LTX" Name="hc_sr04_top.ltx"/>
+  <File Type="RBD_FILE" Name="hc_sr04_top.rbd"/>
+  <File Type="NPI_FILE" Name="hc_sr04_top.npi"/>
+  <File Type="RNPI_FILE" Name="hc_sr04_top.rnpi"/>
+  <File Type="CFI_FILE" Name="hc_sr04_top.cfi"/>
+  <File Type="RCFI_FILE" Name="hc_sr04_top.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="hc_sr04_top_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="hc_sr04_top_boot.pdi"/>
+  <File Type="RDI-RDI" Name="hc_sr04_top.vdi"/>
+  <File Type="PDI-FILE" Name="hc_sr04_top.pdi"/>
+  <File Type="BITSTR-MMI" Name="hc_sr04_top.mmi"/>
+  <File Type="BITSTR-BMM" Name="hc_sr04_top_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="hc_sr04_top.nky"/>
+  <File Type="BITSTR-RBT" Name="hc_sr04_top.rbt"/>
+  <File Type="BITSTR-MSK" Name="hc_sr04_top.msk"/>
+  <File Type="BG-BIN" Name="hc_sr04_top.bin"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="BG-BIT" Name="dht11_top.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="dht11_top_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="dht11_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="dht11_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="dht11_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="dht11_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="dht11_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="dht11_top_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="dht11_top_postroute_physopt.dcp"/>
-  <File Type="BG-DRC" Name="dht11_top.drc"/>
-  <File Type="ROUTE-RQS-PB" Name="dht11_top_rqs_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="dht11_top_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="dht11_top_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="dht11_top_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="dht11_top_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="dht11_top_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="dht11_top_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="dht11_top_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="dht11_top_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="dht11_top_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="dht11_top_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="dht11_top_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="dht11_top_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="dht11_top_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="dht11_top_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="dht11_top_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="dht11_top_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="dht11_top_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="dht11_top_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="dht11_top_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="dht11_top_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="dht11_top_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="dht11_top_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="dht11_top_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="dht11_top_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="dht11_top_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="dht11_top_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="dht11_top_postplace_pwropt.dcp"/>
-  <File Type="PLACE-RQA-PB" Name="dht11_top_rqa_placed.pb"/>
-  <File Type="PLACE-TIMING" Name="dht11_top_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="dht11_top_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="dht11_top_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="dht11_top_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="dht11_top_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="dht11_top_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="dht11_top_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="dht11_top_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="dht11_top_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="dht11_top_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="dht11_top_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="dht11_top_pwropt.dcp"/>
-  <File Type="OPT-RQA-PB" Name="dht11_top_rqa_opted.pb"/>
-  <File Type="OPT-HWDEF" Name="dht11_top.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="dht11_top_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="dht11_top_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="dht11_top_opt.dcp"/>
-  <File Type="OPT-TIMING" Name="dht11_top_timing_summary_opted.rpt"/>
-  <File Type="REPORTS-TCL" Name="dht11_top_reports.tcl"/>
-  <File Type="INIT-TIMING" Name="dht11_top_timing_summary_init.rpt"/>
-  <File Type="PA-TCL" Name="dht11_top.tcl"/>
+  <File Type="BG-BIT" Name="hc_sr04_top.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="hc_sr04_cntr_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="hc_sr04_cntr_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="hc_sr04_cntr_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="hc_sr04_cntr_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="hc_sr04_cntr_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="hc_sr04_cntr_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="hc_sr04_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="hc_sr04_top_postroute_physopt.dcp"/>
+  <File Type="BG-DRC" Name="hc_sr04_top.drc"/>
+  <File Type="ROUTE-RQS-PB" Name="hc_sr04_top_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="hc_sr04_top_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="hc_sr04_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="hc_sr04_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="hc_sr04_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="hc_sr04_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="hc_sr04_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="hc_sr04_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="hc_sr04_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="hc_sr04_top_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="hc_sr04_top_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="hc_sr04_top_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="hc_sr04_top_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="hc_sr04_top_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="hc_sr04_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="hc_sr04_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="hc_sr04_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="hc_sr04_top_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="hc_sr04_top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="hc_sr04_top_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="hc_sr04_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="hc_sr04_top_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="hc_sr04_top_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="hc_sr04_top_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="hc_sr04_top_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="hc_sr04_top_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="hc_sr04_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="hc_sr04_top_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="hc_sr04_top_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="hc_sr04_top_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="hc_sr04_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="hc_sr04_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="hc_sr04_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="hc_sr04_top_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="hc_sr04_top_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="hc_sr04_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="hc_sr04_top_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="hc_sr04_top_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="hc_sr04_top_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="hc_sr04_top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="hc_sr04_top_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="hc_sr04_top_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="hc_sr04_top.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="hc_sr04_top_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="hc_sr04_top_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="hc_sr04_top_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="hc_sr04_top_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="hc_sr04_top_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="hc_sr04_top_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="hc_sr04_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/clock_library.v">
@@ -116,7 +116,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="dht11_top"/>
+      <Option Name="TopModule" Val="hc_sr04_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -148,9 +148,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

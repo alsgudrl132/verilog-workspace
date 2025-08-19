@@ -3,22 +3,22 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Aug 18 16:14:41 2025
-# Process ID         : 73580
+# Start of session at: Tue Aug 19 16:45:03 2025
+# Process ID         : 128367
 # Current directory  : /home/psh/work/project_9/project_9.runs/synth_1
-# Command line       : vivado -log dht11_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dht11_top.tcl
-# Log file           : /home/psh/work/project_9/project_9.runs/synth_1/dht11_top.vds
+# Command line       : vivado -log hc_sr04_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hc_sr04_top.tcl
+# Log file           : /home/psh/work/project_9/project_9.runs/synth_1/hc_sr04_top.vds
 # Journal file       : /home/psh/work/project_9/project_9.runs/synth_1/vivado.jou
 # Running On         : min
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 2152.412 MHz
+# CPU Frequency      : 3286.455 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16396 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20691 MB
-# Available Virtual  : 13263 MB
+# Available Virtual  : 14130 MB
 #-----------------------------------------------------------
-source dht11_top.tcl -notrace
+source hc_sr04_top.tcl -notrace
