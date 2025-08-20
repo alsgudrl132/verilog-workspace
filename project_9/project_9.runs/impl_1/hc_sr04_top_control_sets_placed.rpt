@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue Aug 19 16:46:39 2025
+| Date         : Wed Aug 20 11:47:43 2025
 | Host         : min running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_control_sets -verbose -file hc_sr04_top_control_sets_placed.rpt
 | Design       : hc_sr04_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     7 |
-|    Minimum number of control sets                        |     7 |
+| Total control sets                                       |     9 |
+|    Minimum number of control sets                        |     9 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    26 |
+| Unused register locations in slices containing registers |    24 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     7 |
+| Total control sets |     9 |
 | >= 0 to < 4        |     1 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     4 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              17 |            5 |
-| No           | No                    | Yes                    |              19 |            9 |
+| No           | No                    | No                     |              18 |            6 |
+| No           | No                    | Yes                    |              20 |           11 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              58 |           23 |
+| Yes          | No                    | Yes                    |              50 |           15 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,16 +70,18 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-----------------------------------+------------------+------------------+----------------+--------------+
-|  Clock Signal  |           Enable Signal           | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+-----------------------------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | hcsr04/trig_i_1_n_0               | reset_p_IBUF     |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG | hcsr04/p_0_in_0                   | reset_p_IBUF     |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG | hcsr04/distance_cm[7]_i_1_n_0     | reset_p_IBUF     |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG |                                   |                  |                5 |             17 |         3.40 |
-|  clk_IBUF_BUFG |                                   | reset_p_IBUF     |                9 |             19 |         2.11 |
-|  clk_IBUF_BUFG | hcsr04/us_clk/clk_ed/n_edge_reg_0 | reset_p_IBUF     |                6 |             22 |         3.67 |
-|  clk_IBUF_BUFG | hcsr04/p_1_in[3]                  | reset_p_IBUF     |               11 |             22 |         2.00 |
-+----------------+-----------------------------------+------------------+------------------+----------------+--------------+
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |            Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | hcsr04/trig_i_1_n_0                 | reset_p_IBUF     |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | hcsr04/echo_ed/E[0]                 | reset_p_IBUF     |                2 |              4 |         2.00 |
+| ~clk_IBUF_BUFG |                                     | reset_p_IBUF     |                2 |              4 |         2.00 |
+| ~clk_IBUF_BUFG | hcsr04/us_clk/clk_ed/div_usec_e_reg | reset_p_IBUF     |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | hcsr04/echo_ed/ff_cur_reg_0[0]      | reset_p_IBUF     |                2 |              8 |         4.00 |
+| ~clk_IBUF_BUFG | hcsr04/us_clk/clk_ed/E[0]           | reset_p_IBUF     |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG |                                     | reset_p_IBUF     |                9 |             16 |         1.78 |
+|  clk_IBUF_BUFG |                                     |                  |                6 |             18 |         3.00 |
+| ~clk_IBUF_BUFG | hcsr04/us_clk/clk_ed/n_edge_reg_0   | reset_p_IBUF     |                6 |             22 |         3.67 |
++----------------+-------------------------------------+------------------+------------------+----------------+--------------+
 
 

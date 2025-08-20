@@ -338,15 +338,43 @@ module hc_sr04_cntr(
         .nedge_div_100(clk_usec_pedge)
     );
     
-    reg [21:0] count_usec;    // 마이크로초 카운터
-    reg count_usec_e;         // 카운터 enable
+    reg [21:0] count_usec, start_usec, div_usec_58;    // 마이크로초 카운터
+    reg count_usec_e, div_usec_e;         // 카운터 enable
     
     // 마이크로초 카운터
-    always @(posedge clk or posedge reset_p) begin
+    always @(negedge clk or posedge reset_p) begin
         if(reset_p) count_usec <= 0;
         else if(clk_usec_pedge && count_usec_e) count_usec <= count_usec + 1;
         else if(!count_usec_e) count_usec <= 0;
     end
+    
+    reg[7:0] distance_cnt;
+    always @(negedge clk or posedge reset_p) begin
+        if(reset_p) begin
+            div_usec_58 = 0;
+            distance_cnt = 0;
+        end
+        else if(clk_usec_pedge && div_usec_e) begin
+            if(div_usec_58 >= 57) begin
+                div_usec_58 = 0;
+                distance_cnt = distance_cnt + 1;
+            end
+            else div_usec_58 = div_usec_58 + 1;
+        end
+        else if(!count_usec_e) begin
+            div_usec_58 <= 0;
+            distance_cnt = 0;
+        end
+    end
+    
+    wire echo_nedge, echo_pedge;
+    edge_detector_p echo_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(echo),
+        .p_edge(echo_pedge),  // 상승 엣지
+        .n_edge(echo_nedge)   // 하강 엣지
+    );
     
     // FSM 상태 레지스터
     reg [3:0] state, next_state;
@@ -357,7 +385,7 @@ module hc_sr04_cntr(
     assign led[14] = trig;    // Trig 출력 상태 표시
     
     // 상태 전이
-    always @(posedge clk or posedge reset_p) begin
+    always @(negedge clk or posedge reset_p) begin
         if(reset_p) state <= S_IDLE;
         else state <= next_state;
     end
@@ -383,27 +411,27 @@ module hc_sr04_cntr(
                 S_SEND: begin
                     trig <= 1;
                     count_usec_e <= 1;
-                    if(count_usec > 22'd12) begin       // 12us Trig 신호
+                    if(count_usec > 22'd10) begin       // 10us Trig 신호
                         trig <= 0;
                         count_usec_e <= 0;
                         next_state <= S_RECIVE;
                     end
                 end
                 S_RECIVE: begin
+                    count_usec_e <= 1;
                     if(count_usec > 22'd100_000) begin  // 100ms 타임아웃
                         next_state <= S_IDLE;
                     end
-                    if(echo) count_usec_e <= 1;         // Echo 신호 High
-                    else if(!echo && count_usec_e) begin// Echo 신호 Low
-                        echo_width <= count_usec;
-                        count_usec_e <= 0;
+                    if(echo_pedge) begin
+                        div_usec_e = 1;
+                    end
+                    else if(echo_nedge) begin// Echo 신호 Low
+                        distance_cm = distance_cnt;
+                        div_usec_e = 0;
                         next_state <= S_END;
                     end 
                 end
                 S_END: begin
-                    // 거리 계산 (cm) : echo_width / 58
-                    if(echo_width < 22'd23200)          // 4m 이하만 유효
-                        distance_cm <= echo_width / 58;
                     next_state <= S_IDLE;
                 end
                 default: next_state <= S_IDLE;

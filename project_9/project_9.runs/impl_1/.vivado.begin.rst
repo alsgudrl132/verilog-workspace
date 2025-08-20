@@ -1,90 +1,15 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="14149" HostCore="8" HostMemory="16011872">
+    <Process Command="vivado" Owner="psh" Host="min" Pid="10967" HostCore="8" HostMemory="16011880">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="19476" HostCore="8" HostMemory="16011872">
+    <Process Command="vivado" Owner="psh" Host="min" Pid="28105" HostCore="8" HostMemory="16011880">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="25645" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="34064" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="34956" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="46832" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="58500" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="69601" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="78568" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="84151" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="94277" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="104904" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="110002" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="114952" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="115693" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="120557" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="124335" HostCore="8" HostMemory="16011872">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="psh" Host="min" Pid="128601" HostCore="8" HostMemory="16011872">
+    <Process Command="vivado" Owner="psh" Host="min" Pid="56031" HostCore="8" HostMemory="16011880">
     </Process>
 </ProcessHandle>

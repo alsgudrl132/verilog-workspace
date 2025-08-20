@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Aug 19 16:45:03 2025
-# Process ID         : 128367
+# Start of session at: Wed Aug 20 11:45:25 2025
+# Process ID         : 55287
 # Current directory  : /home/psh/work/project_9/project_9.runs/synth_1
 # Command line       : vivado -log hc_sr04_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hc_sr04_top.tcl
 # Log file           : /home/psh/work/project_9/project_9.runs/synth_1/hc_sr04_top.vds
@@ -13,16 +13,16 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 3286.455 MHz
+# CPU Frequency      : 1065.943 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16396 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20691 MB
-# Available Virtual  : 14130 MB
+# Available Virtual  : 12020 MB
 #-----------------------------------------------------------
 source hc_sr04_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1486.512 ; gain = 11.934 ; free physical = 3198 ; free virtual = 13099
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1487.383 ; gain = 16.871 ; free physical = 941 ; free virtual = 10989
 Command: read_checkpoint -auto_incremental -incremental /home/psh/work/project_9/project_9.srcs/utils_1/imports/synth_1/dht11_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/psh/work/project_9/project_9.srcs/utils_1/imports/synth_1/dht11_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -35,9 +35,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 128417
+INFO: [Synth 8-7075] Helper process launched with PID 55523
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2089.539 ; gain = 428.801 ; free physical = 2354 ; free virtual = 12255
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2089.410 ; gain = 428.801 ; free physical = 368 ; free virtual = 10209
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'sec_bcd', assumed default net type 'wire' [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:31]
 INFO: [Synth 8-6157] synthesizing module 'hc_sr04_top' [/home/psh/work/project_9/project_9.srcs/sources_1/new/test_top.v:534]
@@ -49,6 +49,8 @@ INFO: [Synth 8-6155] done synthesizing module 'clock_div_100' (0#1) [/home/psh/w
 WARNING: [Synth 8-7071] port 'clk_div_100' of module 'clock_div_100' is unconnected for instance 'us_clk' [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:335]
 WARNING: [Synth 8-7071] port 'pedge_div_100' of module 'clock_div_100' is unconnected for instance 'us_clk' [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:335]
 WARNING: [Synth 8-7023] instance 'us_clk' of module 'clock_div_100' has 5 connections declared, but only 3 given [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:335]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_p' [/home/psh/work/project_9/project_9.srcs/sources_1/new/exam02_sequential_logic2.v:252]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_p' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/exam02_sequential_logic2.v:252]
 INFO: [Synth 8-6155] done synthesizing module 'hc_sr04_cntr' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:319]
 INFO: [Synth 8-6157] synthesizing module 'bin_to_dec' [/home/psh/work/project_9/project_9.srcs/sources_1/new/exam02_sequential_logic2.v:304]
 INFO: [Synth 8-6155] done synthesizing module 'bin_to_dec' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/exam02_sequential_logic2.v:304]
@@ -63,6 +65,8 @@ INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/projec
 INFO: [Synth 8-6155] done synthesizing module 'seg_decoder' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/exam02_sequential_logic2.v:344]
 INFO: [Synth 8-6155] done synthesizing module 'fnd_cntr' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'hc_sr04_top' (0#1) [/home/psh/work/project_9/project_9.srcs/sources_1/new/test_top.v:534]
+WARNING: [Synth 8-7137] Register div_usec_58_reg in module hc_sr04_cntr has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:354]
+WARNING: [Synth 8-7137] Register div_usec_e_reg in module hc_sr04_cntr has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:426]
 WARNING: [Synth 8-3848] Net bcd_value in module/entity fnd_cntr does not have driver. [/home/psh/work/project_9/project_9.srcs/sources_1/new/controller.v:30]
 WARNING: [Synth 8-7129] Port led[13] in module hc_sr04_cntr is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[12] in module hc_sr04_cntr is either unconnected or has no load
@@ -75,18 +79,18 @@ WARNING: [Synth 8-7129] Port led[6] in module hc_sr04_cntr is either unconnected
 WARNING: [Synth 8-7129] Port led[5] in module hc_sr04_cntr is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[4] in module hc_sr04_cntr is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2164.477 ; gain = 503.738 ; free physical = 2290 ; free virtual = 12192
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2164.348 ; gain = 503.738 ; free physical = 364 ; free virtual = 10201
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2182.289 ; gain = 521.551 ; free physical = 2290 ; free virtual = 12192
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2179.191 ; gain = 518.582 ; free physical = 364 ; free virtual = 10201
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2182.289 ; gain = 521.551 ; free physical = 2290 ; free virtual = 12192
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2179.191 ; gain = 518.582 ; free physical = 364 ; free virtual = 10201
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2182.289 ; gain = 0.000 ; free physical = 2290 ; free virtual = 12192
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2179.191 ; gain = 0.000 ; free physical = 364 ; free virtual = 10201
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -97,28 +101,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/hc_sr04_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2333.039 ; gain = 0.000 ; free physical = 2302 ; free virtual = 12204
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2326.941 ; gain = 0.000 ; free physical = 329 ; free virtual = 10169
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2333.039 ; gain = 0.000 ; free physical = 2302 ; free virtual = 12204
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2326.941 ; gain = 0.000 ; free physical = 329 ; free virtual = 10169
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2333.039 ; gain = 672.301 ; free physical = 2332 ; free virtual = 12234
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2326.941 ; gain = 666.332 ; free physical = 353 ; free virtual = 10175
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2341.043 ; gain = 680.305 ; free physical = 2332 ; free virtual = 12234
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2334.945 ; gain = 674.336 ; free physical = 353 ; free virtual = 10175
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2341.043 ; gain = 680.305 ; free physical = 2332 ; free virtual = 12234
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2334.945 ; gain = 674.336 ; free physical = 352 ; free virtual = 10173
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'hc_sr04_cntr'
 ---------------------------------------------------------------------------------------------------
@@ -132,29 +136,32 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'hc_sr
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'hc_sr04_cntr'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2341.043 ; gain = 680.305 ; free physical = 2336 ; free virtual = 12239
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2334.945 ; gain = 674.336 ; free physical = 345 ; free virtual = 10191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    6 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 48    
 	   2 Input    3 Bit       Adders := 2     
 +---Registers : 
 	               22 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 9     
 +---Muxes : 
+	   2 Input   22 Bit        Muxes := 4     
 	   2 Input   16 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
 	   5 Input    4 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 37    
+	   2 Input    4 Bit        Muxes := 38    
 	   4 Input    4 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 16    
 	   5 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -183,25 +190,37 @@ WARNING: [Synth 8-7129] Port led[6] in module hc_sr04_top is either unconnected 
 WARNING: [Synth 8-7129] Port led[5] in module hc_sr04_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[4] in module hc_sr04_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2341.043 ; gain = 680.305 ; free physical = 2329 ; free virtual = 12236
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2334.945 ; gain = 674.336 ; free physical = 352 ; free virtual = 10191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2364.043 ; gain = 703.305 ; free physical = 2232 ; free virtual = 12140
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2363.945 ; gain = 703.336 ; free physical = 291 ; free virtual = 10118
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2399.090 ; gain = 738.352 ; free physical = 2201 ; free virtual = 12109
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2397.992 ; gain = 737.383 ; free physical = 266 ; free virtual = 10093
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[5]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[5]_P) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[4]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[4]_P) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[3]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[3]_P) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[2]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[2]_P) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[1]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[1]_P) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[0]_LDC) is unused and will be removed from module hc_sr04_top.
+WARNING: [Synth 8-3332] Sequential element (hcsr04/div_usec_58_reg[0]_P) is unused and will be removed from module hc_sr04_top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2399.090 ; gain = 738.352 ; free physical = 2201 ; free virtual = 12109
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2397.992 ; gain = 737.383 ; free physical = 266 ; free virtual = 10093
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -219,37 +238,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -266,44 +285,44 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    24|
-|3     |LUT1   |     4|
-|4     |LUT2   |    30|
-|5     |LUT3   |    47|
-|6     |LUT4   |    46|
-|7     |LUT5   |    29|
-|8     |LUT6   |    44|
-|9     |FDCE   |    74|
+|2     |CARRY4 |    11|
+|3     |LUT1   |     1|
+|4     |LUT2   |    15|
+|5     |LUT3   |    25|
+|6     |LUT4   |    24|
+|7     |LUT5   |    14|
+|8     |LUT6   |    38|
+|9     |FDCE   |    67|
 |10    |FDPE   |     2|
-|11    |FDRE   |    17|
+|11    |FDRE   |    18|
 |12    |IBUF   |     3|
 |13    |OBUF   |    19|
 |14    |OBUFT  |    10|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.902 ; gain = 879.164 ; free physical = 2079 ; free virtual = 11987
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.805 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2539.902 ; gain = 728.414 ; free physical = 2080 ; free virtual = 11989
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2539.910 ; gain = 879.164 ; free physical = 2080 ; free virtual = 11989
+Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2537.805 ; gain = 729.445 ; free physical = 362 ; free virtual = 9958
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2537.812 ; gain = 877.195 ; free physical = 362 ; free virtual = 9958
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2539.910 ; gain = 0.000 ; free physical = 2080 ; free virtual = 11989
-INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2537.812 ; gain = 0.000 ; free physical = 359 ; free virtual = 9945
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2595.930 ; gain = 0.000 ; free physical = 2245 ; free virtual = 12154
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2593.832 ; gain = 0.000 ; free physical = 513 ; free virtual = 10109
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: e1d09bde
+Synth Design complete | Checksum: 5aa0c4c7
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:35 . Memory (MB): peak = 2595.930 ; gain = 1102.480 ; free physical = 2245 ; free virtual = 12154
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1757.199; main = 1757.199; forked = 269.810
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3261.941; main = 2595.934; forked = 920.895
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2619.941 ; gain = 0.000 ; free physical = 2245 ; free virtual = 12154
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 2593.832 ; gain = 1100.512 ; free physical = 513 ; free virtual = 10109
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1939.092; main = 1743.166; forked = 269.602
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3417.887; main = 2593.836; forked = 920.891
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2617.844 ; gain = 0.000 ; free physical = 513 ; free virtual = 10109
 INFO: [Common 17-1381] The checkpoint '/home/psh/work/project_9/project_9.runs/synth_1/hc_sr04_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hc_sr04_top_utilization_synth.rpt -pb hc_sr04_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 19 16:45:50 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 20 11:46:35 2025...
