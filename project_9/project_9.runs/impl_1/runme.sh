@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log hc_sr04_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source hc_sr04_top.tcl -notrace
+EAStep vivado -log keypad_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source keypad_top.tcl -notrace
 
 

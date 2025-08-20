@@ -568,6 +568,30 @@ module hc_sr04_top(
 
 endmodule
 
+module keypad_top(
+    input clk, reset_p,
+    input [3:0] row,
+    output [3:0] column,
+    output [7:0] seg_7,
+    output [3:0] com,
+    output [15:0] led);
+
+    wire [3:0] key_value;
+    wire key_valid;
+    assign led[0] = key_valid;
+    keypad_cntr key_pad(clk, reset_p, row, column, key_value, key_valid);
+    
+    fnd_cntr fnd(
+        .clk(clk),
+        .reset_p(reset_p),
+        .fnd_value(key_value), 
+        .hex_bcd(1),
+        .seg_7(seg_7),
+        .com(com)
+    );
+    
+endmodule
+
 
 
 

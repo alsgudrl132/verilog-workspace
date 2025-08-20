@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log hc_sr04_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source hc_sr04_top.tcl -notrace
+vivado -log keypad_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source keypad_top.tcl -notrace

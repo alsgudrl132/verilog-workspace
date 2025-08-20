@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log hc_sr04_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hc_sr04_top.tcl" );
+         "-log keypad_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keypad_top.tcl" );
 
 
 
