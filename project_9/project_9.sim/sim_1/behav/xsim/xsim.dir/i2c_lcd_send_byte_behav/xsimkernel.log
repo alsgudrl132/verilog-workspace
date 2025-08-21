@@ -1,0 +1,7 @@
+Running: xsim.dir/i2c_lcd_send_byte_behav/xsimk -simmode gui -wdb i2c_lcd_send_byte_behav.wdb -simrunnum 0 -socket 44849
+Design successfully loaded
+Design Loading Memory Usage: 181656 KB (Peak: 181776 KB)
+Design Loading CPU Usage: 4330 ms
+Simulation completed
+Simulation Memory Usage: 263392 KB (Peak: 320924 KB)
+Simulation CPU Usage: 4360 ms

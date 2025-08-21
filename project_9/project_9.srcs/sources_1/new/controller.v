@@ -519,22 +519,22 @@ module keypad_cntr(
                 KEY_PROCESS: begin   
                     key_valid = 1; // 키가 눌린 경우
                     case({column, row}) // 눌린 key mapping
-                        8'b0001_0001 : key_value = 4'h0;
-                        8'b0001_0010 : key_value = 4'h1;
-                        8'b0001_0100 : key_value = 4'h2;
-                        8'b0001_1000 : key_value = 4'h3;
-                        8'b0010_0001 : key_value = 4'h4;
-                        8'b0010_0010 : key_value = 4'h5;
-                        8'b0010_0100 : key_value = 4'h6;
-                        8'b0010_1000 : key_value = 4'h7;
-                        8'b0100_0001 : key_value = 4'h8;
-                        8'b0100_0010 : key_value = 4'h9;
-                        8'b0100_0100 : key_value = 4'hA;
-                        8'b0100_1000 : key_value = 4'hB;
-                        8'b1000_0001 : key_value = 4'hC;
-                        8'b1000_0010 : key_value = 4'hD;
-                        8'b1000_0100 : key_value = 4'hE;
-                        8'b1000_1000 : key_value = 4'hF;
+                        8'b0001_0001 : key_value = 4'hC; // C clear
+                        8'b0001_0010 : key_value = 4'h0; // 0
+                        8'b0001_0100 : key_value = 4'hF; // F =
+                        8'b0001_1000 : key_value = 4'hd; // d /
+                        8'b0010_0001 : key_value = 4'h1; // 1
+                        8'b0010_0010 : key_value = 4'h2; // 2
+                        8'b0010_0100 : key_value = 4'h3; // 3
+                        8'b0010_1000 : key_value = 4'hE; // E *
+                        8'b0100_0001 : key_value = 4'h4; // 4
+                        8'b0100_0010 : key_value = 4'h5; // 5
+                        8'b0100_0100 : key_value = 4'h6; // 6
+                        8'b0100_1000 : key_value = 4'hb; // b -
+                        8'b1000_0001 : key_value = 4'h7; // 7
+                        8'b1000_0010 : key_value = 4'h8; // 8
+                        8'b1000_0100 : key_value = 4'h9; // 9
+                        8'b1000_1000 : key_value = 4'hA; // A +
                     endcase
                 end                   
             endcase
@@ -542,25 +542,321 @@ module keypad_cntr(
     end
     
 endmodule
+// 주소랑 데이터를 주고 comm_start를 1을 주면 100khz로 I2C통신
+module I2C_master(
+    input clk, reset_p,
+    input [6:0] addr,        // 7비트 슬레이브 주소
+    input [7:0] data,        // 전송할 8비트 데이터
+    input rd_wr, comm_start, // rd_wr: 0=쓰기, 1=읽기 / comm_start: 통신 시작 신호
+    output reg scl, sda,     // I2C 클럭(SCL)과 데이터(SDA) 라인
+    output [15:0] led);
+    
+    // FSM 상태 정의 (One-hot encoding 사용)
+    localparam IDLE         = 7'b000_0001;  // 대기 상태
+    localparam COMM_START   = 7'b000_0010;  // START 컨디션 생성
+    localparam SEND_ADDR    = 7'b000_0100;  // 주소+R/W 비트 전송
+    localparam RD_ACK       = 7'b000_1000;  // ACK 신호 읽기
+    localparam SEND_DATA    = 7'b001_0000;  // 데이터 전송
+    localparam SCL_STOP     = 7'b010_0000;  // STOP 컨디션 준비
+    localparam COMM_STOP    = 7'b100_0000;  // STOP 컨디션 완료
+    
+    // 1μs 단위 클럭 생성 (100MHz → 1MHz)
+    wire clk_usec_nedge;
+    clock_div_100 us_clk(
+        .clk(clk), 
+        .reset_p(reset_p),
+        .nedge_div_100(clk_usec_nedge));
+    
+    // comm_start 신호의 positive edge 검출
+    wire comm_start_pedge;
+    edge_detector_p comm_start_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(comm_start),
+        .p_edge(comm_start_pedge));
+        
+    // SCL 신호의 edge 검출 (데이터 변경/읽기 타이밍용)
+    wire scl_nedge, scl_pedge;
+    edge_detector_p scl_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(scl),
+        .p_edge(scl_pedge),
+        .n_edge(scl_nedge));
+    
+    // SCL 클럭 생성 (100kHz = 10μs 주기 = 5μs HIGH + 5μs LOW)
+    reg [2:0] count_usec5;  // 5μs 카운터
+    reg scl_e;              // SCL 클럭 enable 신호
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            count_usec5 = 0;
+            scl = 0;        // 리셋시 SCL은 LOW
+        end
+        else if(scl_e) begin                    // SCL 클럭이 enable되면
+            if(clk_usec_nedge) begin            // 1μs마다
+                if(count_usec5 >= 4) begin      // 5μs 카운트 완료시
+                    count_usec5 = 0;
+                    scl = ~scl;                 // SCL 토글 (HIGH↔LOW)
+                end
+                else count_usec5 = count_usec5 + 1;
+            end
+        end
+        else if(!scl_e) begin      // SCL disable시
+            count_usec5 = 0;
+            scl = 1;               // SCL을 HIGH로 유지 (I2C idle 상태)
+        end
+    end
+    
+    // FSM 상태 레지스터 (negedge에서 상태 전환)
+    reg[6:0] state, next_state;
+    always @(negedge clk, posedge reset_p) begin
+        if(reset_p) state = IDLE;
+        else state = next_state;
+    end
+    
+    // 주소와 R/W 비트를 합친 8비트 (I2C 표준: 7bit주소 + 1bit R/W)
+    wire [7:0] addr_rd_wr;
+    assign addr_rd_wr = {addr, rd_wr};
+    
+    reg [2:0] cnt_bit;    // 비트 카운터 (7→0으로 카운트)
+    reg stop_flag;        // STOP 조건 플래그
+    
+    // FSM 메인 로직
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            next_state = IDLE;
+            scl_e = 0;
+            sda = 1;              // I2C idle시 SDA는 HIGH
+            cnt_bit = 7;          // MSB부터 전송하므로 7부터 시작
+            stop_flag = 0;
+        end
+        else begin
+            case(state)
+                IDLE      : begin
+                    scl_e = 0;                      // SCL 클럭 정지
+                    sda = 1;                        // SDA HIGH (idle 상태)
+                    if(comm_start_pedge) next_state = COMM_START;  // 통신 시작 신호 감지
+                end
+                
+                COMM_START: begin
+                    sda = 0;                        // START 조건: SCL=HIGH일 때 SDA를 HIGH→LOW
+                    scl_e = 1;                      // SCL 클럭 시작
+                    next_state = SEND_ADDR;
+                end
+                
+                SEND_ADDR : begin
+                    // SCL negedge에서 데이터 변경 (I2C 표준)
+                    if(scl_nedge) sda = addr_rd_wr[cnt_bit];
+                    // SCL pedge에서 비트 카운트 (슬레이브가 이 시점에서 데이터 읽음)
+                    if(scl_pedge) begin
+                        if(cnt_bit == 0) begin      // 8비트 모두 전송 완료
+                            cnt_bit = 7;            // 카운터 리셋
+                            next_state = RD_ACK;    // ACK 대기 상태로
+                        end
+                        else cnt_bit = cnt_bit - 1;  // 다음 비트로
+                    end
+                end
+                
+                RD_ACK    : begin
+                    if(scl_nedge) sda = 'bz;        // SDA를 Hi-Z로 (슬레이브가 ACK 보냄)
+                    else if(scl_pedge) begin
+                        if(stop_flag) begin         // 데이터 전송도 완료된 경우
+                            stop_flag = 0;
+                            next_state = SCL_STOP;  // STOP 조건으로
+                        end
+                        else begin                  // 주소 전송 완료, 데이터 전송 시작
+                            stop_flag = 1;          // 다음 ACK에서 STOP하도록 플래그 설정
+                            next_state = SEND_DATA;
+                        end
+                    end
+                end
+                
+                SEND_DATA : begin
+                    // 데이터 전송 (주소 전송과 동일한 방식)
+                    if(scl_nedge) sda = data[cnt_bit];
+                    if(scl_pedge) begin
+                        if(cnt_bit == 0) begin
+                            cnt_bit = 7;
+                            next_state = RD_ACK;    // 데이터 전송 후 다시 ACK 확인
+                        end
+                        else cnt_bit = cnt_bit - 1;
+                    end
+                end
+                
+                SCL_STOP  : begin
+                    if(scl_nedge) sda = 0;          // STOP 조건 준비: SDA를 LOW로
+                    if(scl_pedge) next_state = COMM_STOP;  // SCL이 HIGH가 되면 STOP 조건 실행
+                end
+                
+                COMM_STOP : begin
+                    // STOP 조건: SCL=HIGH일 때 SDA를 LOW→HIGH
+                    if(count_usec5 >= 3) begin      // 약간의 지연 후
+                        scl_e = 0;                  // SCL 클럭 정지
+                        sda = 1;                    // STOP 조건: SDA HIGH
+                        next_state = IDLE;          // 다시 대기 상태로
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
 
+// I2C를 이용해 LCD에 1바이트를 전송하는 모듈
+// LCD는 4비트 모드로 동작하므로 8비트를 2번에 나누어 전송
+module i2c_lcd_send_byte(
+    input clk, reset_p,
+    input [6:0] addr,           // LCD의 I2C 주소
+    input [7:0] send_buffer,    // 전송할 데이터
+    input send, rs,             // send: 전송 시작, rs: 0=명령어, 1=데이터
+    output scl, sda,            // I2C 신호선
+    output reg busy,            // 전송 중 표시
+    output [15:0] led);
 
+    // LCD 4비트 모드 전송 상태 (상위 4비트 → 하위 4비트 순서)
+    localparam IDLE                     = 6'b00_0001;  // 대기
+    localparam SEND_HIGH_NIBBLE_DISABLE = 6'b00_0010;  // 상위 4비트, E=0
+    localparam SEND_HIGH_NIBBLE_ENABLE  = 6'b00_0100;  // 상위 4비트, E=1
+    localparam SEND_LOW_NIBBLE_DISABLE  = 6'b00_1000;  // 하위 4비트, E=0
+    localparam SEND_LOW_NIBBLE_ENABLE   = 6'b01_0000;  // 하위 4비트, E=1
+    localparam SEND_DISABLE             = 6'b10_0000;  // 전송 완료, E=0
+    
+    // 1μs 클럭 생성
+    wire clk_usec_nedge;
+    clock_div_100 us_clk(
+        .clk(clk), 
+        .reset_p(reset_p),
+        .nedge_div_100(clk_usec_nedge));
 
+    reg [7:0] data;        // I2C로 전송할 실제 데이터
+    reg comm_start;        // I2C 통신 시작 신호
+    
+    // send 신호의 positive edge 검출
+    wire send_pedge;
+    edge_detector_p send_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(send),
+        .p_edge(send_pedge));
+        
+    // 타이밍 제어용 카운터 (각 단계마다 200μs 대기)
+    reg [21:0] count_usec;
+    reg count_usec_e;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    always @(negedge clk, posedge reset_p) begin
+        if(reset_p) count_usec = 0;
+        else if(clk_usec_nedge && count_usec_e) count_usec = count_usec + 1;  
+        else if(!count_usec_e) count_usec = 0;  
+    end
+    
+    // I2C 마스터 모듈 인스턴스 (항상 쓰기 모드: rd_wr=0)
+    I2C_master master(clk, reset_p, addr, data, 1'b0, comm_start, scl, sda);
+    
+    // FSM 상태 관리
+    reg [5:0] state, next_state;
+    always @(negedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            state = IDLE;
+        end
+        else begin
+            state = next_state;
+        end
+    end
+    
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            next_state = IDLE;
+            comm_start = 0;
+            count_usec_e = 0;
+            data = 0;
+            busy = 0;
+        end
+        else begin
+            case(state)
+                IDLE                       : begin
+                    if(send_pedge) begin            // 전송 시작 신호 감지
+                        next_state = SEND_HIGH_NIBBLE_DISABLE;
+                        busy = 1;                   // 전송 중 표시
+                    end
+                end
+                
+                // 상위 4비트 전송, Enable = 0
+                SEND_HIGH_NIBBLE_DISABLE   : begin
+                    if(count_usec <= 22'd200) begin      // 200μs 동안
+                        // LCD 데이터 포맷: [D7 D6 D5 D4] [BL EN RW RS]
+                        // BL=1(백라이트 켜짐), EN=0(disable), RW=0(쓰기), RS=입력값
+                        data = {send_buffer[7:4], 3'b100, rs}; 
+                        comm_start = 1;             // I2C 전송 시작
+                        count_usec_e = 1;           // 타이머 시작
+                    end
+                    else begin
+                        next_state = SEND_HIGH_NIBBLE_ENABLE;
+                        count_usec_e = 0;           // 타이머 리셋
+                        comm_start = 0;             // I2C 전송 정지
+                    end
+                end
+                
+                // 상위 4비트 전송, Enable = 1 (LCD가 데이터를 실제로 읽는 순간)
+                SEND_HIGH_NIBBLE_ENABLE    : begin
+                    if(count_usec <= 22'd200) begin
+                        // EN=1로 변경 (LCD Enable 신호)
+                        data = {send_buffer[7:4], 3'b110, rs}; 
+                        comm_start = 1;
+                        count_usec_e = 1;
+                    end
+                    else begin
+                        next_state = SEND_LOW_NIBBLE_DISABLE;
+                        count_usec_e = 0;
+                        comm_start = 0;
+                    end
+                end
+                
+                // 하위 4비트 전송, Enable = 0
+                SEND_LOW_NIBBLE_DISABLE    : begin
+                    if(count_usec <= 22'd200) begin
+                        // 하위 4비트 전송
+                        data = {send_buffer[3:0], 3'b100, rs}; 
+                        comm_start = 1;
+                        count_usec_e = 1;
+                    end
+                    else begin
+                        next_state = SEND_LOW_NIBBLE_ENABLE;
+                        count_usec_e = 0;
+                        comm_start = 0;
+                    end
+                end
+                
+                // 하위 4비트 전송, Enable = 1
+                SEND_LOW_NIBBLE_ENABLE     : begin
+                    if(count_usec <= 22'd200) begin
+                        data = {send_buffer[3:0], 3'b110, rs}; 
+                        comm_start = 1;
+                        count_usec_e = 1;
+                    end
+                    else begin
+                        next_state = SEND_DISABLE;
+                        count_usec_e = 0;
+                        comm_start = 0;
+                    end
+                end
+                
+                // 최종적으로 Enable = 0으로 만들어 전송 완료
+                SEND_DISABLE               : begin
+                    if(count_usec <= 22'd200) begin
+                        data = {send_buffer[3:0], 3'b100, rs}; 
+                        comm_start = 1;
+                        count_usec_e = 1;
+                    end
+                    else begin
+                        next_state = IDLE;          // 다시 대기 상태로
+                        count_usec_e = 0;
+                        comm_start = 0;
+                        busy = 0;                   // 전송 완료
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
 
 
 

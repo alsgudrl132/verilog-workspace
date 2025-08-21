@@ -370,7 +370,33 @@ module seg_decoder (
 endmodule
 
 
-
+//module calculator_seg_decoder (
+//    input [3:0] digit_in,
+//    output reg [7:0] seg_out
+//);
+//    always @(*) begin
+//        case (digit_in)
+//                             //pgfe_dcba
+//            4'd0: seg_out = 8'b1100_0000;   // 0 (dp 꺼짐)
+//            4'd1: seg_out = 8'b1111_1001; // 1
+//            4'd2: seg_out = 8'b1010_0100; // 2
+//            4'd3: seg_out = 8'b1011_0000; // 3
+//            4'd4: seg_out = 8'b1001_1001; // 4
+//            4'd5: seg_out = 8'b1001_0010; // 5
+//            4'd6: seg_out = 8'b1000_0010; // 6
+//            4'd7: seg_out = 8'b1111_1000; // 7
+//            4'd8: seg_out = 8'b1000_0000; // 8
+//            4'd9: seg_out = 8'b1001_0000; // 9
+//            4'hA: seg_out = 8'b1000_1000; // A
+//            4'hb: seg_out = 8'b1011_1111; // -
+//            4'hC: seg_out = 8'b1100_0110; // C
+//            4'hd: seg_out = 8'b1010_0001; // D
+//            4'hE: seg_out = 8'b1000_0110; // E
+//            4'hF: seg_out = 8'b1011_1110; // =
+//            default: seg_out = 8'b1111_1111;
+//        endcase
+//    end
+//endmodule
 
 
 

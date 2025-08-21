@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log keypad_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keypad_top.tcl
+EAStep vivado -log div_1s_study.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source div_1s_study.tcl
