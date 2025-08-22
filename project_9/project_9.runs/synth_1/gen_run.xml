@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1755764474" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="div_1s_study_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="div_1s_study.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="div_1s_study_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="div_1s_study_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="div_1s_study_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="div_1s_study.vds"/>
-  <File Type="REPORTS-TCL" Name="div_1s_study_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="div_1s_study_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="div_1s_study.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1755833819" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="i2c_txtlcd_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="i2c_txtlcd_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="i2c_txtlcd_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="i2c_txtlcd_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="i2c_txtlcd_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="i2c_txtlcd_top.vds"/>
+  <File Type="REPORTS-TCL" Name="i2c_txtlcd_top_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="i2c_txtlcd_top_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="i2c_txtlcd_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/study.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/clock_library.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/exam02_sequential_logic2.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -36,13 +20,26 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/controller.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/exam02_sequential_logic2.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/test_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/study.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -52,7 +49,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="div_1s_study"/>
+      <Option Name="TopModule" Val="i2c_txtlcd_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

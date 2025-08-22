@@ -485,7 +485,7 @@ module keypad_cntr(
             SCAN_0      : next_state = (row == 0) ? SCAN_1 : KEY_PROCESS;
             SCAN_1      : next_state = (row == 0) ? SCAN_2 : KEY_PROCESS;
             SCAN_2      : next_state = (row == 0) ? SCAN_3 : KEY_PROCESS;
-            SCAN_3      : next_state = (row == 0) ? KEY_PROCESS : KEY_PROCESS;
+            SCAN_3      : next_state = (row == 0) ? SCAN_0 : KEY_PROCESS;
             KEY_PROCESS : next_state = (row == 0) ? SCAN_0 : KEY_PROCESS;
             default     : next_state = SCAN_1;
         endcase

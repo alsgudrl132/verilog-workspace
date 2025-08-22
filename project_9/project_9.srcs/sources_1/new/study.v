@@ -44,7 +44,8 @@ endmodule
 
 module div_1s_study(
     input clk, reset_p,
-    output reg clk_div_1s
+    output reg clk_div_1s,
+    output div_1s_pedge, div_1s_nedge
 );
     reg [25:0] count;
     always @(posedge clk, posedge reset_p) begin
@@ -60,6 +61,36 @@ module div_1s_study(
             else begin
                 count = count + 1;
             end
+        end
+    end
+    
+    edge_detector_study ed(.clk(clk), .reset_p(reset_p), .cp(clk_div_1s), .pedge(div_1s_pedge), .nedge(div_1s_nedge));
+endmodule
+
+module led_top_study(
+    input clk, reset_p,
+    output reg [1:0] led
+);
+
+    wire clk_1s;
+    wire pe, ne;
+
+    div_1s_study div(
+        .clk(clk),
+        .reset_p(reset_p),
+        .clk_div_1s(clk_1s),
+        .div_1s_pedge(pe),
+        .div_1s_nedge(ne)
+    );
+
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p)
+            led <= 2'b00;
+        else begin
+            if(pe)        // 상승 에지에서 LED[0] 토글
+                led[0] <= ~led[0];
+            if(ne)        // 하강 에지에서 LED[1] 토글
+                led[1] <= ~led[1];
         end
     end
 endmodule

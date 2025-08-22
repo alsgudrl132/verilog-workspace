@@ -592,10 +592,169 @@ module keypad_top(
     
 endmodule
 
+module i2c_txtlcd_top(
+    input clk, reset_p,
+    input [3:0] btn,
+    input [3:0] row,       
+    output[3:0] column,
+    output scl, sda,
+    output [15:0] led);
 
+    wire [3:0] btn_pedge;
+    btn_cntr btn0(clk, reset_p, btn[0], btn_pedge[0]);
+    btn_cntr btn1(clk, reset_p, btn[1], btn_pedge[1]);
+    btn_cntr btn2(clk, reset_p, btn[2], btn_pedge[2]);
+    btn_cntr btn3(clk, reset_p, btn[3], btn_pedge[3]);
+    
+    integer cnt_sysclk;
+    reg count_clk_e;
+    always @(negedge clk, posedge reset_p) begin
+        if(reset_p) cnt_sysclk = 0;
+        else if(count_clk_e) cnt_sysclk = cnt_sysclk + 1;
+        else cnt_sysclk = 0;
+    end
+    
+    reg [7:0] send_buffer;
+    reg send, rs;
+    wire busy;
+    
+    i2c_lcd_send_byte send_byte(clk, reset_p, 7'h27, send_buffer, send, rs, scl, sda, busy, led);
+    wire [3:0] key_value;
+    wire key_valid;
+    keypad_cntr keypad(clk, reset_p, row, column, key_value, key_valid);
+    
+    assign led[15] = key_valid;
+    assign led[3:0] = row;
+    
+    wire key_valid_pedge;
+    edge_detector_p key_valid_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(key_valid),
+        .p_edge(key_valid_pedge));
+    
+    localparam IDLE                 = 6'b00_0001;
+    localparam INIT                 = 6'b00_0010;
+    localparam SEND_CHARACTER       = 6'b00_0100;
+    localparam SHIFT_RIGHT_DISPLAY  = 6'b00_1000;
+    localparam SHIFT_LEFT_DISPLAY   = 6'b01_0000;
+    localparam SEND_KEY             = 6'b10_0000;
 
-
-
+    reg [5:0] state, next_state;
+    always @(negedge clk, posedge reset_p) begin
+        if(reset_p) state = IDLE;
+        else state = next_state;
+    end
+    
+    reg init_flag;
+    reg [10:0] cnt_data;
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            next_state = IDLE;
+            init_flag = 0;
+            count_clk_e = 0;
+            send = 0;
+            send_buffer = 0;
+            rs = 0;
+            cnt_data = 0;
+        end
+        else begin
+            case(state)
+                IDLE                 : begin
+                    if(init_flag) begin
+                        if(btn_pedge[0]) next_state = SEND_CHARACTER;
+                        if(btn_pedge[1]) next_state = SHIFT_RIGHT_DISPLAY;
+                        if(btn_pedge[2]) next_state = SHIFT_LEFT_DISPLAY;
+                        if(key_valid_pedge) next_state = SEND_KEY;
+                    end
+                    else begin
+                        if(cnt_sysclk <= 32'd80_000_00) begin
+                            count_clk_e = 1;
+                        end
+                        else begin
+                            next_state = INIT;
+                            count_clk_e = 0;
+                        end
+                    end
+                end
+                INIT                 : begin
+                    if(busy) begin
+                        send = 0;
+                        if(cnt_data >= 6) begin
+                            cnt_data = 0;
+                            next_state = IDLE;
+                            init_flag = 1;
+                        end
+                    end
+                    else if(!send) begin
+                        case(cnt_data)
+                            0:send_buffer = 8'h33;
+                            1:send_buffer = 8'h32;
+                            2:send_buffer = 8'h28;
+                            3:send_buffer = 8'h0c;
+                            4:send_buffer = 8'h01;
+                            5:send_buffer = 8'h06;
+                        endcase
+                        send = 1;
+                        cnt_data = cnt_data + 1;
+                    end
+                end
+                SEND_CHARACTER       : begin
+                    if(busy) begin
+                        next_state = IDLE;
+                        send = 0;
+                        if(cnt_data >= 25) cnt_data = 0;
+                        cnt_data = cnt_data + 1;
+                    end
+                    else begin
+                        rs = 1;
+                        send_buffer = "a" + cnt_data;
+                        send = 1;
+                    end
+                end
+                SHIFT_RIGHT_DISPLAY  : begin
+                    if(busy) begin
+                        next_state = IDLE;
+                        send = 0;
+                    end
+                    else begin
+                        rs = 0;
+                        send_buffer = 8'h1c;
+                        send = 1;
+                    end
+                end
+                SHIFT_LEFT_DISPLAY   : begin
+                    if(busy) begin
+                        next_state = IDLE;
+                        send = 0;
+                    end
+                    else begin
+                        rs = 0;
+                        send_buffer = 8'h18;
+                        send = 1;
+                    end
+                end
+                SEND_KEY             : begin
+                    if(busy) begin
+                        next_state = IDLE;
+                        send = 0;
+                    end
+                    else begin
+                        rs = 1;
+                        if(key_value < 10) send_buffer = "0" + key_value;
+                        else if(key_value == 10) send_buffer = "+";
+                        else if(key_value == 11) send_buffer = "-";
+                        else if(key_value == 12) send_buffer = "C";
+                        else if(key_value == 13) send_buffer = "/";
+                        else if(key_value == 14) send_buffer = "*";
+                        else if(key_value == 15) send_buffer = "=";
+                        send = 1;
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
 
 
 
