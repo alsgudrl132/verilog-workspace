@@ -28,7 +28,7 @@ module fnd_cntr(
     output [3:0] com);
     
     wire [15:0] bcd_value;
-    bin_to_dec bcd(.bin(fnd_value[11:0]), .bcd(sec_bcd));
+    bin_to_dec bcd(.bin(fnd_value[11:0]), .bcd(bcd_value));
     
     reg [16:0] clk_div;
     always @(posedge clk)clk_div = clk_div + 1;
@@ -858,9 +858,132 @@ module i2c_lcd_send_byte(
     end
 endmodule
 
+module pwm_led_128step(
+    input clk, reset_p,
+    input [6:0] duty,
+    output reg pwm);
+    
+    parameter sys_clk_freq = 100_000_000;
+    parameter pwm_freq = 10_000;
+    parameter duty_step = 128;
+    parameter temp = sys_clk_freq / pwm_freq / duty_step / 2;
+    
+    integer cnt;
+    reg pwm_freqX128;
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            cnt = 0;
+            pwm_freqX128 = 0;
+        end
+        else begin
+            if(cnt >= temp - 1) begin
+                cnt = 0;
+                pwm_freqX128 = ~pwm_freqX128;
+            end
+            else cnt = cnt + 1;            
+        end
+    end
+    
+    wire pwm_freqX128_nedge;
+    edge_detector_p send_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(pwm_freqX128),
+        .n_edge(pwm_freqX128_nedge));
+        
+    reg [6:0] cnt_duty;
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p)begin
+            cnt_duty = 0;
+            pwm = 0;
+        end
+        else if(pwm_freqX128_nedge) begin
+            cnt_duty = cnt_duty + 1;
+            if(cnt_duty < duty) pwm = 1;
+            else pwm = 0;
+        end
+    end
 
+endmodule
 
+// ------------------------------------------------------
+// PWM 생성기 (N step 분해능)
+// - 입력 duty 값에 따라 PWM 출력 생성
+// - 주파수, 분해능은 parameter로 조정 가능
+// ------------------------------------------------------
+module pwm_Nfreq_Nstep(
+    input clk, reset_p,      // 시스템 클럭, 리셋 입력
+    input [31:0] duty,       // 듀티비 설정 값 (0 ~ duty_step_N)
+    output reg pwm           // PWM 출력
+);
 
+    // ----------------------------------------------
+    // 파라미터 정의
+    // ----------------------------------------------
+    parameter sys_clk_freq = 100_000_000; // 시스템 클럭 주파수 (100 MHz)
+    parameter pwm_freq     = 10_000;      // 목표 PWM 주파수 (10 kHz)
+    parameter duty_step_N  = 200;         // 듀티비 분해능 (200 스텝)
+    // sys_clk_freq / pwm_freq / duty_step_N / 2
+    // → PWM의 최소 단위 시간을 만들기 위한 분주값
+    parameter temp = sys_clk_freq / pwm_freq / duty_step_N / 2;
+    
+    // ----------------------------------------------
+    // 분주기: PWM 클럭 생성
+    // ----------------------------------------------
+    integer cnt;
+    reg pwm_freqXn; // 분주된 PWM용 클럭
+    
+    always @(posedge clk, posedge reset_p) begin
+        if (reset_p) begin
+            cnt        = 0;
+            pwm_freqXn = 0;
+        end else begin
+            if (cnt >= temp - 1) begin
+                cnt        = 0;
+                pwm_freqXn = ~pwm_freqXn; // 분주된 클럭 토글
+            end else begin
+                cnt = cnt + 1;
+            end
+        end
+    end
+    
+    // ----------------------------------------------
+    // 분주된 클럭의 네거티브 엣지 검출기
+    // → PWM 주기의 기준 이벤트로 사용
+    // ----------------------------------------------
+    wire pwm_freqXn_nedge;
+    edge_detector_p pwm_freqX128_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(pwm_freqXn),
+        .n_edge(pwm_freqXn_nedge) // 네거티브 엣지 출력
+    );
+        
+    // ----------------------------------------------
+    // 듀티비 카운터 및 PWM 출력 생성
+    // ----------------------------------------------
+    integer cnt_duty;
+    always @(posedge clk, posedge reset_p) begin
+        if (reset_p) begin
+            cnt_duty = 0;
+            pwm      = 0;
+        end 
+        else if (pwm_freqXn_nedge) begin
+            // 듀티 카운터 증가
+            if (cnt_duty >= duty_step_N) 
+                cnt_duty = 0;
+            else 
+                cnt_duty = cnt_duty + 1;
+
+            // 듀티비 비교 → PWM 출력 결정
+            if (cnt_duty < duty) 
+                pwm = 1;
+            else 
+                pwm = 0;
+        end
+    end
+    
+endmodule
 
 
 

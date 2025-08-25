@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log i2c_txtlcd_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_txtlcd_top.tcl
+EAStep vivado -log adc_sequence2_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source adc_sequence2_top.tcl

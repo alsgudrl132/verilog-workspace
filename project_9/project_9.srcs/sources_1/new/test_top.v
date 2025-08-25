@@ -593,19 +593,21 @@ module keypad_top(
 endmodule
 
 module i2c_txtlcd_top(
-    input clk, reset_p,
-    input [3:0] btn,
-    input [3:0] row,       
-    output[3:0] column,
-    output scl, sda,
-    output [15:0] led);
+    input clk, reset_p,        // 시스템 클럭, 리셋
+    input [3:0] btn,           // 버튼 입력 (4개)
+    input [3:0] row,           // 키패드 row
+    output[3:0] column,        // 키패드 column
+    output scl, sda,           // I2C 신호
+    output [15:0] led);        // 상태 확인용 LED
 
+    // 버튼의 상승엣지 검출
     wire [3:0] btn_pedge;
     btn_cntr btn0(clk, reset_p, btn[0], btn_pedge[0]);
     btn_cntr btn1(clk, reset_p, btn[1], btn_pedge[1]);
     btn_cntr btn2(clk, reset_p, btn[2], btn_pedge[2]);
     btn_cntr btn3(clk, reset_p, btn[3], btn_pedge[3]);
     
+    // LCD 초기화를 위한 지연 카운터
     integer cnt_sysclk;
     reg count_clk_e;
     always @(negedge clk, posedge reset_p) begin
@@ -614,18 +616,26 @@ module i2c_txtlcd_top(
         else cnt_sysclk = 0;
     end
     
-    reg [7:0] send_buffer;
-    reg send, rs;
-    wire busy;
-    
-    i2c_lcd_send_byte send_byte(clk, reset_p, 7'h27, send_buffer, send, rs, scl, sda, busy, led);
-    wire [3:0] key_value;
-    wire key_valid;
+    // I2C LCD 전송용 신호
+    reg [7:0] send_buffer;   // 보낼 데이터
+    reg send, rs;            // send: 송신 트리거, rs: 명령/데이터 선택
+    wire busy;               // I2C 동작중 여부
+
+    // LCD로 바이트 단위 송신
+    i2c_lcd_send_byte send_byte(
+        clk, reset_p, 7'h27, send_buffer, send, rs, 
+        scl, sda, busy, led
+    );
+
+    // 키패드 제어
+    wire [3:0] key_value;   // 입력된 키 값
+    wire key_valid;         // 키 입력 유효 여부
     keypad_cntr keypad(clk, reset_p, row, column, key_value, key_valid);
     
-    assign led[15] = key_valid;
-    assign led[3:0] = row;
+    assign led[15] = key_valid;   // 키 유효 여부 LED 표시
+    assign led[3:0] = row;        // 디버깅용 row 출력
     
+    // 키 유효 신호의 상승엣지 검출
     wire key_valid_pedge;
     edge_detector_p key_valid_ed(
         .clk(clk), 
@@ -633,6 +643,7 @@ module i2c_txtlcd_top(
         .cp(key_valid),
         .p_edge(key_valid_pedge));
     
+    // FSM 상태 정의
     localparam IDLE                 = 6'b00_0001;
     localparam INIT                 = 6'b00_0010;
     localparam SEND_CHARACTER       = 6'b00_0100;
@@ -640,14 +651,16 @@ module i2c_txtlcd_top(
     localparam SHIFT_LEFT_DISPLAY   = 6'b01_0000;
     localparam SEND_KEY             = 6'b10_0000;
 
+    // 현재 상태, 다음 상태
     reg [5:0] state, next_state;
     always @(negedge clk, posedge reset_p) begin
         if(reset_p) state = IDLE;
         else state = next_state;
     end
     
-    reg init_flag;
-    reg [10:0] cnt_data;
+    // LCD 초기화 및 데이터 송신 관리
+    reg init_flag;          // 초기화 완료 여부
+    reg [10:0] cnt_data;    // 전송 데이터 인덱스
     always @(posedge clk, posedge reset_p) begin
         if(reset_p) begin
             next_state = IDLE;
@@ -660,14 +673,17 @@ module i2c_txtlcd_top(
         end
         else begin
             case(state)
-                IDLE                 : begin
+                // 대기 상태
+                IDLE: begin
                     if(init_flag) begin
+                        // 버튼/키 입력에 따라 상태 전환
                         if(btn_pedge[0]) next_state = SEND_CHARACTER;
                         if(btn_pedge[1]) next_state = SHIFT_RIGHT_DISPLAY;
                         if(btn_pedge[2]) next_state = SHIFT_LEFT_DISPLAY;
                         if(key_valid_pedge) next_state = SEND_KEY;
                     end
                     else begin
+                        // 전원 인가 후 LCD 초기화 지연
                         if(cnt_sysclk <= 32'd80_000_00) begin
                             count_clk_e = 1;
                         end
@@ -677,13 +693,15 @@ module i2c_txtlcd_top(
                         end
                     end
                 end
-                INIT                 : begin
+
+                // LCD 초기화 (데이터시트에 따른 시퀀스)
+                INIT: begin
                     if(busy) begin
                         send = 0;
                         if(cnt_data >= 6) begin
                             cnt_data = 0;
                             next_state = IDLE;
-                            init_flag = 1;
+                            init_flag = 1; // 초기화 완료
                         end
                     end
                     else if(!send) begin
@@ -699,7 +717,9 @@ module i2c_txtlcd_top(
                         cnt_data = cnt_data + 1;
                     end
                 end
-                SEND_CHARACTER       : begin
+
+                // 버튼0: "a~z" 순서 출력
+                SEND_CHARACTER: begin
                     if(busy) begin
                         next_state = IDLE;
                         send = 0;
@@ -707,23 +727,27 @@ module i2c_txtlcd_top(
                         cnt_data = cnt_data + 1;
                     end
                     else begin
-                        rs = 1;
+                        rs = 1;  // 데이터 모드
                         send_buffer = "a" + cnt_data;
                         send = 1;
                     end
                 end
-                SHIFT_RIGHT_DISPLAY  : begin
+
+                // 버튼1: 화면 오른쪽 이동
+                SHIFT_RIGHT_DISPLAY: begin
                     if(busy) begin
                         next_state = IDLE;
                         send = 0;
                     end
                     else begin
-                        rs = 0;
+                        rs = 0;          // 명령 모드
                         send_buffer = 8'h1c;
                         send = 1;
                     end
                 end
-                SHIFT_LEFT_DISPLAY   : begin
+
+                // 버튼2: 화면 왼쪽 이동
+                SHIFT_LEFT_DISPLAY: begin
                     if(busy) begin
                         next_state = IDLE;
                         send = 0;
@@ -734,14 +758,16 @@ module i2c_txtlcd_top(
                         send = 1;
                     end
                 end
-                SEND_KEY             : begin
+
+                // 키패드 입력된 값을 LCD에 표시
+                SEND_KEY: begin
                     if(busy) begin
                         next_state = IDLE;
                         send = 0;
                     end
                     else begin
                         rs = 1;
-                        if(key_value < 10) send_buffer = "0" + key_value;
+                        if(key_value < 10) send_buffer = "0" + key_value;  // 숫자
                         else if(key_value == 10) send_buffer = "+";
                         else if(key_value == 11) send_buffer = "-";
                         else if(key_value == 12) send_buffer = "C";
@@ -756,8 +782,209 @@ module i2c_txtlcd_top(
     end
 endmodule
 
+module led_pwm_top(
+    input clk, reset_p,
+    output led_r, led_g, led_b,
+    output [15:0] led);
 
+    integer cnt;
+    always @(posedge clk)cnt = cnt + 1;
+    
+    pwm_Nfreq_Nstep #(.duty_step_N(200)) pwm_led_r(clk, reset_p, cnt[27:20], led_r);
+    pwm_Nfreq_Nstep #(.duty_step_N(100)) pwm_led_g(clk, reset_p, cnt[28:21], led_g);
+    pwm_Nfreq_Nstep #(.duty_step_N(100)) pwm_led_b(clk, reset_p, cnt[29:22], led_b);
+    
+    
+endmodule
 
+module sg90_top(
+    input clk,          // 시스템 클럭 입력 (예: 100MHz)
+    input reset_p,      // 비동기 리셋 신호, 1로 들어오면 초기화
+    output sg90         // SG90 서보 모터 PWM 출력
+);
+
+    // step: 서보 위치를 나타내는 값
+    // cnt: 펄스 생성용 카운터
+    integer step, cnt;
+
+    // 1클럭마다 cnt 증가
+    always @(posedge clk)
+        cnt = cnt + 1;
+
+    // cnt[22]의 상승 에지 검출용
+    wire cnt_pedge;
+    edge_detector_p echo_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(cnt[22]),     // cnt[22] 신호를 카운트 기준으로 사용
+        .p_edge(cnt_pedge) // cnt[22] 상승 에지 발생 시 1
+    );
+    
+    // inc_flag: step 증가/감소 방향 결정
+    reg inc_flag;
+
+    // step 값 업데이트
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) begin
+            step = 16;       // 초기 step 값 (서보 PWM 최소 위치)
+            inc_flag = 1;    // 처음에는 증가 방향
+        end
+        else if(cnt_pedge) begin //  cnt[22] 상승 에지마다 실행
+            if(inc_flag) begin
+                if(step >= 18) // 최대값 도달 시 감소 방향으로 변경
+                    inc_flag = 0;
+                else
+                    step = step + 1; // 1 step 증가
+            end
+            else begin
+                if(step <= 189) // 최소값 도달 시 증가 방향으로 변경
+                    inc_flag = 1;
+                else
+                    step = step - 1; // 1 step 감소
+            end
+        end
+    end
+
+    // PWM 생성 모듈 인스턴스
+    pwm_Nfreq_Nstep #(
+        .pwm_freq(50),       // SG90 서보 기준 PWM 주파수 50Hz
+        .duty_step_N(1440)   // step 최대값 설정 (PWM 분해능)
+    ) pwm_sg90(
+        clk, reset_p, step, sg90  // step 값으로 PWM duty 결정
+    );    
+
+endmodule
+
+module adc_top_6(
+    input clk, reset_p,           // clk: 시스템 클럭, reset_p: 비동기 리셋(High일 때 리셋)
+    input vauxp6, vauxn6,         // XADC 보드의 아날로그 입력 (채널 6의 차동 입력 핀)
+    output [7:0] seg_7,           // 7세그먼트 LED segment 출력 (a~g + dp)
+    output [3:0] com,             // 7세그먼트 자릿수 선택 출력
+    output [15:0] led);           // 디버깅용 LED 출력 (필요 시 표시용)
+
+    // XADC 관련 신호선
+    wire [4:0] channel_out;       // 변환된 채널 번호 출력
+    wire eoc_out;                 // End Of Conversion (변환 완료 신호)
+    wire [15:0] do_out;           // 변환된 ADC 결과 (16비트 데이터 버스)
+    
+    // Xilinx XADC Wizard IP 인스턴스
+    xadc_wiz_0 adc
+          (
+          .daddr_in({2'b00,channel_out}),  // DRP 주소 입력 (채널 지정)
+          .dclk_in(clk),                   // DRP 클럭 입력 (시스템 클럭 사용)
+          .den_in(eoc_out),                // DRP enable → 변환 완료될 때 데이터 읽음
+          .reset_in(reset_p),              // 리셋 입력
+          .vauxp6(vauxp6), .vauxn6(vauxn6),// 아날로그 입력 (채널 6 사용)
+          .channel_out(channel_out),       // 현재 변환 중인 채널 출력
+          .do_out(do_out),                 // 변환 결과 데이터 출력
+          .eoc_out(eoc_out)                // 변환 완료 신호 출력
+          );
+          
+    // 변환된 ADC 값 저장 레지스터 (12비트만 사용)
+    reg [11:0] adc_value;
+    
+    // eoc_out의 양엣지 검출기
+    wire eoc_pedge;
+    edge_detector_p echo_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(eoc_out),        // 입력: eoc_out 신호
+        .p_edge(eoc_pedge)); // 출력: eoc_out의 양엣지 발생 시 1 클럭 동안 High
+    
+    // ADC 값 저장 로직
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) 
+            adc_value = 0;               // 리셋 시 값 초기화
+        else if(eoc_pedge) 
+            adc_value = do_out[15:8];    // 변환 완료 시 상위 12비트만 adc_value에 저장
+    end
+    
+    // FND(7세그먼트) 표시 모듈
+    fnd_cntr fnd(
+        .clk(clk), 
+        .reset_p(reset_p),
+        .fnd_value(adc_value), // 입력값: ADC 변환 결과
+        .hex_bcd(0),           // 0=HEX 그대로 표시, 1=BCD 변환해서 표시
+        .seg_7(seg_7), 
+        .com(com));
+
+endmodule
+
+module adc_sequence2_top(
+    input clk, reset_p,       // 시스템 클럭, 리셋 입력
+    input vauxp6,             // X축 입력 채널 (ADC 보조 채널 6, +단)
+    input vauxn6,             // X축 입력 채널 (ADC 보조 채널 6, -단)
+    input vauxp14,            // Y축 입력 채널 (ADC 보조 채널 14, +단)
+    input vauxn14,            // Y축 입력 채널 (ADC 보조 채널 14, -단)
+    output [7:0] seg_7,       // 7-세그먼트 데이터 출력
+    output [3:0] com,         // 7-세그먼트 공통 신호
+    output led_g, led_b,
+    output [15:0] led         // 디버깅용 LED 출력 (현재 사용 X)
+);
+
+    // XADC IP에서 나오는 신호들
+    wire [4:0] channel_out;   // 현재 변환된 채널 번호
+    wire [15:0] do_out;       // ADC 변환 데이터 (16비트 중 상위 12비트 사용)
+    wire eoc_out;             // 변환 완료 신호 (End Of Conversion)
+
+    // XADC IP 인스턴스
+    xadc_joystic joystick
+          (
+          .daddr_in({2'b00, channel_out}),  // 동적 재구성 포트 주소 (현재 채널 기반)
+          .dclk_in(clk),                    // 동적 포트 클럭
+          .den_in(eoc_out),                 // 변환 완료 시 enable
+          .reset_in(reset_p),               // 리셋 입력
+          .vauxp6(vauxp6), .vauxn6(vauxn6), // X축 채널 (VAUX6)
+          .vauxp14(vauxp14), .vauxn14(vauxn14), // Y축 채널 (VAUX14)
+          .channel_out(channel_out),        // 변환된 채널 번호 출력
+          .do_out(do_out),                  // 변환된 데이터 출력
+          .eoc_out(eoc_out)                 // 변환 완료 신호 출력
+          );
+          
+    // 변환된 ADC 값 저장 (X, Y 각각 12비트 사용)
+    reg [11:0] adc_value_x, adc_value_y;
+    
+    // eoc_out의 양엣지 검출기 → 변환 완료 시점 검출
+    wire eoc_pedge;
+    edge_detector_p echo_ed(
+        .clk(clk), 
+        .reset_p(reset_p), 
+        .cp(eoc_out),        
+        .p_edge(eoc_pedge)); // eoc_out의 rising edge에서 1클럭 동안 High
+    
+    // ADC 값 저장 로직
+    always @(posedge clk, posedge reset_p) begin
+        if(reset_p) begin
+            adc_value_x = 0;   // 리셋 시 초기화
+            adc_value_y = 0;
+        end
+        else if(eoc_pedge) begin
+            case(channel_out[3:0])        // 채널 번호 확인
+                6:  adc_value_x = do_out[15:4]; // X축 값 저장 (상위 12비트)
+                14: adc_value_y = do_out[15:4]; // Y축 값 저장 (상위 12비트)
+            endcase
+        end
+    end
+    
+    // X, Y 값을 BCD 변환 (상위 6비트만 사용 → 0~63 범위)
+    wire [7:0] x_bcd, y_bcd;
+    bin_to_dec bcd_x(.bin(adc_value_x[11:6]), .bcd(x_bcd));
+    bin_to_dec bcd_y(.bin(adc_value_y[11:6]), .bcd(y_bcd));
+    
+    // 7-Segment 표시 모듈
+    // X값과 Y값을 합쳐서 표시 (예: {X, Y} 형태 → 16비트 입력)
+    fnd_cntr fnd_x(
+        .clk(clk), 
+        .reset_p(reset_p),
+        .fnd_value({x_bcd,y_bcd}), // 상위 8비트=Y, 하위 8비트=X
+        .hex_bcd(1),               // 0=HEX 그대로, 1=BCD 변환된 값 사용
+        .seg_7(seg_7), 
+        .com(com));
+    
+    pwm_Nfreq_Nstep #(.duty_step_N(128)) pwm_led_g(clk, reset_p, adc_value_x[11:4], led_g);
+    pwm_Nfreq_Nstep #(.duty_step_N(128)) pwm_led_b(clk, reset_p, adc_value_y[11:4], led_b);
+
+endmodule
 
 
 

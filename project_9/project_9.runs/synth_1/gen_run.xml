@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1755833819" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="i2c_txtlcd_top_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="i2c_txtlcd_top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="i2c_txtlcd_top_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="i2c_txtlcd_top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="i2c_txtlcd_top_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="i2c_txtlcd_top.vds"/>
-  <File Type="REPORTS-TCL" Name="i2c_txtlcd_top_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="i2c_txtlcd_top_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="i2c_txtlcd_top.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756106924" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="adc_sequence2_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="adc_sequence2_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="adc_sequence2_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="adc_sequence2_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="adc_sequence2_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="adc_sequence2_top.vds"/>
+  <File Type="REPORTS-TCL" Name="adc_sequence2_top_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="adc_sequence2_top_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="adc_sequence2_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/clock_library.v">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_joystic/xadc_joystic.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -39,6 +39,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clock_library.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/study.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -49,7 +65,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="i2c_txtlcd_top"/>
+      <Option Name="TopModule" Val="adc_sequence2_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

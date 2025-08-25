@@ -1,0 +1,2 @@
+xadc_joystic.v,verilog,xil_defaultlib,../../../../project_9.gen/sources_1/ip/xadc_joystic/xadc_joystic.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
