@@ -94,3 +94,28 @@ module led_top_study(
         end
     end
 endmodule
+
+module sound_led_study_top(
+    input clk,             // FPGA 시스템 클럭
+    input reset_p,         // 리셋 버튼 (active high)
+    input sound_in,        // 사운드 센서 디지털 출력 (DO 핀 연결)
+    output reg [15:0] led  // 16개 LED 출력
+);
+
+    // 소리를 감지하면 LED에 표시 (토글 효과)
+    always @(posedge clk or posedge reset_p) begin
+        if (reset_p) begin
+            led <= 16'b0;  // 리셋 시 LED OFF
+        end else begin
+            if (sound_in) begin
+                // 소리 감지되면 LED shift left
+                led <= {led[14:0], 1'b1};
+            end else begin
+                // 소리 없으면 그대로 유지
+                led <= led;
+            end
+        end
+    end
+
+endmodule
+

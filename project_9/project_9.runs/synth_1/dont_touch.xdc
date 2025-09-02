@@ -3,10 +3,43 @@
 
 # XDC: imports/work/Basys-3-Master.xdc
 
-# IP: ip/xadc_joystic/xadc_joystic.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==xadc_joystic || ORIG_REF_NAME==xadc_joystic} -quiet] -quiet
+# Block Designs: bd/soc_hello/soc_hello.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello || ORIG_REF_NAME==soc_hello} -quiet] -quiet
 
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/ip/xadc_joystic/xadc_joystic_ooc.xdc
+# IP: bd/soc_hello/ip/soc_hello_proc_sys_reset_0_0/soc_hello_proc_sys_reset_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_hello_proc_sys_reset_0_0} -quiet] -quiet
 
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/ip/xadc_joystic/xadc_joystic.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==xadc_joystic || ORIG_REF_NAME==xadc_joystic} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# IP: bd/soc_hello/ip/soc_hello_clk_wiz_0/soc_hello_clk_wiz_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_clk_wiz_0 || ORIG_REF_NAME==soc_hello_clk_wiz_0} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_microblaze_riscv_0_0/soc_hello_microblaze_riscv_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_hello_microblaze_riscv_0_0} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_dlmb_v10_1/soc_hello_dlmb_v10_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_dlmb_v10_1 || ORIG_REF_NAME==soc_hello_dlmb_v10_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_ilmb_v10_1/soc_hello_ilmb_v10_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_ilmb_v10_1 || ORIG_REF_NAME==soc_hello_ilmb_v10_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_dlmb_bram_if_cntlr_1/soc_hello_dlmb_bram_if_cntlr_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_dlmb_bram_if_cntlr_1 || ORIG_REF_NAME==soc_hello_dlmb_bram_if_cntlr_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_ilmb_bram_if_cntlr_1/soc_hello_ilmb_bram_if_cntlr_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_ilmb_bram_if_cntlr_1 || ORIG_REF_NAME==soc_hello_ilmb_bram_if_cntlr_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_lmb_bram_1/soc_hello_lmb_bram_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_lmb_bram_1 || ORIG_REF_NAME==soc_hello_lmb_bram_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_mdm_1_1/soc_hello_mdm_1_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_mdm_1_1 || ORIG_REF_NAME==soc_hello_mdm_1_1} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_axi_uartlite_0_0/soc_hello_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_axi_uartlite_0_0 || ORIG_REF_NAME==soc_hello_axi_uartlite_0_0} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_axi_smc_0/soc_hello_axi_smc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_axi_smc_0 || ORIG_REF_NAME==soc_hello_axi_smc_0} -quiet] -quiet
+
+# IP: bd/soc_hello/ip/soc_hello_axi_gpio_0_0/soc_hello_axi_gpio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_hello_axi_gpio_0_0 || ORIG_REF_NAME==soc_hello_axi_gpio_0_0} -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_hello/soc_hello_ooc.xdc

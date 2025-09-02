@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756106924" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="adc_sequence2_top_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="adc_sequence2_top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="adc_sequence2_top_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="adc_sequence2_top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="adc_sequence2_top_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="adc_sequence2_top.vds"/>
-  <File Type="REPORTS-TCL" Name="adc_sequence2_top_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="adc_sequence2_top_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="adc_sequence2_top.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756784547" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="soc_hello_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="soc_hello_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="soc_hello_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="soc_hello_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="soc_hello_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="soc_hello_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="soc_hello_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="soc_hello_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="soc_hello_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/soc_hello/soc_hello.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_hello/hdl/soc_hello_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/ip/xadc_joystic/xadc_joystic.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,6 +35,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/controller.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -27,6 +43,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/exam02_sequential_logic2.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -34,6 +51,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/test_top.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -65,7 +83,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="adc_sequence2_top"/>
+      <Option Name="TopModule" Val="soc_hello_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -100,4 +118,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_smc_0"/>
 </GenRun>

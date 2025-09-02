@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log adc_sequence2_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source adc_sequence2_top.tcl
+vivado -log soc_hello_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_hello_wrapper.tcl

@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log adc_sequence2_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source adc_sequence2_top.tcl
+EAStep vivado -log soc_hello_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_hello_wrapper.tcl

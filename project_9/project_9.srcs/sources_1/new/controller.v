@@ -19,6 +19,31 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module edge_detector_p(
+    input clk,
+    input reset_p,
+    input cp,
+
+    output p_edge,
+    output n_edge
+
+    );
+
+    reg ff_cur, ff_old;
+
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) begin
+            ff_cur <= 0;
+            ff_old <= 0;
+        end else begin
+            ff_old <= ff_cur;
+            ff_cur <= cp;
+        end
+    end
+
+    assign p_edge = ({ff_cur, ff_old} == 2'b10) ? 1'b1 : 1'b0;
+    assign n_edge = ({ff_cur, ff_old} == 2'b01) ? 1'b1 : 1'b0;
+endmodule
 
 module fnd_cntr(
     input clk, reset_p,
