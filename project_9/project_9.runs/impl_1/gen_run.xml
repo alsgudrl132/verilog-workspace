@@ -1,93 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756784549">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756862471">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="soc_hello_wrapper_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS" Name="soc_hello_wrapper_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="soc_btn_fnd_wrapper_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="soc_btn_fnd_wrapper_routed.rqs"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-BGN" Name="soc_hello_wrapper.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="soc_hello_wrapper.sysdef"/>
+  <File Type="BG-BGN" Name="soc_btn_fnd_wrapper.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="soc_btn_fnd_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="soc_hello_wrapper.ltx"/>
-  <File Type="RBD_FILE" Name="soc_hello_wrapper.rbd"/>
-  <File Type="NPI_FILE" Name="soc_hello_wrapper.npi"/>
-  <File Type="RNPI_FILE" Name="soc_hello_wrapper.rnpi"/>
-  <File Type="CFI_FILE" Name="soc_hello_wrapper.cfi"/>
-  <File Type="RCFI_FILE" Name="soc_hello_wrapper.rcfi"/>
-  <File Type="PL-PDI-FILE" Name="soc_hello_wrapper_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="soc_hello_wrapper_boot.pdi"/>
-  <File Type="RDI-RDI" Name="soc_hello_wrapper.vdi"/>
-  <File Type="PDI-FILE" Name="soc_hello_wrapper.pdi"/>
-  <File Type="BITSTR-MMI" Name="soc_hello_wrapper.mmi"/>
-  <File Type="BITSTR-BMM" Name="soc_hello_wrapper_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="soc_hello_wrapper.nky"/>
-  <File Type="BITSTR-RBT" Name="soc_hello_wrapper.rbt"/>
-  <File Type="BITSTR-MSK" Name="soc_hello_wrapper.msk"/>
-  <File Type="BG-BIN" Name="soc_hello_wrapper.bin"/>
+  <File Type="BITSTR-LTX" Name="soc_btn_fnd_wrapper.ltx"/>
+  <File Type="RBD_FILE" Name="soc_btn_fnd_wrapper.rbd"/>
+  <File Type="NPI_FILE" Name="soc_btn_fnd_wrapper.npi"/>
+  <File Type="RNPI_FILE" Name="soc_btn_fnd_wrapper.rnpi"/>
+  <File Type="CFI_FILE" Name="soc_btn_fnd_wrapper.cfi"/>
+  <File Type="RCFI_FILE" Name="soc_btn_fnd_wrapper.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="soc_btn_fnd_wrapper_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="soc_btn_fnd_wrapper_boot.pdi"/>
+  <File Type="RDI-RDI" Name="soc_btn_fnd_wrapper.vdi"/>
+  <File Type="PDI-FILE" Name="soc_btn_fnd_wrapper.pdi"/>
+  <File Type="BITSTR-MMI" Name="soc_btn_fnd_wrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="soc_btn_fnd_wrapper_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="soc_btn_fnd_wrapper.nky"/>
+  <File Type="BITSTR-RBT" Name="soc_btn_fnd_wrapper.rbt"/>
+  <File Type="BITSTR-MSK" Name="soc_btn_fnd_wrapper.msk"/>
+  <File Type="BG-BIN" Name="soc_btn_fnd_wrapper.bin"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="BG-BIT" Name="soc_hello_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="adc_sequence2_top_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="adc_sequence2_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="adc_sequence2_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="adc_sequence2_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="adc_sequence2_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="adc_sequence2_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="soc_hello_wrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="soc_hello_wrapper_postroute_physopt.dcp"/>
-  <File Type="BG-DRC" Name="soc_hello_wrapper.drc"/>
-  <File Type="ROUTE-RQS-PB" Name="soc_hello_wrapper_rqs_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="soc_hello_wrapper_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="soc_hello_wrapper_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="soc_hello_wrapper_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="soc_hello_wrapper_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="soc_hello_wrapper_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="soc_hello_wrapper_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="soc_hello_wrapper_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="soc_hello_wrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="soc_hello_wrapper_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="soc_hello_wrapper_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="soc_hello_wrapper_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="soc_hello_wrapper_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="soc_hello_wrapper_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="soc_hello_wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="soc_hello_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="soc_hello_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="soc_hello_wrapper_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="soc_hello_wrapper_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="soc_hello_wrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="soc_hello_wrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="soc_hello_wrapper_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="soc_hello_wrapper_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="soc_hello_wrapper_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="soc_hello_wrapper_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="soc_hello_wrapper_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="soc_hello_wrapper_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="soc_hello_wrapper_postplace_pwropt.dcp"/>
-  <File Type="PLACE-RQA-PB" Name="soc_hello_wrapper_rqa_placed.pb"/>
-  <File Type="PLACE-TIMING" Name="soc_hello_wrapper_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="soc_hello_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="soc_hello_wrapper_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="soc_hello_wrapper_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="soc_hello_wrapper_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="soc_hello_wrapper_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="soc_hello_wrapper_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="soc_hello_wrapper_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="soc_hello_wrapper_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="soc_hello_wrapper_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="soc_hello_wrapper_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="soc_hello_wrapper_pwropt.dcp"/>
-  <File Type="OPT-RQA-PB" Name="soc_hello_wrapper_rqa_opted.pb"/>
-  <File Type="OPT-HWDEF" Name="soc_hello_wrapper.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="soc_hello_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="soc_hello_wrapper_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="soc_hello_wrapper_opt.dcp"/>
-  <File Type="OPT-TIMING" Name="soc_hello_wrapper_timing_summary_opted.rpt"/>
-  <File Type="REPORTS-TCL" Name="soc_hello_wrapper_reports.tcl"/>
-  <File Type="INIT-TIMING" Name="soc_hello_wrapper_timing_summary_init.rpt"/>
-  <File Type="PA-TCL" Name="soc_hello_wrapper.tcl"/>
+  <File Type="BG-BIT" Name="soc_btn_fnd_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="soc_hello_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="soc_hello_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="soc_hello_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="soc_hello_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="soc_hello_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="soc_hello_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="soc_btn_fnd_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="soc_btn_fnd_wrapper_postroute_physopt.dcp"/>
+  <File Type="BG-DRC" Name="soc_btn_fnd_wrapper.drc"/>
+  <File Type="ROUTE-RQS-PB" Name="soc_btn_fnd_wrapper_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="soc_btn_fnd_wrapper_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="soc_btn_fnd_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="soc_btn_fnd_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="soc_btn_fnd_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="soc_btn_fnd_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="soc_btn_fnd_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="soc_btn_fnd_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="soc_btn_fnd_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="soc_btn_fnd_wrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="soc_btn_fnd_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="soc_btn_fnd_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="soc_btn_fnd_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="soc_btn_fnd_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="soc_btn_fnd_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="soc_btn_fnd_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="soc_btn_fnd_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="soc_btn_fnd_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="soc_btn_fnd_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="soc_btn_fnd_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="soc_btn_fnd_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="soc_btn_fnd_wrapper_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="soc_btn_fnd_wrapper_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="soc_btn_fnd_wrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="soc_btn_fnd_wrapper_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="soc_btn_fnd_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="soc_btn_fnd_wrapper_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="soc_btn_fnd_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="soc_btn_fnd_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="soc_btn_fnd_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="soc_btn_fnd_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="soc_btn_fnd_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="soc_btn_fnd_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="soc_btn_fnd_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="soc_btn_fnd_wrapper_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="soc_btn_fnd_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="soc_btn_fnd_wrapper_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="soc_btn_fnd_wrapper_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="soc_btn_fnd_wrapper.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="soc_btn_fnd_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="soc_btn_fnd_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="soc_btn_fnd_wrapper_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="soc_btn_fnd_wrapper_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="soc_btn_fnd_wrapper_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="soc_btn_fnd_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/soc_btn_fnd/soc_btn_fnd.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_btn_fnd/hdl/soc_btn_fnd_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/soc_hello/soc_hello.bd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -95,6 +110,7 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/soc_hello/hdl/soc_hello_wrapper.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -158,7 +174,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="soc_hello_wrapper"/>
+      <Option Name="TopModule" Val="soc_btn_fnd_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -201,7 +217,12 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_hello_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_gpio_1_0"/>
 </GenRun>

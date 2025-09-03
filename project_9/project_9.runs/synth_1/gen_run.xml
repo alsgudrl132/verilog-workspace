@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756784547" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="soc_hello_wrapper_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="soc_hello_wrapper.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="soc_hello_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="soc_hello_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="soc_hello_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="soc_hello_wrapper.vds"/>
-  <File Type="REPORTS-TCL" Name="soc_hello_wrapper_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="soc_hello_wrapper_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="soc_hello_wrapper.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1756862467" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="soc_btn_fnd_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="soc_btn_fnd_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="soc_btn_fnd_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="soc_btn_fnd_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="soc_btn_fnd_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="soc_btn_fnd_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="soc_btn_fnd_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="soc_btn_fnd_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="soc_btn_fnd_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/soc_btn_fnd/soc_btn_fnd.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_btn_fnd/hdl/soc_btn_fnd_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/soc_hello/soc_hello.bd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,6 +35,7 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/soc_hello/hdl/soc_hello_wrapper.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -83,7 +99,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="soc_hello_wrapper"/>
+      <Option Name="TopModule" Val="soc_btn_fnd_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -118,7 +134,12 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_hello_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_hello_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_btn_fnd_axi_gpio_1_0"/>
 </GenRun>
