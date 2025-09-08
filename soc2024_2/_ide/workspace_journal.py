@@ -96,3 +96,15 @@ status = platform.build()
 comp = client.get_component(name="app_txtlcd")
 comp.build()
 
+platform = client.get_component(name="platform_dht11_iic")
+status = platform.build()
+
+comp = client.get_component(name="app_dht11_iic")
+comp.build()
+
+platform = client.get_component(name="platform_txtlcd")
+status = platform.build()
+
+comp = client.get_component(name="app_txtlcd")
+comp.build()
+
