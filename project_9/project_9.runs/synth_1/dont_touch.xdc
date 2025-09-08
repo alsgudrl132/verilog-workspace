@@ -3,46 +3,285 @@
 
 # XDC: imports/work/Basys-3-Master.xdc
 
-# Block Designs: bd/soc_btn_fnd/soc_btn_fnd.bd
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd || ORIG_REF_NAME==soc_btn_fnd} -quiet] -quiet
+# Block Designs: bd/soc_txtlcd/soc_txtlcd.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd || ORIG_REF_NAME==soc_txtlcd} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_proc_sys_reset_0_0/soc_btn_fnd_proc_sys_reset_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_btn_fnd_proc_sys_reset_0_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_proc_sys_reset_0_0/soc_txtlcd_proc_sys_reset_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_txtlcd_proc_sys_reset_0_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_clk_wiz_0/soc_btn_fnd_clk_wiz_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_clk_wiz_0 || ORIG_REF_NAME==soc_btn_fnd_clk_wiz_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_clk_wiz_0/soc_txtlcd_clk_wiz_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_clk_wiz_0 || ORIG_REF_NAME==soc_txtlcd_clk_wiz_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_microblaze_riscv_0_0/soc_btn_fnd_microblaze_riscv_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_btn_fnd_microblaze_riscv_0_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_microblaze_riscv_0_0/soc_txtlcd_microblaze_riscv_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_txtlcd_microblaze_riscv_0_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_dlmb_v10_0/soc_btn_fnd_dlmb_v10_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_dlmb_v10_0 || ORIG_REF_NAME==soc_btn_fnd_dlmb_v10_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_dlmb_v10_0/soc_txtlcd_dlmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_dlmb_v10_0 || ORIG_REF_NAME==soc_txtlcd_dlmb_v10_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_ilmb_v10_0/soc_btn_fnd_ilmb_v10_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_ilmb_v10_0 || ORIG_REF_NAME==soc_btn_fnd_ilmb_v10_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_ilmb_v10_0/soc_txtlcd_ilmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_ilmb_v10_0 || ORIG_REF_NAME==soc_txtlcd_ilmb_v10_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_dlmb_bram_if_cntlr_0/soc_btn_fnd_dlmb_bram_if_cntlr_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_btn_fnd_dlmb_bram_if_cntlr_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_dlmb_bram_if_cntlr_0/soc_txtlcd_dlmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_txtlcd_dlmb_bram_if_cntlr_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_ilmb_bram_if_cntlr_0/soc_btn_fnd_ilmb_bram_if_cntlr_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_btn_fnd_ilmb_bram_if_cntlr_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_ilmb_bram_if_cntlr_0/soc_txtlcd_ilmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_txtlcd_ilmb_bram_if_cntlr_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_lmb_bram_0/soc_btn_fnd_lmb_bram_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_lmb_bram_0 || ORIG_REF_NAME==soc_btn_fnd_lmb_bram_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_lmb_bram_0/soc_txtlcd_lmb_bram_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_lmb_bram_0 || ORIG_REF_NAME==soc_txtlcd_lmb_bram_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_mdm_1_0/soc_btn_fnd_mdm_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_mdm_1_0 || ORIG_REF_NAME==soc_btn_fnd_mdm_1_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_mdm_1_0/soc_txtlcd_mdm_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_mdm_1_0 || ORIG_REF_NAME==soc_txtlcd_mdm_1_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_axi_uartlite_0_0/soc_btn_fnd_axi_uartlite_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_axi_uartlite_0_0 || ORIG_REF_NAME==soc_btn_fnd_axi_uartlite_0_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_axi_uartlite_0_0/soc_txtlcd_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_axi_uartlite_0_0 || ORIG_REF_NAME==soc_txtlcd_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_axi_smc_0/soc_btn_fnd_axi_smc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_axi_smc_0 || ORIG_REF_NAME==soc_btn_fnd_axi_smc_0} -quiet] -quiet
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/soc_txtlcd_axi_smc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_axi_smc_0 || ORIG_REF_NAME==soc_txtlcd_axi_smc_0} -quiet] -quiet
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_axi_gpio_0_0/soc_btn_fnd_axi_gpio_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_axi_gpio_0_0 || ORIG_REF_NAME==soc_btn_fnd_axi_gpio_0_0} -quiet] -quiet
+# Block Designs: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/bd_5040.bd
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
 
-# IP: bd/soc_btn_fnd/ip/soc_btn_fnd_axi_gpio_1_0/soc_btn_fnd_axi_gpio_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_btn_fnd_axi_gpio_1_0 || ORIG_REF_NAME==soc_btn_fnd_axi_gpio_1_0} -quiet] -quiet
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_0/bd_5040_one_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
 
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_btn_fnd/soc_btn_fnd_ooc.xdc
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_1/bd_5040_psr_aclk_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_2/bd_5040_arinsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_3/bd_5040_rinsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_4/bd_5040_awinsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_5/bd_5040_winsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_6/bd_5040_binsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_7/bd_5040_aroutsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_8/bd_5040_routsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_9/bd_5040_awoutsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_10/bd_5040_woutsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_11/bd_5040_boutsw_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_12/bd_5040_arni_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_13/bd_5040_rni_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_14/bd_5040_awni_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_15/bd_5040_wni_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_16/bd_5040_bni_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_17/bd_5040_s00mmu_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_18/bd_5040_s00tr_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_19/bd_5040_s00sic_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_20/bd_5040_s00a2s_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_21/bd_5040_sarn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_22/bd_5040_srn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_23/bd_5040_sawn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_24/bd_5040_swn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_25/bd_5040_sbn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_26/bd_5040_m00s2a_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_27/bd_5040_m00arn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_28/bd_5040_m00rn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_29/bd_5040_m00awn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_30/bd_5040_m00wn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_31/bd_5040_m00bn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_32/bd_5040_m00e_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_33/bd_5040_m01s2a_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_34/bd_5040_m01arn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_35/bd_5040_m01rn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_36/bd_5040_m01awn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_37/bd_5040_m01wn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_38/bd_5040_m01bn_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_39/bd_5040_m01e_0.xci
+# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+
+# IP: bd/soc_txtlcd/ip/soc_txtlcd_myip_iic_txtlcd_0_0/soc_txtlcd_myip_iic_txtlcd_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_txtlcd_myip_iic_txtlcd_0_0 || ORIG_REF_NAME==soc_txtlcd_myip_iic_txtlcd_0_0} -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_proc_sys_reset_0_0/soc_txtlcd_proc_sys_reset_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_txtlcd_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_proc_sys_reset_0_0/soc_txtlcd_proc_sys_reset_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_txtlcd_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_clk_wiz_0/soc_txtlcd_clk_wiz_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_clk_wiz_0 || ORIG_REF_NAME==soc_txtlcd_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_clk_wiz_0/soc_txtlcd_clk_wiz_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_clk_wiz_0 || ORIG_REF_NAME==soc_txtlcd_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_clk_wiz_0/soc_txtlcd_clk_wiz_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_microblaze_riscv_0_0/soc_txtlcd_microblaze_riscv_0_0.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_txtlcd_microblaze_riscv_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_microblaze_riscv_0_0/soc_txtlcd_microblaze_riscv_0_0_ooc_debug.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_dlmb_v10_0/soc_txtlcd_dlmb_v10_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_ilmb_v10_0/soc_txtlcd_ilmb_v10_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_dlmb_bram_if_cntlr_0/soc_txtlcd_dlmb_bram_if_cntlr_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_ilmb_bram_if_cntlr_0/soc_txtlcd_ilmb_bram_if_cntlr_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_lmb_bram_0/soc_txtlcd_lmb_bram_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_mdm_1_0/soc_txtlcd_mdm_1_0.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_mdm_1_0 || ORIG_REF_NAME==soc_txtlcd_mdm_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_mdm_1_0/soc_txtlcd_mdm_1_0_ooc_trace.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_uartlite_0_0/soc_txtlcd_axi_uartlite_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_axi_uartlite_0_0 || ORIG_REF_NAME==soc_txtlcd_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_uartlite_0_0/soc_txtlcd_axi_uartlite_0_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_uartlite_0_0/soc_txtlcd_axi_uartlite_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_axi_uartlite_0_0 || ORIG_REF_NAME==soc_txtlcd_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_1/bd_5040_psr_aclk_0_board.xdc
+# DONT_TOUCH constraint suppressed by parent sub-design file.
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_1/bd_5040_psr_aclk_0.xdc
+# DONT_TOUCH constraint suppressed by parent sub-design file.
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_2/bd_5040_arinsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_3/bd_5040_rinsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_4/bd_5040_awinsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_5/bd_5040_winsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_6/bd_5040_binsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_7/bd_5040_aroutsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_8/bd_5040_routsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_9/bd_5040_awoutsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_10/bd_5040_woutsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_11/bd_5040_boutsw_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_12/bd_5040_arni_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_13/bd_5040_rni_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_14/bd_5040_awni_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_15/bd_5040_wni_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_16/bd_5040_bni_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_20/bd_5040_s00a2s_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_21/bd_5040_sarn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_22/bd_5040_srn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_23/bd_5040_sawn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_24/bd_5040_swn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_25/bd_5040_sbn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_26/bd_5040_m00s2a_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_27/bd_5040_m00arn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_28/bd_5040_m00rn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_29/bd_5040_m00awn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_30/bd_5040_m00wn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_31/bd_5040_m00bn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_33/bd_5040_m01s2a_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_34/bd_5040_m01arn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_35/bd_5040_m01rn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_36/bd_5040_m01awn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_37/bd_5040_m01wn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_38/bd_5040_m01bn_0_ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/ooc.xdc
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/smartconnect.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_txtlcd_axi_smc_0 || ORIG_REF_NAME==soc_txtlcd_axi_smc_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_txtlcd/soc_txtlcd_ooc.xdc

@@ -1,0 +1,58 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri Sep  5 09:28:33 2025
+| Host         : min running 64-bit Ubuntu 24.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'soc_dht11_myip_dht11_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of soc_dht11_myip_dht11_0_0 (user.org:user:myip_dht11:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Thu Sep  4 09:58:08 2025
+| Host         : min running 64-bit Ubuntu 24.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'soc_btn_fnd_myip_fnd_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of soc_btn_fnd_myip_fnd_0_3 (user.org:user:myip_fnd:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Thu Sep  4 09:52:09 2025
+| Host         : min running 64-bit Ubuntu 24.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'soc_btn_fnd_myip_fnd_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of soc_btn_fnd_myip_fnd_0_2 (user.org:user:myip_fnd:1.0) from (Rev. 2) to (Rev. 3)
+

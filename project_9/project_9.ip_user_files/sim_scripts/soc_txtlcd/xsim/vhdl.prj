@@ -1,0 +1,13 @@
+vhdl xil_defaultlib  \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_proc_sys_reset_0_0/sim/soc_txtlcd_proc_sys_reset_0_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_microblaze_riscv_0_0/sim/soc_txtlcd_microblaze_riscv_0_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_dlmb_v10_0/sim/soc_txtlcd_dlmb_v10_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_ilmb_v10_0/sim/soc_txtlcd_ilmb_v10_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_dlmb_bram_if_cntlr_0/sim/soc_txtlcd_dlmb_bram_if_cntlr_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_ilmb_bram_if_cntlr_0/sim/soc_txtlcd_ilmb_bram_if_cntlr_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_mdm_1_0/sim/soc_txtlcd_mdm_1_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_axi_uartlite_0_0/sim/soc_txtlcd_axi_uartlite_0_0.vhd" \
+"../../../bd/soc_txtlcd/ip/soc_txtlcd_axi_smc_0/bd_0/ip/ip_1/sim/bd_5040_psr_aclk_0.vhd" \
+
+# Do not sort compile order
+nosort

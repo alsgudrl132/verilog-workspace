@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x909B50D36998D75C",
+      "boundary_crc": "0xC62CB8594ED0ED95",
       "design_src": "SBD",
       "device": "xc7a35tcpg236-1",
       "name": "bd_67cd",
@@ -297,7 +297,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -350,7 +350,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "9",
+            "value": "5",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -395,7 +395,7 @@
           },
           "HAS_PROT": {
             "value": "1",
-            "value_src": "default_prop"
+            "value_src": "default"
           },
           "HAS_QOS": {
             "value": "0",
@@ -423,7 +423,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -549,7 +549,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
-            "value_src": "default_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "1"
@@ -2461,7 +2461,7 @@
                 "value": "READ_WRITE"
               },
               "SEG000_BASE_ADDR": {
-                "value": "0x0000000040000000"
+                "value": "0x0000000040010000"
               },
               "SEG000_SECURE_READ": {
                 "value": "0"
@@ -2470,7 +2470,7 @@
                 "value": "0"
               },
               "SEG000_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000000001"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000010"
               },
               "SEG000_SIZE": {
                 "value": "16"
@@ -2482,7 +2482,7 @@
                 "value": "1"
               },
               "SEG001_BASE_ADDR": {
-                "value": "0x0000000040010000"
+                "value": "0x0000000040600000"
               },
               "SEG001_SECURE_READ": {
                 "value": "0"
@@ -2491,7 +2491,7 @@
                 "value": "0"
               },
               "SEG001_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000000010"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000000"
               },
               "SEG001_SIZE": {
                 "value": "16"
@@ -2503,7 +2503,7 @@
                 "value": "1"
               },
               "SEG002_BASE_ADDR": {
-                "value": "0x0000000040600000"
+                "value": "0x0000000044A00000"
               },
               "SEG002_SECURE_READ": {
                 "value": "0"
@@ -2512,7 +2512,7 @@
                 "value": "0"
               },
               "SEG002_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000000000"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000001"
               },
               "SEG002_SIZE": {
                 "value": "16"
@@ -4958,7 +4958,7 @@
         "inst_hier_path": "m01_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "9"
+            "value": "5"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -5991,7 +5991,7 @@
             "inst_hier_path": "m01_exit_pipeline/m01_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "9"
+                "value": "5"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"

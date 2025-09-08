@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log soc_btn_fnd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_btn_fnd_wrapper.tcl
+EAStep vivado -log soc_txtlcd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_txtlcd_wrapper.tcl

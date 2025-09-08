@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x8ACC7567CD81F438",
+      "boundary_crc": "0xC4C978C57C179DFF",
       "device": "xc7a35tcpg236-1",
       "gen_directory": "../../../../project_9.gen/sources_1/bd/soc_btn_fnd",
       "name": "soc_btn_fnd",
@@ -24,8 +24,8 @@
       "mdm_1": "",
       "axi_uartlite_0": "",
       "axi_smc": "",
-      "axi_gpio_fnd": "",
-      "axi_gpio_btn": ""
+      "axi_gpio_btn": "",
+      "myip_fnd_0": ""
     },
     "interface_ports": {
       "usb_uart": {
@@ -40,32 +40,6 @@
           "TxD": {
             "physical_name": "usb_uart_txd",
             "direction": "O"
-          }
-        }
-      },
-      "seven_seg_led_an": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_O": {
-            "physical_name": "seven_seg_led_an_tri_o",
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "seven_seg_led_disp": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_O": {
-            "physical_name": "seven_seg_led_disp_tri_o",
-            "direction": "O",
-            "left": "7",
-            "right": "0"
           }
         }
       },
@@ -120,6 +94,16 @@
             "value": "0.0"
           }
         }
+      },
+      "com_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "seg_7_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
       }
     },
     "components": {
@@ -534,24 +518,6 @@
           }
         }
       },
-      "axi_gpio_fnd": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "35",
-        "xci_name": "soc_btn_fnd_axi_gpio_0_0",
-        "xci_path": "ip/soc_btn_fnd_axi_gpio_0_0/soc_btn_fnd_axi_gpio_0_0.xci",
-        "inst_hier_path": "axi_gpio_fnd",
-        "parameters": {
-          "GPIO2_BOARD_INTERFACE": {
-            "value": "seven_seg_led_disp"
-          },
-          "GPIO_BOARD_INTERFACE": {
-            "value": "seven_seg_led_an"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
-      },
       "axi_gpio_btn": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "35",
@@ -566,21 +532,16 @@
             "value": "true"
           }
         }
+      },
+      "myip_fnd_0": {
+        "vlnv": "user.org:user:myip_fnd:1.0",
+        "ip_revision": "4",
+        "xci_name": "soc_btn_fnd_myip_fnd_0_3",
+        "xci_path": "ip/soc_btn_fnd_myip_fnd_0_3/soc_btn_fnd_myip_fnd_0_3.xci",
+        "inst_hier_path": "myip_fnd_0"
       }
     },
     "interface_nets": {
-      "axi_gpio_0_GPIO": {
-        "interface_ports": [
-          "seven_seg_led_an",
-          "axi_gpio_fnd/GPIO"
-        ]
-      },
-      "axi_gpio_0_GPIO2": {
-        "interface_ports": [
-          "seven_seg_led_disp",
-          "axi_gpio_fnd/GPIO2"
-        ]
-      },
       "axi_gpio_1_GPIO": {
         "interface_ports": [
           "push_buttons_4bits",
@@ -596,7 +557,7 @@
       "axi_smc_M01_AXI": {
         "interface_ports": [
           "axi_smc/M01_AXI",
-          "axi_gpio_fnd/S_AXI"
+          "myip_fnd_0/S00_AXI"
         ]
       },
       "axi_smc_M02_AXI": {
@@ -651,8 +612,20 @@
           "microblaze_riscv_0_local_memory/LMB_Clk",
           "axi_smc/aclk",
           "axi_uartlite_0/s_axi_aclk",
-          "axi_gpio_fnd/s_axi_aclk",
-          "axi_gpio_btn/s_axi_aclk"
+          "axi_gpio_btn/s_axi_aclk",
+          "myip_fnd_0/s00_axi_aclk"
+        ]
+      },
+      "myip_fnd_0_com": {
+        "ports": [
+          "myip_fnd_0/com",
+          "com_0"
+        ]
+      },
+      "myip_fnd_0_seg_7": {
+        "ports": [
+          "myip_fnd_0/seg_7",
+          "seg_7_0"
         ]
       },
       "proc_sys_reset_0_bus_struct_reset": {
@@ -672,8 +645,8 @@
           "proc_sys_reset_0/peripheral_aresetn",
           "axi_uartlite_0/s_axi_aresetn",
           "axi_smc/aresetn",
-          "axi_gpio_fnd/s_axi_aresetn",
-          "axi_gpio_btn/s_axi_aresetn"
+          "axi_gpio_btn/s_axi_aresetn",
+          "myip_fnd_0/s00_axi_aresetn"
         ]
       },
       "reset_1": {
@@ -695,11 +668,6 @@
         "address_spaces": {
           "Data": {
             "segments": {
-              "SEG_axi_gpio_0_Reg": {
-                "address_block": "/axi_gpio_fnd/S_AXI/Reg",
-                "offset": "0x40000000",
-                "range": "64K"
-              },
               "SEG_axi_gpio_1_Reg": {
                 "address_block": "/axi_gpio_btn/S_AXI/Reg",
                 "offset": "0x40010000",
@@ -715,6 +683,13 @@
                 "offset": "0x00000000",
                 "range": "128K",
                 "offset_high_param": "C_HIGHADDR"
+              },
+              "SEG_myip_fnd_0_S00_AXI_reg": {
+                "address_block": "/myip_fnd_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A00000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
               }
             }
           },
