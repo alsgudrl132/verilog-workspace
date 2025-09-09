@@ -1,6 +1,27 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Tue Sep  9 16:24:50 2025
+| Host         : min running 64-bit Ubuntu 24.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'soc_stop_watch_myip_stop_watch_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of soc_stop_watch_myip_stop_watch_0_0 (user.org:user:myip_stop_watch:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
 | Date         : Fri Sep  5 09:28:33 2025
 | Host         : min running 64-bit Ubuntu 24.04.2 LTS
 | Command      : upgrade_ip

@@ -238,9 +238,9 @@ endmodule
 
 module stop_watch(
     input clk, reset_p,
-    input btn_start, btn_lap, btn_clear,
-    output [7:0] fnd_sec, fnd_csec,
-    output reg lap, start_stop);
+    input btn_start, btn_lap, btn_clear, // 컨트롤러 레지스터
+    output [7:0] fnd_sec, fnd_csec,      // 데이터 레지스터
+    output reg lap, start_stop);         // 상태 레지스터
     
     always @(posedge clk, posedge reset_p)begin
         if(reset_p)start_stop = 0;

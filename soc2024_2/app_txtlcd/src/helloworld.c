@@ -86,8 +86,13 @@ int main()
 
     print("Hello World\n\r");
     print("Successfully ran Hello World application");
+    volatile unsigned int *txtlcd_instance = (volatile unsigned int*)TXTLCD_ADDR;      // 0x00: I2C Address Register
 
-    volatile unsigned int *txtlcd_instance = (volatile unsigned int*)TXTLCD_ADDR;
+    // volatile unsigned int *DEVICE_ADDR = (volatile unsigned int*)TXTLCD_ADDR;      // 0x00: I2C Address Register
+    // volatile unsigned int *SEND_DATA   = (volatile unsigned int*)TXTLCD_ADDR+4;    // 0x04: Send Buffer Register  
+    // volatile unsigned int *SEND_RS_REG    = (volatile unsigned int*)TXTLCD_ADDR+8;    // 0x08: Control Register
+    // volatile unsigned int *BUSY_REG  = (volatile unsigned int*)TXTLCD_ADDR+12;   // 0x0C: Status Register
+
     lcdInit(txtlcd_instance);
     lcdString("Humi : 00", txtlcd_instance);
     moveCursor(1, 0, txtlcd_instance);
