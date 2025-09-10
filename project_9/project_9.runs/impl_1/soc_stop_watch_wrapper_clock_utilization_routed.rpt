@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue Sep  9 16:36:53 2025
+| Date         : Wed Sep 10 12:03:58 2025
 | Host         : min running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_clock_utilization -file soc_stop_watch_wrapper_clock_utilization_routed.rpt
 | Design       : soc_stop_watch_wrapper
@@ -51,12 +51,12 @@ Table of Contents
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                                                                 | Driver Pin                                                                                            | Net                                                                                                   |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 3 |        2396 |               0 |       10.000 | clk_out1_soc_stop_watch_clk_wiz_0                                                                     | soc_stop_watch_i/clk_wiz/inst/clkout1_buf/O                                                           | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 3 |        2342 |               0 |       10.000 | clk_out1_soc_stop_watch_clk_wiz_0                                                                     | soc_stop_watch_i/clk_wiz/inst/clkout1_buf/O                                                           | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
 | g1        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 2 |         198 |               0 |       33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native/O   | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
 | g1        | src2      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 2 |         198 |               0 |       33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native/O   | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
 | g2        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y3 | n/a          |                 2 |          99 |               0 |       66.666 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
 | g3        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y4 | n/a          |                 1 |          51 |               0 |       33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | soc_stop_watch_i/mdm_1/U0/tck_BUFG_inst/O                                                             | soc_stop_watch_i/mdm_1/U0/tck_BUFG                                                                    |
-| g4        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y1 | n/a          |                 3 |          31 |               0 |       33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native/O                            | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
+| g4        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y1 | n/a          |                 2 |          31 |               0 |       33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native/O                            | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
 | g5        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y5 | n/a          |                 1 |           1 |               0 |       10.000 | clkfbout_soc_stop_watch_clk_wiz_0                                                                     | soc_stop_watch_i/clk_wiz/inst/clkf_buf/O                                                              | soc_stop_watch_i/clk_wiz/inst/clkfbout_buf_soc_stop_watch_clk_wiz_0                                   |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -74,7 +74,7 @@ Table of Contents
 | src1      | g3        | BSCANE2/TCK         | None       | BSCAN_X0Y1      | X0Y0         |           2 |               0 |              33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                            | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/tck                                          |
 | src1      | g4        | BSCANE2/TCK         | None       | BSCAN_X0Y1      | X0Y0         |           2 |               0 |              33.333 | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                            | soc_stop_watch_i/mdm_1/U0/Use_E2.BSCAN_I/tck                                          |
 | src2      | g1        | VCC/P               | None       |                 | n/a          |           0 |               0 |                     |                                                               | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/VCC/P    | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/VCC_1 |
-| src3      | g2        | FDRE/Q              | None       | SLICE_X36Y43    | X1Y0         |           1 |               0 |                     |                                                               | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf_reg/Q | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf    |
+| src3      | g2        | FDRE/Q              | None       | SLICE_X34Y44    | X0Y0         |           1 |               0 |                     |                                                               | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf_reg/Q | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf    |
 | src4      | g5        | MMCME2_ADV/CLKFBOUT | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |              10.000 | clkfbout_soc_stop_watch_clk_wiz_0                             | soc_stop_watch_i/clk_wiz/inst/mmcm_adv_inst/CLKFBOUT                                     | soc_stop_watch_i/clk_wiz/inst/clkfbout_soc_stop_watch_clk_wiz_0                       |
 +-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+---------------------------------------------------------------+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -89,10 +89,10 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  625 |  1200 |  211 |   400 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y0              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2004 |  1500 |  665 |   450 |    0 |    40 |   20 |    20 |    4 |    20 |
+| X0Y0              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  546 |  1200 |  189 |   400 |    0 |    20 |    9 |    10 |    0 |    20 |
+| X1Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2029 |  1500 |  657 |   450 |    0 |    40 |   20 |    20 |    4 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    2 |    20 |    0 |    20 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    3 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |   950 |    0 |   300 |    0 |    10 |    0 |     5 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
@@ -118,7 +118,7 @@ All Modules
 +-----------+-----------------+-------------------+-----------------------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                             | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                    |
 +-----------+-----------------+-------------------+-----------------------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
-| g0        | BUFG/O          | n/a               | clk_out1_soc_stop_watch_clk_wiz_0 |      10.000 | {0.000 5.000} |        2380 |        0 |              0 |        0 | soc_stop_watch_i/clk_wiz/inst/clk_out1 |
+| g0        | BUFG/O          | n/a               | clk_out1_soc_stop_watch_clk_wiz_0 |      10.000 | {0.000 5.000} |        2326 |        0 |              0 |        0 | soc_stop_watch_i/clk_wiz/inst/clk_out1 |
 +-----------+-----------------+-------------------+-----------------------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -130,8 +130,8 @@ All Modules
 |    | X0   | X1    | HORIZONTAL PROG DELAY |
 +----+------+-------+-----------------------+
 | Y2 |    0 |     0 |                     - |
-| Y1 |    0 |     2 |                     0 |
-| Y0 |  364 |  2014 |                     0 |
+| Y1 |    0 |     3 |                     0 |
+| Y0 |  340 |  1983 |                     0 |
 +----+------+-------+-----------------------+
 
 
@@ -154,7 +154,7 @@ All Modules
 +----+------+-----+-----------------------+
 | Y2 |    0 |   0 |                     - |
 | Y1 |    0 |   0 |                     - |
-| Y0 |  155 |  43 |                     0 |
+| Y0 |  105 |  93 |                     0 |
 +----+------+-----+-----------------------+
 
 
@@ -177,7 +177,7 @@ All Modules
 +----+-----+-----+-----------------------+
 | Y2 |   0 |   0 |                     - |
 | Y1 |   0 |   0 |                     - |
-| Y0 |  61 |  38 |                     0 |
+| Y0 |  53 |  46 |                     0 |
 +----+-----+-----+-----------------------+
 
 
@@ -223,7 +223,7 @@ All Modules
 +----+-----+----+-----------------------+
 | Y2 |   0 |  0 |                     - |
 | Y1 |   0 |  0 |                     - |
-| Y0 |  21 |  9 |                     0 |
+| Y0 |  30 |  0 |                     0 |
 +----+-----+----+-----------------------+
 
 
@@ -256,11 +256,11 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         364 |               0 | 342 |          12 |   10 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
-| g1        | n/a   | BUFGCTRL/O      | None       |         155 |               0 | 153 |           2 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
-| g2        | n/a   | BUFG/O          | None       |          61 |               0 |  61 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
+| g0        | n/a   | BUFG/O          | None       |         340 |               0 | 310 |          21 |    9 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
+| g1        | n/a   | BUFGCTRL/O      | None       |         105 |               0 | 105 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
+| g2        | n/a   | BUFG/O          | None       |          53 |               0 |  53 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
 | g3        | n/a   | BUFG/O          | None       |          51 |               0 |  48 |           3 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/tck_BUFG                                                                    |
-| g4        | n/a   | BUFGCTRL/O      | None       |          21 |               0 |  21 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
+| g4        | n/a   | BUFGCTRL/O      | None       |          30 |               0 |  30 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -273,10 +273,9 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        2014 |               0 | 1914 |          76 |   20 |   4 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
-| g1        | n/a   | BUFGCTRL/O      | None       |          43 |               0 |   43 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
-| g2        | n/a   | BUFG/O          | None       |          38 |               0 |   38 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
-| g4        | n/a   | BUFGCTRL/O      | None       |           9 |               0 |    9 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
+| g0        | n/a   | BUFG/O          | None       |        1983 |               0 | 1892 |          67 |   20 |   4 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1                                                                |
+| g1        | n/a   | BUFGCTRL/O      | None       |          93 |               0 |   91 |           2 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
+| g2        | n/a   | BUFG/O          | None       |          46 |               0 |   46 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
 | g5        | n/a   | BUFG/O          | None       |           1 |               0 |    0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clkfbout_buf_soc_stop_watch_clk_wiz_0                                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-------------------------------------------------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -290,7 +289,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |           2 |               0 |  0 |           0 |    2 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1 |
+| g0        | n/a   | BUFG/O          | None       |           3 |               0 |  0 |           0 |    3 |   0 |  0 |    0 |   0 |       0 | soc_stop_watch_i/clk_wiz/inst/clk_out1 |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -322,7 +321,7 @@ resize_pblock [get_pblocks {CLKAG_soc_stop_watch_i/mdm_1/U0/tck_BUFG}] -add {CLO
 #startgroup
 create_pblock {CLKAG_soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}
 add_cells_to_pblock [get_pblocks  {CLKAG_soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int"}]]]
-resize_pblock [get_pblocks {CLKAG_soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+resize_pblock [get_pblocks {CLKAG_soc_stop_watch_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
 #endgroup
 
 # Clock net "soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0" driven by instance "soc_stop_watch_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native" located at site "BUFGCTRL_X0Y3"

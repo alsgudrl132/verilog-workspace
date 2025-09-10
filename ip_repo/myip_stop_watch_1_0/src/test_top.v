@@ -239,7 +239,7 @@ endmodule
 module stop_watch(
     input clk, reset_p,
     input start_stop, lap, clear,            // 제어 레지스터
-    output reg [7:0] sec, csec, lap_sec, lap_csec);     // 데이터 레지스터
+    output reg [7:0] sec, csec, min, lap_sec, lap_csec, lap_min);     // 데이터 레지스터
     
     wire lap_pedge, clear_pedge;
     edge_detector_p lap_ed(.clk(clk), .reset_p(reset_p),
@@ -252,14 +252,17 @@ module stop_watch(
         if(reset_p)begin
             lap_sec = 0;
             lap_csec = 0;
+            lap_min = 0;
         end
         else if(lap_pedge)begin
             lap_sec = sec;
             lap_csec = csec;
+            lap_min = min;
         end
         else if(clear_pedge)begin
             lap_sec = 0;
             lap_csec = 0;
+            lap_min = 0;
         end
     end
     
@@ -276,7 +279,13 @@ module stop_watch(
                     cnt_sysclk = 0;
                     if(csec >= 99)begin
                         csec = 0;
-                        if(sec >= 99)sec = 0;
+                        if(sec >= 59) begin
+                            sec = 0;
+                            if(min >= 59) begin
+                                min = 0;
+                            end
+                            else min = min + 1;
+                        end
                         else sec = sec + 1;
                     end
                     else csec = csec + 1;

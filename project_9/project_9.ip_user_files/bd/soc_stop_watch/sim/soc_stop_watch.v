@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Tue Sep  9 16:25:05 2025
+//Date        : Wed Sep 10 11:55:11 2025
 //Host        : min running 64-bit Ubuntu 24.04.2 LTS
 //Command     : generate_target soc_stop_watch.bd
 //Design      : soc_stop_watch

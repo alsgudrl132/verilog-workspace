@@ -247,10 +247,10 @@ vlog -work axi_vip_v1_1_19 -64 -incr -mfcu  -sv -L axi_vip_v1_1_19 -L smartconne
 
 vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/3cbc" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/f0b6/hdl/verilog" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/0127/hdl/verilog" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/ec67/hdl" "+incdir+/home/psh/tools/Vivado/2024.2/data/xilinx_vip/include" \
 "../../../bd/soc_stop_watch/ip/soc_stop_watch_axi_smc_0/sim/soc_stop_watch_axi_smc_0.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/src/exam02_sequential_logic.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/src/test_top.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/src/exam02_sequential_logic.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/src/test_top.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch.v" \
 "../../../bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0/sim/soc_stop_watch_myip_stop_watch_0_0.v" \
 
 vcom -work interrupt_control_v3_1_5 -64 -93  \

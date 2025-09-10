@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Sep  9 16:27:42 2025" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Sep 10 11:56:27 2025" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.2" DEVICE="7a35t" NAME="soc_stop_watch" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
@@ -4800,7 +4800,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/myip_stop_watch_0" HWVERSION="1.0" INSTANCE="myip_stop_watch_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="myip_stop_watch" VLNV="user.org:user:myip_stop_watch:1.0">
+    <MODULE COREREVISION="5" FULLNAME="/myip_stop_watch_0" HWVERSION="1.0" INSTANCE="myip_stop_watch_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="myip_stop_watch" VLNV="user.org:user:myip_stop_watch:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>

@@ -340,19 +340,19 @@
 	          end                                       
 	        end                                         
 	// Implement memory mapped register select and read logic generation
-	 wire [7:0] sec, csec, lap_sec, lap_csec;
+	 wire [7:0] sec, csec, lap_sec, lap_csec, min, lap_min;
 	  assign S_AXI_RDATA = 
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h0) ? slv_reg0 :
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h1) ? sec : 
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h2) ? csec : 
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h3) ? lap_sec : 
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h4) ? lap_csec : 
-	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h5) ? slv_reg5 : 
-	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h6) ? slv_reg6 : 
+	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h5) ? min : 
+	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h6) ? lap_min : 
 	   (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h7) ? 32'h1234 : 0; 
 	// Add user logic here 
         stop_watch sw(.clk(S_AXI_ACLK), .reset_p(~S_AXI_ARESETN), .start_stop(slv_reg0[0]), .lap(slv_reg0[1]), .clear(slv_reg0[2]),
-        .sec(sec), .csec(csec), .lap_sec(lap_sec), .lap_csec(lap_csec));   
+        .sec(sec), .csec(csec), .min(min), .lap_sec(lap_sec), .lap_csec(lap_csec), .lap_min(lap_min));   
 	// User logic ends
 
 	endmodule

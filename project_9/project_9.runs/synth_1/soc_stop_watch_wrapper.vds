@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Sep  9 16:28:03 2025
-# Process ID         : 113088
+# Start of session at: Wed Sep 10 11:56:45 2025
+# Process ID         : 66933
 # Current directory  : /home/psh/work/project_9/project_9.runs/synth_1
 # Command line       : vivado -log soc_stop_watch_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_stop_watch_wrapper.tcl
 # Log file           : /home/psh/work/project_9/project_9.runs/synth_1/soc_stop_watch_wrapper.vds
@@ -13,16 +13,16 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
-# CPU Frequency      : 1200.048 MHz
+# CPU Frequency      : 2738.380 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16396 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20691 MB
-# Available Virtual  : 10587 MB
+# Available Virtual  : 12714 MB
 #-----------------------------------------------------------
 source soc_stop_watch_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1487.449 ; gain = 24.840 ; free physical = 885 ; free virtual = 9677
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1487.414 ; gain = 13.902 ; free physical = 1815 ; free virtual = 11702
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_stop_watch_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_iic_txtlcd_1_0'.
@@ -43,9 +43,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 113446
+INFO: [Synth 8-7075] Helper process launched with PID 67037
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2163.270 ; gain = 417.070 ; free physical = 272 ; free virtual = 8887
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2162.234 ; gain = 416.070 ; free physical = 873 ; free virtual = 10756
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_axi_smc_0/bd_0/ip/ip_7/synth/bd_b74d_aroutsw_0.sv:94]
 WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_axi_smc_0/bd_0/ip/ip_7/synth/bd_b74d_aroutsw_0.sv:95]
@@ -1136,21 +1136,21 @@ WARNING: [Synth 8-7071] port 'rstb_busy' of module 'soc_stop_watch_lmb_bram_0' i
 WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'soc_stop_watch_lmb_bram_0' has 16 connections declared, but only 14 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/synth/soc_stop_watch.v:209]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_riscv_0_local_memory_imp_JF9TWY' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/synth/soc_stop_watch.v:13]
 INFO: [Synth 8-6157] synthesizing module 'soc_stop_watch_myip_stop_watch_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0/synth/soc_stop_watch_myip_stop_watch_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'myip_stop_watch' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch.v:4]
-INFO: [Synth 8-6157] synthesizing module 'myip_stop_watch_slave_lite_v1_0_S00_AXI' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:145]
-INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:223]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:308]
-INFO: [Synth 8-6157] synthesizing module 'stop_watch' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:239]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_p' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/exam02_sequential_logic.v:252]
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_p' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/exam02_sequential_logic.v:252]
-WARNING: [Synth 8-7071] port 'n_edge' of module 'edge_detector_p' is unconnected for instance 'lap_ed' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:245]
-WARNING: [Synth 8-7023] instance 'lap_ed' of module 'edge_detector_p' has 5 connections declared, but only 4 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:245]
-WARNING: [Synth 8-7071] port 'n_edge' of module 'edge_detector_p' is unconnected for instance 'clear_ed' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:248]
-WARNING: [Synth 8-7023] instance 'clear_ed' of module 'edge_detector_p' has 5 connections declared, but only 4 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:248]
-INFO: [Synth 8-6155] done synthesizing module 'stop_watch' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/src/test_top.v:239]
-INFO: [Synth 8-6155] done synthesizing module 'myip_stop_watch_slave_lite_v1_0_S00_AXI' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'myip_stop_watch' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch.v:4]
+INFO: [Synth 8-6157] synthesizing module 'myip_stop_watch' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch.v:4]
+INFO: [Synth 8-6157] synthesizing module 'myip_stop_watch_slave_lite_v1_0_S00_AXI' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:145]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:223]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:308]
+INFO: [Synth 8-6157] synthesizing module 'stop_watch' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:239]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_p' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/exam02_sequential_logic.v:252]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_p' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/exam02_sequential_logic.v:252]
+WARNING: [Synth 8-7071] port 'n_edge' of module 'edge_detector_p' is unconnected for instance 'lap_ed' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:245]
+WARNING: [Synth 8-7023] instance 'lap_ed' of module 'edge_detector_p' has 5 connections declared, but only 4 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:245]
+WARNING: [Synth 8-7071] port 'n_edge' of module 'edge_detector_p' is unconnected for instance 'clear_ed' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:248]
+WARNING: [Synth 8-7023] instance 'clear_ed' of module 'edge_detector_p' has 5 connections declared, but only 4 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:248]
+INFO: [Synth 8-6155] done synthesizing module 'stop_watch' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:239]
+INFO: [Synth 8-6155] done synthesizing module 'myip_stop_watch_slave_lite_v1_0_S00_AXI' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'myip_stop_watch' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'soc_stop_watch_myip_stop_watch_0_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0/synth/soc_stop_watch_myip_stop_watch_0_0.v:53]
 INFO: [Synth 8-638] synthesizing module 'soc_stop_watch_proc_sys_reset_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_proc_sys_reset_0_0/synth/soc_stop_watch_proc_sys_reset_0_0.vhd:74]
 	Parameter C_FAMILY bound to: artix7 - type: string 
@@ -1195,11 +1195,14 @@ WARNING: [Synth 8-6014] Unused sequential element dynamic_MSMS_d_reg was removed
 WARNING: [Synth 8-3848] Net aresetn_out in module/entity clk_map_imp_THTWLT does not have driver. [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_axi_smc_0/bd_0/synth/bd_b74d.v:1834]
 WARNING: [Synth 8-6014] Unused sequential element is_read_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2447]
 WARNING: [Synth 8-6014] Unused sequential element is_write_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2448]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:212]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:213]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:214]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:215]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:218]
+WARNING: [Synth 8-7137] Register min_reg in module stop_watch has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/src/test_top.v:284]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:212]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:213]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:214]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:215]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:216]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:217]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v:218]
 WARNING: [Synth 8-7129] Port prmry_aclk in module cdc_sync__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port prmry_resetn in module cdc_sync__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port prmry_vect_in[1] in module cdc_sync__parameterized1 is either unconnected or has no load
@@ -1302,18 +1305,18 @@ WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper__p
 WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper__parameterized22 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 2779.855 ; gain = 1033.656 ; free physical = 232 ; free virtual = 8229
+Finished RTL Elaboration : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2780.820 ; gain = 1034.656 ; free physical = 375 ; free virtual = 10268
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 2779.855 ; gain = 1033.656 ; free physical = 241 ; free virtual = 8239
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2780.820 ; gain = 1034.656 ; free physical = 374 ; free virtual = 10268
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 2779.855 ; gain = 1033.656 ; free physical = 241 ; free virtual = 8239
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2780.820 ; gain = 1034.656 ; free physical = 374 ; free virtual = 10268
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2779.855 ; gain = 0.000 ; free physical = 255 ; free virtual = 8254
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2780.820 ; gain = 0.000 ; free physical = 371 ; free virtual = 10263
 INFO: [Netlist 29-17] Analyzing 777 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1457,7 +1460,7 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/soc_stop_wat
 INFO: [Project 1-1714] 67 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2956.531 ; gain = 0.000 ; free physical = 207 ; free virtual = 8215
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2955.496 ; gain = 0.000 ; free physical = 338 ; free virtual = 10230
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 505 instances were transformed.
   BUFGCE_1 => BUFGCTRL: 2 instances
@@ -1471,18 +1474,18 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2956.531 ; gain = 0.000 ; free physical = 207 ; free virtual = 8215
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2955.496 ; gain = 0.000 ; free physical = 338 ; free virtual = 10229
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 2956.531 ; gain = 1210.332 ; free physical = 287 ; free virtual = 8197
+Finished Constraint Validation : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 2955.496 ; gain = 1209.332 ; free physical = 303 ; free virtual = 10194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 287 ; free virtual = 8197
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 303 ; free virtual = 10194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1584,7 +1587,7 @@ Applied set_property KEEP = true for sys_clock. (constraint file  auto generated
 Applied set_property KEEP = true for usb_uart_rxd. (constraint file  auto generated constraint).
 Applied set_property KEEP = true for soc_stop_watch_i/axi_uartlite_0/U0/UARTLITE_CORE_I/UARTLITE_TX_I/TX. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:44 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 285 ; free virtual = 8194
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 303 ; free virtual = 10195
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment__parameterized0'
@@ -1708,7 +1711,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'myip_stop_watch_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:53 ; elapsed = 00:01:58 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 260 ; free virtual = 8178
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:14 ; elapsed = 00:01:17 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 311 ; free virtual = 10211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1722,8 +1725,8 @@ Detailed RTL Component Info :
 	   2 Input   14 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 3     
 	   2 Input    8 Bit       Adders := 2     
-	   2 Input    7 Bit       Adders := 5     
-	   2 Input    6 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    6 Bit       Adders := 5     
 	   3 Input    5 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 33    
 	   2 Input    3 Bit       Adders := 1     
@@ -1745,7 +1748,7 @@ Detailed RTL Component Info :
 	               42 Bit    Registers := 2     
 	               34 Bit    Registers := 1     
 	               33 Bit    Registers := 5     
-	               32 Bit    Registers := 42    
+	               32 Bit    Registers := 40    
 	               31 Bit    Registers := 1     
 	               29 Bit    Registers := 1     
 	               27 Bit    Registers := 1     
@@ -1757,7 +1760,7 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 11    
 	                9 Bit    Registers := 3     
-	                8 Bit    Registers := 16    
+	                8 Bit    Registers := 18    
 	                7 Bit    Registers := 6     
 	                6 Bit    Registers := 5     
 	                5 Bit    Registers := 76    
@@ -1774,11 +1777,11 @@ Detailed RTL Component Info :
 	   4 Input   53 Bit        Muxes := 1     
 	   2 Input   34 Bit        Muxes := 1     
 	   2 Input   33 Bit        Muxes := 9     
-	   2 Input   32 Bit        Muxes := 52    
+	   2 Input   32 Bit        Muxes := 51    
 	   5 Input   32 Bit        Muxes := 1     
 	   3 Input   32 Bit        Muxes := 1     
 	   4 Input   32 Bit        Muxes := 3     
-	   8 Input   32 Bit        Muxes := 3     
+	   8 Input   32 Bit        Muxes := 1     
 	   2 Input   20 Bit        Muxes := 2     
 	   2 Input   18 Bit        Muxes := 2     
 	  16 Input   16 Bit        Muxes := 1     
@@ -1789,11 +1792,11 @@ Detailed RTL Component Info :
 	  10 Input   10 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 2     
 	   3 Input    9 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 14    
+	   2 Input    8 Bit        Muxes := 15    
 	   7 Input    8 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 16    
+	   2 Input    7 Bit        Muxes := 14    
 	   4 Input    7 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 7     
+	   2 Input    6 Bit        Muxes := 10    
 	  16 Input    5 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 13    
 	   3 Input    5 Bit        Muxes := 1     
@@ -1876,7 +1879,7 @@ WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GE
 WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset__parameterized1.
 WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset__parameterized1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:11 ; elapsed = 00:03:18 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 281 ; free virtual = 8164
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:07 ; elapsed = 00:02:11 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 295 ; free virtual = 10232
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1899,19 +1902,19 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'microblaze_riscv_0/U0/Reset' to pin 'proc_sys_reset_0/U0/FDRE_inst/Q'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 234 ; free virtual = 8142
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:17 ; elapsed = 00:02:21 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 241 ; free virtual = 10184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:55 ; elapsed = 00:04:03 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 205 ; free virtual = 8113
+Finished Timing Optimization : Time (s): cpu = 00:02:38 ; elapsed = 00:02:43 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 264 ; free virtual = 10129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:02 ; elapsed = 00:04:10 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 210 ; free virtual = 8119
+Finished Technology Mapping : Time (s): cpu = 00:02:52 ; elapsed = 00:02:57 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 246 ; free virtual = 9695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1962,37 +1965,37 @@ WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Op
 WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[0] to constant 0
 WARNING: [Synth 8-5410] Found another clock driver \Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native :TCK [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stop_watch/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:645]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:09 ; elapsed = 00:04:18 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 209 ; free virtual = 8117
+Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 358 ; free virtual = 9590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:09 ; elapsed = 00:04:18 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 209 ; free virtual = 8117
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 357 ; free virtual = 9589
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:11 ; elapsed = 00:04:20 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 207 ; free virtual = 8116
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:05 ; elapsed = 00:03:11 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 374 ; free virtual = 9606
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:11 ; elapsed = 00:04:20 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 207 ; free virtual = 8117
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:06 ; elapsed = 00:03:11 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 373 ; free virtual = 9604
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:12 ; elapsed = 00:04:20 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 208 ; free virtual = 8117
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 385 ; free virtual = 9616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:12 ; elapsed = 00:04:20 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 208 ; free virtual = 8117
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 385 ; free virtual = 9616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -2056,14 +2059,14 @@ Report Cell Usage:
 |4     |CARRY4     |    69|
 |5     |DSP48E1    |     4|
 |8     |LUT1       |   267|
-|9     |LUT2       |   476|
-|10    |LUT3       |   598|
-|11    |LUT4       |   610|
-|12    |LUT5       |   510|
-|13    |LUT6       |  1502|
+|9     |LUT2       |   475|
+|10    |LUT3       |   604|
+|11    |LUT4       |   634|
+|12    |LUT5       |   512|
+|13    |LUT6       |  1476|
 |15    |MMCME2_ADV |     1|
 |16    |MUXCY_L    |   232|
-|17    |MUXF7      |    32|
+|17    |MUXF7      |    25|
 |18    |MUXF8      |     4|
 |19    |RAM32M     |    16|
 |20    |RAMB36E1   |    32|
@@ -2071,11 +2074,11 @@ Report Cell Usage:
 |22    |SRL16E     |    90|
 |23    |SRLC32E    |     1|
 |24    |XORCY      |   188|
-|25    |FDCE       |   265|
+|25    |FDCE       |   269|
 |26    |FDE        |    32|
 |27    |FDPE       |     1|
 |28    |FDR        |    61|
-|29    |FDRE       |  2220|
+|29    |FDRE       |  2162|
 |30    |FDS        |     1|
 |31    |FDSE       |   147|
 |32    |IBUF       |     7|
@@ -2083,18 +2086,18 @@ Report Cell Usage:
 |34    |OBUF       |     1|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:12 ; elapsed = 00:04:20 . Memory (MB): peak = 2964.535 ; gain = 1218.336 ; free physical = 208 ; free virtual = 8117
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:06 ; elapsed = 00:03:12 . Memory (MB): peak = 2963.500 ; gain = 1217.336 ; free physical = 385 ; free virtual = 9616
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2141 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:43 ; elapsed = 00:03:53 . Memory (MB): peak = 2964.535 ; gain = 1041.660 ; free physical = 208 ; free virtual = 8117
-Synthesis Optimization Complete : Time (s): cpu = 00:04:12 ; elapsed = 00:04:21 . Memory (MB): peak = 2964.543 ; gain = 1218.336 ; free physical = 208 ; free virtual = 8117
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:48 ; elapsed = 00:02:54 . Memory (MB): peak = 2963.500 ; gain = 1042.660 ; free physical = 384 ; free virtual = 9615
+Synthesis Optimization Complete : Time (s): cpu = 00:03:07 ; elapsed = 00:03:12 . Memory (MB): peak = 2963.508 ; gain = 1217.336 ; free physical = 383 ; free virtual = 9614
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.56 . Memory (MB): peak = 2964.543 ; gain = 0.000 ; free physical = 367 ; free virtual = 8277
-INFO: [Netlist 29-17] Analyzing 758 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2963.508 ; gain = 0.000 ; free physical = 545 ; free virtual = 9778
+INFO: [Netlist 29-17] Analyzing 751 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3020.562 ; gain = 0.000 ; free physical = 368 ; free virtual = 8277
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3019.527 ; gain = 0.000 ; free physical = 560 ; free virtual = 9797
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 258 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 62 instances
@@ -2107,15 +2110,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
   SRL16 => SRL16E: 2 instances
 
-Synth Design complete | Checksum: e23565c5
+Synth Design complete | Checksum: f9addd09
 INFO: [Common 17-83] Releasing license: Synthesis
-628 Infos, 252 Warnings, 29 Critical Warnings and 0 Errors encountered.
+628 Infos, 255 Warnings, 29 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:37 ; elapsed = 00:04:38 . Memory (MB): peak = 3020.562 ; gain = 1472.395 ; free physical = 369 ; free virtual = 8278
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2396.202; main = 2185.676; forked = 268.204
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3885.434; main = 3020.566; forked = 920.895
+synth_design: Time (s): cpu = 00:03:24 ; elapsed = 00:03:25 . Memory (MB): peak = 3019.527 ; gain = 1471.395 ; free physical = 536 ; free virtual = 9776
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2388.131; main = 2180.001; forked = 268.280
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3884.398; main = 3019.531; forked = 920.895
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3044.574 ; gain = 0.000 ; free physical = 369 ; free virtual = 8279
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3043.539 ; gain = 0.000 ; free physical = 535 ; free virtual = 9776
 INFO: [Common 17-1381] The checkpoint '/home/psh/work/project_9/project_9.runs/synth_1/soc_stop_watch_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_stop_watch_wrapper_utilization_synth.rpt -pb soc_stop_watch_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Sep  9 16:33:13 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 10 12:00:27 2025...

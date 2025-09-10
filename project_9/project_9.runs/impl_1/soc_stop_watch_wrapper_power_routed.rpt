@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Tue Sep  9 16:36:52 2025
+| Date             : Wed Sep 10 12:03:57 2025
 | Host             : min running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file soc_stop_watch_wrapper_power_routed.rpt -pb soc_stop_watch_wrapper_power_summary_routed.pb -rpx soc_stop_watch_wrapper_power_routed.rpx
 | Design           : soc_stop_watch_wrapper
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.209        |
+| Total On-Chip Power (W)  | 0.207        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.139        |
-| Device Static (W)        | 0.070        |
+| Dynamic (W)              | 0.134        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
 | Junction Temperature (C) | 26.0         |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.012 |        8 |       --- |             --- |
-| Slice Logic              |     0.005 |     7766 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3208 |     20800 |           15.42 |
-|   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
+| Slice Logic              |     0.004 |     7710 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     3199 |     20800 |           15.38 |
 |   CARRY4                 |    <0.001 |      131 |      8150 |            1.61 |
-|   Register               |    <0.001 |     2629 |     41600 |            6.32 |
-|   F7/F8 Muxes            |    <0.001 |       35 |     32600 |            0.11 |
+|   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
+|   Register               |    <0.001 |     2575 |     41600 |            6.19 |
+|   F7/F8 Muxes            |    <0.001 |       28 |     32600 |            0.09 |
 |   LUT as Shift Register  |    <0.001 |       53 |      9600 |            0.55 |
 |   Others                 |     0.000 |      811 |       --- |             --- |
-| Signals                  |     0.010 |     5724 |       --- |             --- |
+| Signals                  |     0.009 |     5680 |       --- |             --- |
 | Block RAM                |     0.002 |       32 |        50 |           64.00 |
 | MMCM                     |     0.106 |        1 |         5 |           20.00 |
-| DSPs                     |     0.002 |        4 |        90 |            4.44 |
+| DSPs                     |     0.001 |        4 |        90 |            4.44 |
 | I/O                      |    <0.001 |       10 |       106 |            9.43 |
-| Static Power             |     0.070 |          |           |                 |
-| Total                    |     0.209 |          |           |                 |
+| Static Power             |     0.073 |          |           |                 |
+| Total                    |     0.207 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.043 |       0.033 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.039 |       0.028 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -151,20 +151,18 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| soc_stop_watch_wrapper              |     0.139 |
-|   soc_stop_watch_i                  |     0.138 |
+| soc_stop_watch_wrapper              |     0.134 |
+|   soc_stop_watch_i                  |     0.134 |
 |     axi_iic_0                       |     0.002 |
 |       U0                            |     0.002 |
-|     axi_smc                         |     0.005 |
-|       inst                          |     0.005 |
+|     axi_smc                         |     0.004 |
+|       inst                          |     0.004 |
 |     clk_wiz                         |     0.106 |
 |       inst                          |     0.106 |
-|     microblaze_riscv_0              |     0.019 |
-|       U0                            |     0.019 |
-|     microblaze_riscv_0_local_memory |     0.003 |
-|       lmb_bram                      |     0.003 |
-|     myip_stop_watch_0               |     0.001 |
-|       inst                          |     0.001 |
+|     microblaze_riscv_0              |     0.016 |
+|       U0                            |     0.016 |
+|     microblaze_riscv_0_local_memory |     0.002 |
+|       lmb_bram                      |     0.002 |
 +-------------------------------------+-----------+
 
 

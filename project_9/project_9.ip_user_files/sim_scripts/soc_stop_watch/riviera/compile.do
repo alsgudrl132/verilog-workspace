@@ -250,10 +250,10 @@ vlog -work axi_vip_v1_1_19  -incr "+incdir+../../../../project_9.gen/sources_1/b
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/3cbc" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/f0b6/hdl/verilog" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/0127/hdl/verilog" "+incdir+../../../../project_9.gen/sources_1/bd/soc_stop_watch/ipshared/ec67/hdl" "+incdir+/home/psh/tools/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_16 -l xil_defaultlib -l microblaze_v11_0_14 -l microblaze_riscv_v1_0_3 -l lmb_v10_v3_0_14 -l lmb_bram_if_cntlr_v4_0_25 -l blk_mem_gen_v8_4_9 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_3 -l lib_pkg_v1_0_4 -l lib_srl_fifo_v1_0_4 -l axi_uartlite_v2_0_37 -l xlconstant_v1_1_9 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_33 -l axi_vip_v1_1_19 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_35 -l axi_iic_v2_1_9 \
 "../../../bd/soc_stop_watch/ip/soc_stop_watch_axi_smc_0/sim/soc_stop_watch_axi_smc_0.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/hdl/myip_stop_watch.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/src/exam02_sequential_logic.v" \
-"../../../bd/soc_stop_watch/ipshared/cbd0/src/test_top.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/src/exam02_sequential_logic.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/src/test_top.v" \
+"../../../bd/soc_stop_watch/ipshared/1ca0/hdl/myip_stop_watch.v" \
 "../../../bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0/sim/soc_stop_watch_myip_stop_watch_0_0.v" \
 
 vcom -work interrupt_control_v3_1_5 -93  -incr \

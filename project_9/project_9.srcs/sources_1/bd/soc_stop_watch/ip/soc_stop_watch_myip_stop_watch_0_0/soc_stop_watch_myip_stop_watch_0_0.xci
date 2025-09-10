@@ -4,7 +4,7 @@
     "xci_name": "soc_stop_watch_myip_stop_watch_0_0",
     "cell_name": "myip_stop_watch_0",
     "component_reference": "user.org:user:myip_stop_watch:1.0",
-    "ip_revision": "3",
+    "ip_revision": "5",
     "gen_directory": "../../../../../../project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "3" } ],
+        "IPREVISION": [ { "value": "5" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../project_9.gen/sources_1/bd/soc_stop_watch/ip/soc_stop_watch_myip_stop_watch_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -44,6 +44,8 @@
     },
     "boundary": {
       "ports": {
+        "s00_axi_aclk": [ { "direction": "in" } ],
+        "s00_axi_aresetn": [ { "direction": "in" } ],
         "s00_axi_awaddr": [ { "direction": "in", "size_left": "4", "size_right": "0" } ],
         "s00_axi_awprot": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
         "s00_axi_awvalid": [ { "direction": "in" } ],
@@ -62,9 +64,7 @@
         "s00_axi_rdata": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "s00_axi_rresp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "s00_axi_rvalid": [ { "direction": "out" } ],
-        "s00_axi_rready": [ { "direction": "in" } ],
-        "s00_axi_aclk": [ { "direction": "in" } ],
-        "s00_axi_aresetn": [ { "direction": "in" } ]
+        "s00_axi_rready": [ { "direction": "in" } ]
       },
       "interfaces": {
         "S00_AXI": {

@@ -1,11 +1,11 @@
 [
-  "/home/psh/work/soc2024_2/platform_dht11_iic/export/platform_dht11_iic",
-  "/home/psh/work/soc2024_2/platform_dht11/export/platform_dht11",
-  "/home/psh/work/soc2024_2/platform_btn_fnd/export/platform_btn_fnd",
-  "/home/psh/work/soc2024_2/platform_fnd_cntr/export/platform_fnd_cntr",
-  "/home/psh/work/soc2024_2/platform_hello/export/platform_hello",
-  "/home/psh/work/soc2024_2/platform_led_sw/export/platform_led_sw",
-  "/home/psh/work/soc2024_2/platform_dht11_fnd/export/platform_dht11_fnd",
   "/home/psh/work/soc2024_2/platform_txtlcd/export/platform_txtlcd",
+  "/home/psh/work/soc2024_2/platform_dht11_fnd/export/platform_dht11_fnd",
+  "/home/psh/work/soc2024_2/platform_led_sw/export/platform_led_sw",
+  "/home/psh/work/soc2024_2/platform_hello/export/platform_hello",
+  "/home/psh/work/soc2024_2/platform_fnd_cntr/export/platform_fnd_cntr",
+  "/home/psh/work/soc2024_2/platform_btn_fnd/export/platform_btn_fnd",
+  "/home/psh/work/soc2024_2/platform_dht11/export/platform_dht11",
+  "/home/psh/work/soc2024_2/platform_dht11_iic/export/platform_dht11_iic",
   "/home/psh/work/soc2024_2/platform_stop_watch/export/platform_stop_watch"
 ]
