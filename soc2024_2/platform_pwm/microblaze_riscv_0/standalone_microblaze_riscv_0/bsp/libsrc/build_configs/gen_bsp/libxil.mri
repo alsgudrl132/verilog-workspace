@@ -1,0 +1,4 @@
+create libxil.a
+addlib /home/psh/work/soc2024_2/platform_pwm/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/uartlite/src/libuartlite.a
+save
+end

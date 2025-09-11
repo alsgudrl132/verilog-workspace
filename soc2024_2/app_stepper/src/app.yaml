@@ -1,0 +1,4 @@
+domain_path: /home/psh/work/soc2024_2/platform_stepper/export/platform_stepper/sw/standalone_microblaze_riscv_0
+app_src_dir: /home/psh/tools/Vitis/2024.2/data/embeddedsw/lib/sw_apps/hello_world
+template: hello_world
+lang: c

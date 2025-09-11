@@ -7,4 +7,4 @@
 # Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log soc_stop_watch_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_stop_watch_wrapper.tcl
+vivado -log soc_stepper_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_stepper_wrapper.tcl

@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1757472994" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="soc_stop_watch_wrapper_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="soc_stop_watch_wrapper.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="soc_stop_watch_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="soc_stop_watch_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="soc_stop_watch_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="soc_stop_watch_wrapper.vds"/>
-  <File Type="REPORTS-TCL" Name="soc_stop_watch_wrapper_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="soc_stop_watch_wrapper_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="soc_stop_watch_wrapper.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1757573518" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/dht11_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="soc_stepper_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="soc_stepper_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="soc_stepper_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="soc_stepper_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="soc_stepper_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="soc_stepper_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="soc_stepper_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="soc_stepper_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="soc_stepper_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/soc_stepper/soc_stepper.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_stepper/hdl/soc_stepper_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/soc_pwm_servo/soc_pwm_servo.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_pwm_servo/hdl/soc_pwm_servo_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/soc_pwm/soc_pwm.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/soc_pwm/hdl/soc_pwm_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/soc_stop_watch/soc_stop_watch.bd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,6 +67,7 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/soc_stop_watch/hdl/soc_stop_watch_wrapper.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -179,7 +227,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="soc_stop_watch_wrapper"/>
+      <Option Name="TopModule" Val="soc_stepper_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
