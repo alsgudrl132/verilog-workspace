@@ -3,293 +3,102 @@
 
 # XDC: imports/work/Basys-3-Master.xdc
 
-# Block Designs: bd/soc_stepper/soc_stepper.bd
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper || ORIG_REF_NAME==soc_stepper} -quiet] -quiet
+# Block Designs: bd/soc_intc/soc_intc.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc || ORIG_REF_NAME==soc_intc} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_proc_sys_reset_0_0/soc_stepper_proc_sys_reset_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_stepper_proc_sys_reset_0_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_intc_proc_sys_reset_0_0} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_clk_wiz_0/soc_stepper_clk_wiz_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_clk_wiz_0 || ORIG_REF_NAME==soc_stepper_clk_wiz_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_clk_wiz_0 || ORIG_REF_NAME==soc_intc_clk_wiz_0} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_microblaze_riscv_0_0/soc_stepper_microblaze_riscv_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_stepper_microblaze_riscv_0_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_0} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_dlmb_v10_0/soc_stepper_dlmb_v10_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_dlmb_v10_0 || ORIG_REF_NAME==soc_stepper_dlmb_v10_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_dlmb_v10_2/soc_intc_dlmb_v10_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_dlmb_v10_2 || ORIG_REF_NAME==soc_intc_dlmb_v10_2} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_ilmb_v10_0/soc_stepper_ilmb_v10_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_ilmb_v10_0 || ORIG_REF_NAME==soc_stepper_ilmb_v10_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_ilmb_v10_2/soc_intc_ilmb_v10_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_ilmb_v10_2 || ORIG_REF_NAME==soc_intc_ilmb_v10_2} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_dlmb_bram_if_cntlr_0/soc_stepper_dlmb_bram_if_cntlr_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_stepper_dlmb_bram_if_cntlr_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_dlmb_bram_if_cntlr_2/soc_intc_dlmb_bram_if_cntlr_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_dlmb_bram_if_cntlr_2 || ORIG_REF_NAME==soc_intc_dlmb_bram_if_cntlr_2} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_ilmb_bram_if_cntlr_0/soc_stepper_ilmb_bram_if_cntlr_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==soc_stepper_ilmb_bram_if_cntlr_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_ilmb_bram_if_cntlr_2/soc_intc_ilmb_bram_if_cntlr_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_ilmb_bram_if_cntlr_2 || ORIG_REF_NAME==soc_intc_ilmb_bram_if_cntlr_2} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_lmb_bram_0/soc_stepper_lmb_bram_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_lmb_bram_0 || ORIG_REF_NAME==soc_stepper_lmb_bram_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_lmb_bram_2/soc_intc_lmb_bram_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_lmb_bram_2 || ORIG_REF_NAME==soc_intc_lmb_bram_2} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_mdm_1_0/soc_stepper_mdm_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_mdm_1_0 || ORIG_REF_NAME==soc_stepper_mdm_1_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_axi_uartlite_0_0/soc_stepper_axi_uartlite_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_axi_uartlite_0_0 || ORIG_REF_NAME==soc_stepper_axi_uartlite_0_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_1/soc_intc_microblaze_riscv_0_axi_periph_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_axi_periph_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_axi_periph_1} -quiet] -quiet
 
-# IP: bd/soc_stepper/ip/soc_stepper_axi_smc_0/soc_stepper_axi_smc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_axi_smc_0 || ORIG_REF_NAME==soc_stepper_axi_smc_0} -quiet] -quiet
+# IP: bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1} -quiet] -quiet
 
-# Block Designs: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/bd_1f6c.bd
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# IP: bd/soc_intc/ip/soc_intc_microblaze_riscv_0_xlconcat_1/soc_intc_microblaze_riscv_0_xlconcat_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_xlconcat_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_xlconcat_1} -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_0/bd_1f6c_one_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# IP: bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_mdm_1_2 || ORIG_REF_NAME==soc_intc_mdm_1_2} -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_1/bd_1f6c_psr_aclk_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# IP: bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_axi_uartlite_0_0 || ORIG_REF_NAME==soc_intc_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_2/bd_1f6c_arinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# IP: bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_intc_axi_gpio_0_0 || ORIG_REF_NAME==soc_intc_axi_gpio_0_0} -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_3/bd_1f6c_rinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_intc_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_4/bd_1f6c_awinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_intc_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_5/bd_1f6c_winsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_clk_wiz_0 || ORIG_REF_NAME==soc_intc_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_6/bd_1f6c_binsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_clk_wiz_0 || ORIG_REF_NAME==soc_intc_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_7/bd_1f6c_aroutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_ooc.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_8/bd_1f6c_routsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_9/bd_1f6c_awoutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0_ooc_debug.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_10/bd_1f6c_woutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_lmb_bram_2/soc_intc_lmb_bram_2_ooc.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_11/bd_1f6c_boutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_12/bd_1f6c_arni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1_clocks.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1 || ORIG_REF_NAME==soc_intc_microblaze_riscv_0_axi_intc_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_13/bd_1f6c_rni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1_ooc.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_14/bd_1f6c_awni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_mdm_1_2 || ORIG_REF_NAME==soc_intc_mdm_1_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_15/bd_1f6c_wni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2_ooc_trace.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_16/bd_1f6c_bni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_axi_uartlite_0_0 || ORIG_REF_NAME==soc_intc_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_17/bd_1f6c_s00mmu_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0_ooc.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_18/bd_1f6c_s00tr_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_axi_uartlite_0_0 || ORIG_REF_NAME==soc_intc_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_19/bd_1f6c_s00sic_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_axi_gpio_0_0 || ORIG_REF_NAME==soc_intc_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_20/bd_1f6c_s00a2s_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0_ooc.xdc
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_21/bd_1f6c_sarn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_intc_axi_gpio_0_0 || ORIG_REF_NAME==soc_intc_axi_gpio_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_22/bd_1f6c_srn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_23/bd_1f6c_sawn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_24/bd_1f6c_swn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_25/bd_1f6c_sbn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_26/bd_1f6c_m00s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_27/bd_1f6c_m00arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_28/bd_1f6c_m00rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_29/bd_1f6c_m00awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_30/bd_1f6c_m00wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_31/bd_1f6c_m00bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_32/bd_1f6c_m00e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_33/bd_1f6c_m01s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_34/bd_1f6c_m01arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_35/bd_1f6c_m01rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_36/bd_1f6c_m01awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_37/bd_1f6c_m01wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_38/bd_1f6c_m01bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_39/bd_1f6c_m01e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: bd/soc_stepper/ip/soc_stepper_axi_gpio_0_1/soc_stepper_axi_gpio_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_stepper_axi_gpio_0_1 || ORIG_REF_NAME==soc_stepper_axi_gpio_0_1} -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_proc_sys_reset_0_0/soc_stepper_proc_sys_reset_0_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_stepper_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_proc_sys_reset_0_0/soc_stepper_proc_sys_reset_0_0.xdc
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_proc_sys_reset_0_0 || ORIG_REF_NAME==soc_stepper_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_clk_wiz_0/soc_stepper_clk_wiz_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_clk_wiz_0 || ORIG_REF_NAME==soc_stepper_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_clk_wiz_0/soc_stepper_clk_wiz_0.xdc
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_clk_wiz_0 || ORIG_REF_NAME==soc_stepper_clk_wiz_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_clk_wiz_0/soc_stepper_clk_wiz_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_microblaze_riscv_0_0/soc_stepper_microblaze_riscv_0_0.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_microblaze_riscv_0_0 || ORIG_REF_NAME==soc_stepper_microblaze_riscv_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_microblaze_riscv_0_0/soc_stepper_microblaze_riscv_0_0_ooc_debug.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_dlmb_v10_0/soc_stepper_dlmb_v10_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_ilmb_v10_0/soc_stepper_ilmb_v10_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_dlmb_bram_if_cntlr_0/soc_stepper_dlmb_bram_if_cntlr_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_ilmb_bram_if_cntlr_0/soc_stepper_ilmb_bram_if_cntlr_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_lmb_bram_0/soc_stepper_lmb_bram_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_mdm_1_0/soc_stepper_mdm_1_0.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_mdm_1_0 || ORIG_REF_NAME==soc_stepper_mdm_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_mdm_1_0/soc_stepper_mdm_1_0_ooc_trace.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_uartlite_0_0/soc_stepper_axi_uartlite_0_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_axi_uartlite_0_0 || ORIG_REF_NAME==soc_stepper_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_uartlite_0_0/soc_stepper_axi_uartlite_0_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_uartlite_0_0/soc_stepper_axi_uartlite_0_0.xdc
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_axi_uartlite_0_0 || ORIG_REF_NAME==soc_stepper_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_1/bd_1f6c_psr_aclk_0_board.xdc
-# DONT_TOUCH constraint suppressed by parent sub-design file.
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_1/bd_1f6c_psr_aclk_0.xdc
-# DONT_TOUCH constraint suppressed by parent sub-design file.
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_2/bd_1f6c_arinsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_3/bd_1f6c_rinsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_4/bd_1f6c_awinsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_5/bd_1f6c_winsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_6/bd_1f6c_binsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_7/bd_1f6c_aroutsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_8/bd_1f6c_routsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_9/bd_1f6c_awoutsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_10/bd_1f6c_woutsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_11/bd_1f6c_boutsw_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_12/bd_1f6c_arni_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_13/bd_1f6c_rni_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_14/bd_1f6c_awni_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_15/bd_1f6c_wni_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_16/bd_1f6c_bni_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_20/bd_1f6c_s00a2s_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_21/bd_1f6c_sarn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_22/bd_1f6c_srn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_23/bd_1f6c_sawn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_24/bd_1f6c_swn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_25/bd_1f6c_sbn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_26/bd_1f6c_m00s2a_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_27/bd_1f6c_m00arn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_28/bd_1f6c_m00rn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_29/bd_1f6c_m00awn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_30/bd_1f6c_m00wn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_31/bd_1f6c_m00bn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_33/bd_1f6c_m01s2a_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_34/bd_1f6c_m01arn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_35/bd_1f6c_m01rn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_36/bd_1f6c_m01awn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_37/bd_1f6c_m01wn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/bd_0/ip/ip_38/bd_1f6c_m01bn_0_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_smc_0/smartconnect.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_axi_smc_0 || ORIG_REF_NAME==soc_stepper_axi_smc_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_gpio_0_1/soc_stepper_axi_gpio_0_1_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_axi_gpio_0_1 || ORIG_REF_NAME==soc_stepper_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_gpio_0_1/soc_stepper_axi_gpio_0_1_ooc.xdc
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/ip/soc_stepper_axi_gpio_0_1/soc_stepper_axi_gpio_0_1.xdc
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==soc_stepper_axi_gpio_0_1 || ORIG_REF_NAME==soc_stepper_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_stepper/soc_stepper_ooc.xdc
+# XDC: /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/soc_intc_ooc.xdc

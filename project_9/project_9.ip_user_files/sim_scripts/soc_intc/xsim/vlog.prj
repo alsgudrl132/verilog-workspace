@@ -1,0 +1,12 @@
+verilog xil_defaultlib --include "/home/psh/tools/Vivado/2024.2/data/xilinx_vip/include" --include "../../../../project_9.gen/sources_1/bd/soc_intc/ipshared/3cbc" --include "../../../../project_9.gen/sources_1/bd/soc_intc/ipshared/ec67/hdl" \
+"../../../bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_clk_wiz.v" \
+"../../../bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.v" \
+"../../../bd/soc_intc/ip/soc_intc_lmb_bram_2/sim/soc_intc_lmb_bram_2.v" \
+"../../../bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/sim/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v" \
+"../../../bd/soc_intc/ip/soc_intc_microblaze_riscv_0_xlconcat_1/sim/soc_intc_microblaze_riscv_0_xlconcat_1.v" \
+"../../../bd/soc_intc/sim/soc_intc.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

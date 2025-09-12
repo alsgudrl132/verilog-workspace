@@ -1,0 +1,1751 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Sep 12 10:35:15 2025
+# Process ID         : 28940
+# Current directory  : /home/psh/work/project_9/project_9.runs/synth_1
+# Command line       : vivado -log soc_intc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_intc_wrapper.tcl
+# Log file           : /home/psh/work/project_9/project_9.runs/synth_1/soc_intc_wrapper.vds
+# Journal file       : /home/psh/work/project_9/project_9.runs/synth_1/vivado.jou
+# Running On         : min
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-1035G7 CPU @ 1.20GHz
+# CPU Frequency      : 3121.278 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16396 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20691 MB
+# Available Virtual  : 12095 MB
+#-----------------------------------------------------------
+source soc_intc_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1486.418 ; gain = 6.965 ; free physical = 429 ; free virtual = 11131
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_pwm_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_stop_watch_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_iic_txtlcd_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_dht11_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_fnd_1_0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/psh/work/ip_repo/myip_fnd_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/psh/work/ip_repo/myip_fnd_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/psh/tools/Vivado/2024.2/data/ip'.
+INFO: [Project 1-5578] Found utility IPs instantiated in block design /home/psh/work/project_9/project_9.srcs/sources_1/bd/soc_intc/soc_intc.bd which have equivalent inline hdl with improved performance and reduced diskspace.
+It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
+More information on inline hdl is available in UG994. 
+Command: read_checkpoint -auto_incremental -incremental /home/psh/work/project_9/project_9.srcs/utils_1/imports/synth_1/dht11_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/psh/work/project_9/project_9.srcs/utils_1/imports/synth_1/dht11_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top soc_intc_wrapper -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 29030
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2145.293 ; gain = 407.098 ; free physical = 252 ; free virtual = 10236
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:155]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:157]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:158]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:160]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_wrapper' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/hdl/soc_intc_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:698]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_axi_gpio_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/synth/soc_intc_axi_gpio_0_0.vhd:85]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 4 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 1 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:1269' bound to instance 'U0' of component 'axi_gpio' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/synth/soc_intc_axi_gpio_0_0.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:1355]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized20' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized20' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'interrupt_control' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
+INFO: [Synth 8-256] done synthesizing module 'interrupt_control' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:181]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:446]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:181]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:1355]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_axi_gpio_0_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/synth/soc_intc_axi_gpio_0_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_axi_uartlite_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/synth/soc_intc_axi_uartlite_0_0.vhd:86]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_BAUDRATE bound to: 9600 - type: integer 
+	Parameter C_DATA_BITS bound to: 8 - type: integer 
+	Parameter C_USE_PARITY bound to: 0 - type: integer 
+	Parameter C_ODD_PARITY bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'axi_uartlite' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2089' bound to instance 'U0' of component 'axi_uartlite' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/synth/soc_intc_axi_uartlite_0_0.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'axi_uartlite' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2151]
+INFO: [Synth 8-638] synthesizing module 'uartlite_core' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1617]
+INFO: [Synth 8-638] synthesizing module 'baudrate' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1426]
+INFO: [Synth 8-256] done synthesizing module 'baudrate' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1426]
+INFO: [Synth 8-638] synthesizing module 'uartlite_rx' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:906]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:777]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:538]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:329]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:329]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:538]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd:777]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_rx' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:906]
+INFO: [Synth 8-638] synthesizing module 'uartlite_tx' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:393]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_tx' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:393]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_core' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1617]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_uartlite' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/9a87/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2151]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_axi_uartlite_0_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/synth/soc_intc_axi_uartlite_0_0.vhd:86]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_clk_wiz_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.v:65]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_clk_wiz_0_clk_wiz' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_clk_wiz.v:65]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84588]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84588]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_clk_wiz_0_clk_wiz' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_clk_wiz.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_clk_wiz_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.v:65]
+WARNING: [Synth 8-7071] port 'locked' of module 'soc_intc_clk_wiz_0' is unconnected for instance 'clk_wiz' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:871]
+WARNING: [Synth 8-7023] instance 'clk_wiz' of module 'soc_intc_clk_wiz_0' has 4 connections declared, but only 3 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:871]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_mdm_1_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/synth/soc_intc_mdm_1_2.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DEVICE bound to: xc7a35t - type: string 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_BSCANID bound to: 0 - type: integer 
+	Parameter C_USE_BSCAN_SWITCH bound to: 0 - type: integer 
+	Parameter C_USE_JTAG_BSCAN bound to: 1 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_AVOID_PRIMITIVES bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 2 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_RISCV' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:10836' bound to instance 'U0' of component 'mdm_riscv' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/synth/soc_intc_mdm_1_2.vhd:1662]
+INFO: [Synth 8-638] synthesizing module 'MDM_RISCV' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:12521]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:510' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:14162]
+INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:544]
+INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-3491] module 'MB_LUT1' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1735' bound to instance 'LUT1_I' of component 'MB_LUT1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:14180]
+INFO: [Synth 8-638] synthesizing module 'mdm_riscv_v1_0_3_MB_LUT1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1771]
+INFO: [Synth 8-256] done synthesizing module 'mdm_riscv_v1_0_3_MB_LUT1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:14224]
+INFO: [Synth 8-638] synthesizing module 'mdm_riscv_v1_0_3_xil_scan_reset_control' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
+INFO: [Synth 8-256] done synthesizing module 'mdm_riscv_v1_0_3_xil_scan_reset_control' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_JTAG_TCK' of component 'MB_BUFGCE_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:14620]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFGCE_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFGCE_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:645]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_REG_NUM_CE bound to: 1 - type: integer 
+	Parameter C_REG_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_Core' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:5226' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:14780]
+INFO: [Synth 8-638] synthesizing module 'MDM_Core' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6464]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3265' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:7942]
+INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
+WARNING: [Synth 8-3919] null assignment ignored [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3676]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3754]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_DRCK' of component 'MB_BUFGCE_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFG' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:572' bound to instance 'BUFG_UPDATE' of component 'MB_BUFG' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3926]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:595]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
+WARNING: [Synth 8-3919] null assignment ignored [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:4272]
+INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
+INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6464]
+INFO: [Synth 8-256] done synthesizing module 'MDM_RISCV' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:12521]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_mdm_1_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/synth/soc_intc_mdm_1_2.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_microblaze_riscv_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/synth/soc_intc_microblaze_riscv_0_0.vhd:116]
+	Parameter C_FREQ bound to: 100000000 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF_CLK bound to: 2 - type: integer 
+	Parameter C_NUM_SYNC_FF_CLK_IRQ bound to: 1 - type: integer 
+	Parameter C_NUM_SYNC_FF_CLK_DEBUG bound to: 2 - type: integer 
+	Parameter C_NUM_SYNC_FF_DBG_CLK bound to: 1 - type: integer 
+	Parameter C_NUM_SYNC_FF_DBG_TRACE_CLK bound to: 2 - type: integer 
+	Parameter C_FAULT_TOLERANT bound to: 0 - type: integer 
+	Parameter C_ECC_USE_CE_EXCEPTION bound to: 0 - type: integer 
+	Parameter C_LOCKSTEP_SLAVE bound to: 0 - type: integer 
+	Parameter C_LOCKSTEP_MASTER bound to: 0 - type: integer 
+	Parameter C_TEMPORAL_DEPTH bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_PART bound to: xc7a35tcpg236-1 - type: string 
+	Parameter C_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_LMB_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_INSTR_SIZE bound to: 32 - type: integer 
+	Parameter C_IADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_PIADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_DADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_PDADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_INSTANCE bound to: soc_intc_microblaze_riscv_0_0 - type: string 
+	Parameter C_AVOID_PRIMITIVES bound to: 0 - type: integer 
+	Parameter C_OPTIMIZATION bound to: 1 - type: integer 
+	Parameter C_INTERCONNECT bound to: 2 - type: integer 
+	Parameter C_BASE_VECTORS bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_ARCHID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000001 
+	Parameter C_IMPID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000001 
+	Parameter C_HARTID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_M_AXI_DP_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_DP_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DP_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DP_EXCLUSIVE_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_D_BUS_EXCEPTION bound to: 1 - type: integer 
+	Parameter C_M_AXI_IP_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_IP_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_IP_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_I_BUS_EXCEPTION bound to: 1 - type: integer 
+	Parameter C_D_LMB bound to: 1 - type: integer 
+	Parameter C_D_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_D_AXI bound to: 1 - type: integer 
+	Parameter C_I_LMB bound to: 1 - type: integer 
+	Parameter C_I_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_I_AXI bound to: 0 - type: integer 
+	Parameter C_S_AXI bound to: 0 - type: integer 
+	Parameter C_USE_MULDIV bound to: 2 - type: integer 
+	Parameter C_USE_ATOMIC bound to: 0 - type: integer 
+	Parameter C_USE_FPU bound to: 0 - type: integer 
+	Parameter C_USE_COMPRESSION bound to: 1 - type: integer 
+	Parameter C_USE_BITMAN bound to: 0 - type: integer 
+	Parameter C_FSL_LINKS bound to: 0 - type: integer 
+	Parameter C_USE_EXTENDED_FSL_INSTR bound to: 0 - type: integer 
+	Parameter C_MMU_PRIVILEGED_INSTR bound to: 0 - type: integer 
+	Parameter C_FSL_EXCEPTION bound to: 0 - type: integer 
+	Parameter C_IMPRECISE_EXCEPTIONS bound to: 0 - type: integer 
+	Parameter C_MISALIGNED_EXCEPTIONS bound to: 1 - type: integer 
+	Parameter C_ILL_INSTR_EXCEPTION bound to: 1 - type: integer 
+	Parameter C_PMP_ENTRIES bound to: 0 - type: integer 
+	Parameter C_PMP_GRANULARITY bound to: 2 - type: integer 
+	Parameter C_USE_INTERRUPT bound to: 2 - type: integer 
+	Parameter C_USE_NON_SECURE bound to: 0 - type: integer 
+	Parameter C_USE_EXT_BRK bound to: 0 - type: integer 
+	Parameter C_USE_EXT_NM_BRK bound to: 0 - type: integer 
+	Parameter C_USE_SLEEP bound to: 0 - type: integer 
+	Parameter C_USE_MMU bound to: 0 - type: integer 
+	Parameter C_USE_BARREL bound to: 1 - type: integer 
+	Parameter C_USE_COUNTERS bound to: 1 - type: integer 
+	Parameter C_USE_BRANCH_TARGET_CACHE bound to: 0 - type: integer 
+	Parameter C_BRANCH_TARGET_CACHE_SIZE bound to: 0 - type: integer 
+	Parameter C_PC_WIDTH bound to: 17 - type: integer 
+	Parameter C_DEBUG_ENABLED bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_NUMBER_OF_PC_BRK bound to: 1 - type: integer 
+	Parameter C_NUMBER_OF_RD_ADDR_BRK bound to: 0 - type: integer 
+	Parameter C_NUMBER_OF_WR_ADDR_BRK bound to: 0 - type: integer 
+	Parameter C_DEBUG_EVENT_COUNTERS bound to: 0 - type: integer 
+	Parameter C_DEBUG_LATENCY_COUNTERS bound to: 0 - type: integer 
+	Parameter C_DEBUG_COUNTER_WIDTH bound to: 64 - type: integer 
+	Parameter C_DEBUG_TRACE_SIZE bound to: 0 - type: integer 
+	Parameter C_DEBUG_EXTERNAL_TRACE bound to: 0 - type: integer 
+	Parameter C_DEBUG_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_DEBUG_PROFILE_SIZE bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_IS_EDGE bound to: 0 - type: integer 
+	Parameter C_EDGE_IS_POSITIVE bound to: 1 - type: integer 
+	Parameter C_ASYNC_INTERRUPT bound to: 1 - type: integer 
+	Parameter C_ASYNC_WAKEUP bound to: 3 - type: integer 
+	Parameter C_M0_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S0_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M1_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S1_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M2_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M3_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S3_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M4_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S4_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M5_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S5_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M6_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S6_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M7_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S7_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M8_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S8_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M9_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S9_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M10_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S10_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M11_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S11_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M12_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S12_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M13_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S13_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M14_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S14_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M15_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S15_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ICACHE_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_ICACHE_HIGHADDR bound to: 64'b0000000000000000000000000000000000111111111111111111111111111111 
+	Parameter C_USE_ICACHE bound to: 0 - type: integer 
+	Parameter C_ICACHE_BYTE_SIZE bound to: 4096 - type: integer 
+	Parameter C_ICACHE_LINE_LEN bound to: 4 - type: integer 
+	Parameter C_ICACHE_STREAMS bound to: 0 - type: integer 
+	Parameter C_ICACHE_VICTIMS bound to: 0 - type: integer 
+	Parameter C_ICACHE_FORCE_TAG_LUTRAM bound to: 0 - type: integer 
+	Parameter C_ICACHE_DATA_WIDTH bound to: 0 - type: integer 
+	Parameter C_M_AXI_IC_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_IC_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_IC_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_IC_USER_VALUE bound to: 31 - type: integer 
+	Parameter C_M_AXI_IC_AWUSER_WIDTH bound to: 5 - type: integer 
+	Parameter C_M_AXI_IC_ARUSER_WIDTH bound to: 5 - type: integer 
+	Parameter C_M_AXI_IC_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_IC_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_IC_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DCACHE_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_DCACHE_HIGHADDR bound to: 64'b0000000000000000000000000000000000111111111111111111111111111111 
+	Parameter C_USE_DCACHE bound to: 0 - type: integer 
+	Parameter C_DCACHE_BYTE_SIZE bound to: 4096 - type: integer 
+	Parameter C_DCACHE_LINE_LEN bound to: 4 - type: integer 
+	Parameter C_DCACHE_USE_WRITEBACK bound to: 0 - type: integer 
+	Parameter C_DCACHE_VICTIMS bound to: 0 - type: integer 
+	Parameter C_DCACHE_FORCE_TAG_LUTRAM bound to: 0 - type: integer 
+	Parameter C_DCACHE_DATA_WIDTH bound to: 0 - type: integer 
+	Parameter C_M_AXI_DC_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_DC_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DC_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DC_EXCLUSIVE_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_DC_USER_VALUE bound to: 31 - type: integer 
+	Parameter C_M_AXI_DC_AWUSER_WIDTH bound to: 5 - type: integer 
+	Parameter C_M_AXI_DC_ARUSER_WIDTH bound to: 5 - type: integer 
+	Parameter C_M_AXI_DC_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_DC_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_DC_BUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'riscv' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/f9dd/hdl/microblaze_riscv_v1_0_vh_rfs.vhd:128013' bound to instance 'U0' of component 'riscv' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/synth/soc_intc_microblaze_riscv_0_0.vhd:829]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_microblaze_riscv_0_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/synth/soc_intc_microblaze_riscv_0_0.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_microblaze_riscv_0_axi_intc_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/synth/soc_intc_microblaze_riscv_0_axi_intc_1.vhd:89]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_INSTANCE bound to: soc_intc_microblaze_riscv_0_axi_intc_1 - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_NUM_INTR_INPUTS bound to: 2 - type: integer 
+	Parameter C_NUM_SW_INTR bound to: 0 - type: integer 
+	Parameter C_KIND_OF_INTR bound to: 32'b11111111111111111111111111111101 
+	Parameter C_KIND_OF_EDGE bound to: 32'b11111111111111111111111111111111 
+	Parameter C_KIND_OF_LVL bound to: 32'b11111111111111111111111111111111 
+	Parameter C_ASYNC_INTR bound to: 32'b11111111111111111111111111111100 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_IVAR_RESET_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000000000000010000 
+	Parameter C_ENABLE_ASYNC bound to: 0 - type: integer 
+	Parameter C_HAS_IPR bound to: 1 - type: integer 
+	Parameter C_HAS_SIE bound to: 1 - type: integer 
+	Parameter C_HAS_CIE bound to: 1 - type: integer 
+	Parameter C_HAS_IVR bound to: 1 - type: integer 
+	Parameter C_HAS_ILR bound to: 0 - type: integer 
+	Parameter C_IRQ_IS_LEVEL bound to: 1 - type: integer 
+	Parameter C_IRQ_ACTIVE bound to: 1'b1 
+	Parameter C_DISABLE_SYNCHRONIZERS bound to: 1 - type: integer 
+	Parameter C_MB_CLK_NOT_CONNECTED bound to: 1 - type: integer 
+	Parameter C_HAS_FAST bound to: 1 - type: integer 
+	Parameter C_EN_CASCADE_MODE bound to: 0 - type: integer 
+	Parameter C_CASCADE_MASTER bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'axi_intc' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:3442' bound to instance 'U0' of component 'axi_intc' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/synth/soc_intc_microblaze_riscv_0_axi_intc_1.vhd:203]
+INFO: [Synth 8-638] synthesizing module 'axi_intc' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:3543]
+INFO: [Synth 8-638] synthesizing module 'intc_core' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'shared_ram_ivar' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:316]
+INFO: [Synth 8-256] done synthesizing module 'shared_ram_ivar' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:316]
+INFO: [Synth 8-256] done synthesizing module 'intc_core' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized21' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized21' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized22' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized22' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized23' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized23' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized24' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized24' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized25' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized25' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_intc' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:3543]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_microblaze_riscv_0_axi_intc_1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/synth/soc_intc_microblaze_riscv_0_axi_intc_1.vhd:89]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_microblaze_riscv_0_axi_periph_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1085]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15AG8CM' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15AG8CM' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:13]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_Y9PLLZ' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_Y9PLLZ' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:128]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_148JEF9' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:243]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_148JEF9' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:243]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UI3FNO' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:571]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UI3FNO' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:571]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_crossbar_sasd' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:1234]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_carry_and' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_carry_and' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter_sasd' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter_sasd' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:63]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_splitter' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_splitter' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_splitter__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_splitter__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_crossbar_sasd' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:1234]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1/synth/soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1.v:53]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1' is unconnected for instance 'xbar' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1550]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1' is unconnected for instance 'xbar' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1550]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'soc_intc_microblaze_riscv_0_axi_periph_imp_xbar_1' has 40 connections declared, but only 38 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1550]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_microblaze_riscv_0_axi_periph_1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1085]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_riscv_0_local_memory_imp_BBXUO' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:358]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_dlmb_bram_if_cntlr_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_bram_if_cntlr_2/synth/soc_intc_dlmb_bram_if_cntlr_2.vhd:84]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_HIGHADDR bound to: 64'b0000000000000000000000000000000000000000000000011111111111111111 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000001000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 0 - type: integer 
+	Parameter C_FAULT_INJECT bound to: 0 - type: integer 
+	Parameter C_CE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_UE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_STATUS_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_REGISTER bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_RESET_VALUE bound to: 1 - type: integer 
+	Parameter C_CE_COUNTER_WIDTH bound to: 0 - type: integer 
+	Parameter C_WRITE_ACCESS bound to: 2 - type: integer 
+	Parameter C_BRAM_AWIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_bram_if_cntlr' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5040' bound to instance 'U0' of component 'lmb_bram_if_cntlr' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_bram_if_cntlr_2/synth/soc_intc_dlmb_bram_if_cntlr_2.vhd:280]
+INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000001000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_ECC_WIDTH bound to: 7 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_mux' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4146' bound to instance 'lmb_mux_I' of component 'lmb_mux' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5548]
+INFO: [Synth 8-638] synthesizing module 'lmb_mux' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+	Parameter C_AW bound to: 32 - type: integer 
+	Parameter C_BAR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000001000000000000000000000000000000 
+INFO: [Synth 8-3491] module 'pselect_mask' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3470' bound to instance 'pselect_mask_lmb' of component 'pselect_mask' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4404]
+INFO: [Synth 8-638] synthesizing module 'pselect_mask' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'pselect_mask' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'lmb_mux' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_dlmb_bram_if_cntlr_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_bram_if_cntlr_2/synth/soc_intc_dlmb_bram_if_cntlr_2.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_dlmb_v10_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_v10_2/synth/soc_intc_dlmb_v10_2.vhd:89]
+	Parameter C_LMB_NUM_SLAVES bound to: 1 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_v10' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd:91' bound to instance 'U0' of component 'lmb_v10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_v10_2/synth/soc_intc_dlmb_v10_2.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'lmb_v10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd:140]
+INFO: [Synth 8-3491] module 'FDS' declared at '/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:43311' bound to instance 'POR_FF_I' of component 'FDS' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd:170]
+INFO: [Synth 8-6157] synthesizing module 'FDS' [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:43311]
+INFO: [Synth 8-6155] done synthesizing module 'FDS' (0#1) [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:43311]
+INFO: [Synth 8-256] done synthesizing module 'lmb_v10' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd:140]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_dlmb_v10_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_dlmb_v10_2/synth/soc_intc_dlmb_v10_2.vhd:89]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'soc_intc_dlmb_v10_2' is unconnected for instance 'dlmb_v10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:483]
+WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'soc_intc_dlmb_v10_2' has 25 connections declared, but only 24 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:483]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_ilmb_bram_if_cntlr_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_bram_if_cntlr_2/synth/soc_intc_ilmb_bram_if_cntlr_2.vhd:84]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_HIGHADDR bound to: 64'b0000000000000000000000000000000000000000000000011111111111111111 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 0 - type: integer 
+	Parameter C_FAULT_INJECT bound to: 0 - type: integer 
+	Parameter C_CE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_UE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_STATUS_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_REGISTER bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_RESET_VALUE bound to: 1 - type: integer 
+	Parameter C_CE_COUNTER_WIDTH bound to: 0 - type: integer 
+	Parameter C_WRITE_ACCESS bound to: 2 - type: integer 
+	Parameter C_BRAM_AWIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_bram_if_cntlr' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5040' bound to instance 'U0' of component 'lmb_bram_if_cntlr' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_bram_if_cntlr_2/synth/soc_intc_ilmb_bram_if_cntlr_2.vhd:280]
+INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_ECC_WIDTH bound to: 7 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_mux' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4146' bound to instance 'lmb_mux_I' of component 'lmb_mux' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5548]
+INFO: [Synth 8-638] synthesizing module 'lmb_mux__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+	Parameter C_AW bound to: 32 - type: integer 
+	Parameter C_BAR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-3491] module 'pselect_mask' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3470' bound to instance 'pselect_mask_lmb' of component 'pselect_mask' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4404]
+INFO: [Synth 8-638] synthesizing module 'pselect_mask__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'pselect_mask__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'lmb_mux__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/73e9/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_ilmb_bram_if_cntlr_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_bram_if_cntlr_2/synth/soc_intc_ilmb_bram_if_cntlr_2.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_ilmb_v10_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_v10_2/synth/soc_intc_ilmb_v10_2.vhd:89]
+	Parameter C_LMB_NUM_SLAVES bound to: 1 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_v10' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd:91' bound to instance 'U0' of component 'lmb_v10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_v10_2/synth/soc_intc_ilmb_v10_2.vhd:169]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_ilmb_v10_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_ilmb_v10_2/synth/soc_intc_ilmb_v10_2.vhd:89]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'soc_intc_ilmb_v10_2' is unconnected for instance 'ilmb_v10' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:529]
+WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'soc_intc_ilmb_v10_2' has 25 connections declared, but only 24 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:529]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_lmb_bram_2' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_lmb_bram_2/synth/soc_intc_lmb_bram_2.vhd:80]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 1 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 1 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 2 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 8 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 0 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: no_coe_file_loaded - type: string 
+	Parameter C_INIT_FILE bound to: soc_intc_lmb_bram_2.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 1 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 1 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 1 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 4 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 32768 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 32768 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 32 - type: integer 
+	Parameter C_HAS_RSTB bound to: 1 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 1 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 1 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 4 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 32768 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 32768 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 32 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 1 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 32 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     20.388 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_9' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/5ec1/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195208' bound to instance 'U0' of component 'blk_mem_gen_v8_4_9' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_lmb_bram_2/synth/soc_intc_lmb_bram_2.vhd:258]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_lmb_bram_2' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_lmb_bram_2/synth/soc_intc_lmb_bram_2.vhd:80]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'soc_intc_lmb_bram_2' is unconnected for instance 'lmb_bram' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:554]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'soc_intc_lmb_bram_2' is unconnected for instance 'lmb_bram' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:554]
+WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'soc_intc_lmb_bram_2' has 16 connections declared, but only 14 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:554]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_riscv_0_local_memory_imp_BBXUO' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:358]
+INFO: [Synth 8-6157] synthesizing module 'soc_intc_microblaze_riscv_0_xlconcat_1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_xlconcat_1/synth/soc_intc_microblaze_riscv_0_xlconcat_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_6_xlconcat' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_6_xlconcat' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6120/hdl/xlconcat_v2_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_microblaze_riscv_0_xlconcat_1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_xlconcat_1/synth/soc_intc_microblaze_riscv_0_xlconcat_1.v:53]
+INFO: [Synth 8-638] synthesizing module 'soc_intc_proc_sys_reset_0_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/synth/soc_intc_proc_sys_reset_0_0.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b1 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1271' bound to instance 'U0' of component 'proc_sys_reset' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/synth/soc_intc_proc_sys_reset_0_0.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1399]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1415]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1441]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1464]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1488]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:149029' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:873]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:149029]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (0#1) [/home/psh/tools/Vivado/2024.2/scripts/rt/data/unisim_comp.v:149029]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized1' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized1' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+INFO: [Synth 8-256] done synthesizing module 'soc_intc_proc_sys_reset_0_0' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/synth/soc_intc_proc_sys_reset_0_0.vhd:74]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'soc_intc_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1074]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'soc_intc_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1074]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'soc_intc_proc_sys_reset_0_0' has 10 connections declared, but only 8 given [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:1074]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/synth/soc_intc.v:698]
+INFO: [Synth 8-6155] done synthesizing module 'soc_intc_wrapper' (0#1) [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/hdl/soc_intc_wrapper.v:13]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element is_read_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2447]
+WARNING: [Synth 8-6014] Unused sequential element is_write_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2448]
+WARNING: [Synth 8-6014] Unused sequential element ACK_EN_SYNC_ON_AXI_CLK_GEN.NO_CASCADE_MASTER.second_ack_sync_d3_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/99b7/hdl/axi_intc_v4_1_vh_rfs.vhd:1322]
+WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_aw_trans_seq_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2051]
+WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_ar_trans_seq_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2062]
+WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_beat_cnt_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2073]
+WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2086]
+WARNING: [Synth 8-7129] Port prmry_aclk in module cdc_sync__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_resetn in module cdc_sync__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[1] in module cdc_sync__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[0] in module cdc_sync__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scndry_resetn in module cdc_sync__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In2[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In3[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In4[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In5[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In6[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In7[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In8[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In9[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In10[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In11[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In12[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In13[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In14[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In15[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In16[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In17[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In18[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In19[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In20[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In21[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In22[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In23[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In24[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In25[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In26[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In27[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In28[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In29[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In30[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In31[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In32[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In33[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In34[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In35[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In36[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In37[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In38[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In39[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In40[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In41[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In42[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In43[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In44[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In45[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In46[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In47[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In48[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In49[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In50[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In51[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In52[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In53[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In54[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In55[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In56[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In57[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In58[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In59[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In60[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In61[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In62[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In63[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In64[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In65[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In66[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In67[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In68[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In69[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In70[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In71[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In72[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In73[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In74[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In75[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In76[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In77[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In78[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In79[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In80[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In81[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In82[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In83[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In84[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In85[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In86[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In87[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In88[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In89[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In90[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In91[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In92[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In93[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In94[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In95[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In96[0] in module xlconcat_v2_1_6_xlconcat is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2650.309 ; gain = 912.113 ; free physical = 237 ; free virtual = 9854
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 2650.309 ; gain = 912.113 ; free physical = 241 ; free virtual = 9860
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 2650.309 ; gain = 912.113 ; free physical = 241 ; free virtual = 9860
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2650.309 ; gain = 0.000 ; free physical = 347 ; free virtual = 9941
+INFO: [Netlist 29-17] Analyzing 718 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0_board.xdc] for cell 'soc_intc_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0_board.xdc] for cell 'soc_intc_i/proc_sys_reset_0/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0.xdc] for cell 'soc_intc_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0.xdc] for cell 'soc_intc_i/proc_sys_reset_0/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/soc_intc_proc_sys_reset_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_intc_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_intc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_board.xdc] for cell 'soc_intc_i/clk_wiz/inst'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0_board.xdc] for cell 'soc_intc_i/clk_wiz/inst'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xdc] for cell 'soc_intc_i/clk_wiz/inst'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xdc] for cell 'soc_intc_i/clk_wiz/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_intc_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_intc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0.xdc] for cell 'soc_intc_i/microblaze_riscv_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0.xdc] for cell 'soc_intc_i/microblaze_riscv_0/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/soc_intc_microblaze_riscv_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_intc_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_intc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1.xdc] for cell 'soc_intc_i/microblaze_riscv_0_axi_intc/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1.xdc] for cell 'soc_intc_i/microblaze_riscv_0_axi_intc/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0_board.xdc] for cell 'soc_intc_i/axi_uartlite_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0_board.xdc] for cell 'soc_intc_i/axi_uartlite_0/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0.xdc] for cell 'soc_intc_i/axi_uartlite_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/soc_intc_axi_uartlite_0_0.xdc] for cell 'soc_intc_i/axi_uartlite_0/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0_board.xdc] for cell 'soc_intc_i/axi_gpio_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0_board.xdc] for cell 'soc_intc_i/axi_gpio_0/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0.xdc] for cell 'soc_intc_i/axi_gpio_0/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_axi_gpio_0_0/soc_intc_axi_gpio_0_0.xdc] for cell 'soc_intc_i/axi_gpio_0/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led_0[0]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[1]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[2]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[3]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[4]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[5]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[6]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[7]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[8]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[9]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[10]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[11]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[12]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[13]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[14]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0[15]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[0]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[1]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[2]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[3]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[4]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[5]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[6]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_7_0[7]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'com_0[0]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'com_0[1]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'com_0[2]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'com_0[3]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pwm_0'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_scl_io'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iic_rtl_sda_io'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dip_switches_16bits_tri_i[0]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dip_switches_16bits_tri_i[1]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dip_switches_16bits_tri_i[2]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dip_switches_16bits_tri_i[3]'. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.srcs/constrs_1/imports/work/Basys-3-Master.xdc]
+Parsing XDC File [/home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_intc_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_intc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1_clocks.xdc] for cell 'soc_intc_i/microblaze_riscv_0_axi_intc/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/soc_intc_microblaze_riscv_0_axi_intc_1_clocks.xdc] for cell 'soc_intc_i/microblaze_riscv_0_axi_intc/U0'
+Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2.xdc] for cell 'soc_intc_i/mdm_1/U0'
+Finished Parsing XDC File [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2.xdc] for cell 'soc_intc_i/mdm_1/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_mdm_1_2/soc_intc_mdm_1_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_intc_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_intc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2690.328 ; gain = 0.000 ; free physical = 218 ; free virtual = 9726
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 458 instances were transformed.
+  BUFGCE_1 => BUFGCTRL: 2 instances
+  FDE => FDRE: 32 instances
+  FDR => FDRE: 79 instances
+  FDS => FDSE: 3 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 80 instances
+  MUXCY_L => MUXCY: 245 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2690.328 ; gain = 0.000 ; free physical = 217 ; free virtual = 9725
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 2690.328 ; gain = 952.133 ; free physical = 194 ; free virtual = 9833
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 194 ; free virtual = 9833
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property keep_hierarchy = soft for soc_intc_i/clk_wiz/inst. (constraint file  /home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ip/soc_intc_clk_wiz_0/soc_intc_clk_wiz_0.xdc, line 53).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/proc_sys_reset_0/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 55).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/clk_wiz/inst. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 61).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 69).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_axi_intc/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 76).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/mdm_1/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 84).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/axi_uartlite_0/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 89).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/axi_gpio_0/U0. (constraint file  /home/psh/work/project_9/project_9.runs/synth_1/dont_touch.xdc, line 97).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/proc_sys_reset_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/clk_wiz. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_local_memory/dlmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_local_memory/ilmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_local_memory/lmb_bram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_axi_periph/xbar. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_axi_intc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/microblaze_riscv_0_xlconcat. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/mdm_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/axi_uartlite_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for soc_intc_i/axi_gpio_0. (constraint file  auto generated constraint).
+Applied set_property KEEP = true for push_buttons_4bits_tri_i[0]. (constraint file  auto generated constraint).
+Applied set_property KEEP = true for reset. (constraint file  auto generated constraint).
+Applied set_property KEEP = true for sys_clock. (constraint file  auto generated constraint).
+Applied set_property KEEP = true for usb_uart_rxd. (constraint file  auto generated constraint).
+Applied set_property KEEP = true for soc_intc_i/axi_uartlite_0/U0/UARTLITE_CORE_I/UARTLITE_TX_I/TX. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 187 ; free virtual = 9826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint /home/psh/work/project_9/project_9.srcs/utils_1/imports/synth_1/dht11_top.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 199 ; free virtual = 9821
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 199 ; free virtual = 9821
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'Test_Access_Port.state_reg' in module 'JTAG_CONTROL'
+INFO: [Synth 8-802] inferred FSM for state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg' in module 'intc_core'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment__parameterized1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 sm_idle |                             0010 |                               00
+                 sm_read |                             1000 |                               01
+                sm_write |                             0100 |                               10
+                 sm_resp |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                tl_reset |                 0000000000000001 |                             0000
+                    idle |                 0000000000000010 |                             0001
+               select_dr |                 0000000000000100 |                             0010
+               select_ir |                 0000000000001000 |                             1001
+              capture_ir |                 0000000000010000 |                             1010
+                shift_ir |                 0000000000100000 |                             1011
+                exit1_ir |                 0000000001000000 |                             1100
+                pause_ir |                 0000000010000000 |                             1101
+                exit2_ir |                 0000000100000000 |                             1110
+               update_ir |                 0000001000000000 |                             1111
+              capture_dr |                 0000010000000000 |                             0011
+                shift_dr |                 0000100000000000 |                             0100
+                exit1_dr |                 0001000000000000 |                             0101
+                pause_dr |                 0010000000000000 |                             0110
+                exit2_dr |                 0100000000000000 |                             0111
+               update_dr |                 1000000000000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Test_Access_Port.state_reg' using encoding 'one-hot' in module 'JTAG_CONTROL'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+           gen_level_irq |                               01 |                               01
+                wait_ack |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg' using encoding 'sequential' in module 'intc_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment__parameterized1'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 188 ; free virtual = 9823
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 2     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
+	   3 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      4 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 168   
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	             4096 Bit    Registers := 1     
+	               64 Bit    Registers := 3     
+	               42 Bit    Registers := 2     
+	               36 Bit    Registers := 2     
+	               34 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 42    
+	               31 Bit    Registers := 1     
+	               29 Bit    Registers := 1     
+	               23 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 71    
+	                4 Bit    Registers := 10    
+	                3 Bit    Registers := 11    
+	                2 Bit    Registers := 45    
+	                1 Bit    Registers := 780   
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 10    
+	   2 Input   36 Bit        Muxes := 2     
+	   2 Input   34 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 9     
+	   2 Input   32 Bit        Muxes := 50    
+	   5 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 2     
+	  16 Input   16 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 17    
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 6     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 6     
+	  16 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 13    
+	   3 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 23    
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 11    
+	   3 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 47    
+	   3 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 510   
+	   4 Input    1 Bit        Muxes := 8     
+	  16 Input    1 Bit        Muxes := 10    
+	   5 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1726]
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[0].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[1].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[2].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[3].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[4].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[5].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[6].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[7].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[8].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[9].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[10].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[11].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[12].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[13].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/PC_Module_I/Instruction_Prefetch_Mux[14].Gen_Instr_DFF/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/Using_FPGA_2.ex_is_lr_instr_Inst/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (UARTLITE_CORE_I/UARTLITE_RX_I/INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module axi_uartlite.
+INFO: [Synth 8-3332] Sequential element (UARTLITE_CORE_I/UARTLITE_RX_I/INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module axi_uartlite.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/Using_FPGA_2.ex_is_sc_instr_Inst/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/Using_FPGA_2.ex_is_amo_instr_Inst/Using_FPGA.Native) is unused and will be removed from module riscv.
+INFO: [Synth 8-3332] Sequential element (U0/POR_FF_I) is unused and will be removed from module soc_intc_dlmb_v10_2.
+INFO: [Synth 8-3332] Sequential element (U0/POR_FF_I) is unused and will be removed from module soc_intc_ilmb_v10_2.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_HIGH_EXT.ACT_HI_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_HIGH_EXT.ACT_HI_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:17 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 278 ; free virtual = 9880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------------------------------------+----------------------------+---------------+----------------+
+|Module Name                                | RTL Object                 | Depth x Width | Implemented As | 
++-------------------------------------------+----------------------------+---------------+----------------+
+|microblaze_riscv_v1_0_3_Barrel_Shifter_gti | Barrel32.two_comp_table[0] | 32x5          | LUT            | 
+|microblaze_riscv_v1_0_3_Barrel_Shifter_gti | Barrel32.two_comp_table[0] | 32x5          | LUT            | 
++-------------------------------------------+----------------------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|Module Name                               | RTL Object                                                                              | Inference      | Size (Depth x Width) | Primitives     | 
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|soc_intc_i/microblaze_riscv_0_axi_intc/U0 | INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg | User Attribute | 16 x 32              | RAM16X1D x 32  | 
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'soc_intc_i/microblaze_riscv_0/U0/Reset' to pin 'soc_intc_i/proc_sys_reset_0/U0/FDRE_inst/Q'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 310 ; free virtual = 9931
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 330 ; free virtual = 9945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|Module Name                               | RTL Object                                                                              | Inference      | Size (Depth x Width) | Primitives     | 
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|soc_intc_i/microblaze_riscv_0_axi_intc/U0 | INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg | User Attribute | 16 x 32              | RAM16X1D x 32  | 
++------------------------------------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2698.332 ; gain = 960.137 ; free physical = 343 ; free virtual = 9959
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin riscv_core_I/Base.Core/Data_Flow_I/Operand_Select_I/of_op2_tmp_inferred:in0[0] to constant 0
+WARNING: [Synth 8-5410] Found another clock driver \Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native :TCK [/home/psh/work/project_9/project_9.gen/sources_1/bd/soc_intc/ipshared/d547/hdl/mdm_riscv_v1_0_vh_rfs.vhd:645]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 346 ; free virtual = 9964
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 346 ; free virtual = 9964
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 346 ; free virtual = 9964
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 346 ; free virtual = 9964
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 348 ; free virtual = 9965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 348 ; free virtual = 9965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name        | RTL Name                                                                                                                                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|axi_uartlite       | UARTLITE_CORE_I/UARTLITE_RX_I/data_shift_reg[15]                                                                                        | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|axi_uartlite       | UARTLITE_CORE_I/UARTLITE_TX_I/data_shift_reg[15]                                                                                        | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV          | MDM_Core_I1/JTAG_CONTROL_I/dmi_reg[31]                                                                                                  | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV          | MDM_Core_I1/JTAG_CONTROL_I/dmi_reg[3]                                                                                                   | 28     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|MDM_RISCV          | Use_JTAG_BSCAN.bscanid_reg[27]                                                                                                          | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV          | Use_JTAG_BSCAN.bscanid_reg[11]                                                                                                          | 9      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV          | Use_JTAG_BSCAN.bscanid_reg[1]                                                                                                           | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|blk_mem_gen_v8_4_9 | inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[16].ram.r/SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[4] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                  | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | INFERRED_GEN.data_reg[15] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
+|dsrl__1     | PC_Buffer_reg[3]          | 32     | 32         | 32     | 0       | 0      | 0      | 0      | 
+|dsrl__2     | data_buffer_reg[2]        | 32     | 32         | 32     | 0       | 0      | 0      | 0      | 
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-------------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                    | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|MB_DSP48E1                     | (A*B)'             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|MB_DSP48E1__parameterized1_582 | PCIN>>17+(A*B)'    | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|MB_DSP48E1__parameterized1     | PCIN+(A*B)'        | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|MB_DSP48E1__parameterized3     | (PCIN>>17+(A*B)')' | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 1    | 
++-------------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BSCANE2    |     1|
+|2     |BUFG       |     4|
+|3     |BUFGCE     |     2|
+|4     |CARRY4     |    54|
+|5     |DSP48E1    |     4|
+|8     |LUT1       |    81|
+|9     |LUT2       |   389|
+|10    |LUT3       |   488|
+|11    |LUT4       |   635|
+|12    |LUT5       |   383|
+|13    |LUT6       |  1192|
+|15    |MMCME2_ADV |     1|
+|16    |MUXCY_L    |   223|
+|17    |MUXF7      |    22|
+|18    |RAM16X1D   |    32|
+|19    |RAM32M     |    16|
+|20    |RAMB36E1   |    32|
+|21    |SRL16      |     1|
+|22    |SRL16E     |    72|
+|23    |SRLC32E    |     1|
+|24    |XORCY      |   176|
+|25    |FDCE       |    12|
+|26    |FDE        |    32|
+|27    |FDPE       |     1|
+|28    |FDR        |    46|
+|29    |FDRE       |  1848|
+|30    |FDS        |     1|
+|31    |FDSE       |    58|
+|32    |IBUF       |     7|
+|33    |OBUF       |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2714.176 ; gain = 975.980 ; free physical = 348 ; free virtual = 9965
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 15706 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 2714.176 ; gain = 935.961 ; free physical = 348 ; free virtual = 9966
+Synthesis Optimization Complete : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 2714.184 ; gain = 975.980 ; free physical = 348 ; free virtual = 9966
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2714.184 ; gain = 0.000 ; free physical = 520 ; free virtual = 10139
+INFO: [Netlist 29-17] Analyzing 722 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2770.203 ; gain = 0.000 ; free physical = 518 ; free virtual = 10137
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 269 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 59 instances
+  BUFGCE_1 => BUFGCTRL: 2 instances
+  FDE => FDRE: 32 instances
+  FDR => FDRE: 46 instances
+  FDS => FDSE: 1 instance 
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 80 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: e357443c
+INFO: [Common 17-83] Releasing license: Synthesis
+390 Infos, 213 Warnings, 36 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:01:45 . Memory (MB): peak = 2770.203 ; gain = 1235.074 ; free physical = 519 ; free virtual = 10138
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2147.137; main = 1942.844; forked = 268.254
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3619.230; main = 2770.207; forked = 920.895
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2794.215 ; gain = 0.000 ; free physical = 519 ; free virtual = 10139
+INFO: [Common 17-1381] The checkpoint '/home/psh/work/project_9/project_9.runs/synth_1/soc_intc_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_intc_wrapper_utilization_synth.rpt -pb soc_intc_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 12 10:37:15 2025...

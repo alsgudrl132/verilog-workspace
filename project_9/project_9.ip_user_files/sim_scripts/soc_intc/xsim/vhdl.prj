@@ -1,0 +1,14 @@
+vhdl xil_defaultlib  \
+"../../../bd/soc_intc/ip/soc_intc_proc_sys_reset_0_0/sim/soc_intc_proc_sys_reset_0_0.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_microblaze_riscv_0_0/sim/soc_intc_microblaze_riscv_0_0.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_dlmb_v10_2/sim/soc_intc_dlmb_v10_2.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_ilmb_v10_2/sim/soc_intc_ilmb_v10_2.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_dlmb_bram_if_cntlr_2/sim/soc_intc_dlmb_bram_if_cntlr_2.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_ilmb_bram_if_cntlr_2/sim/soc_intc_ilmb_bram_if_cntlr_2.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_microblaze_riscv_0_axi_intc_1/sim/soc_intc_microblaze_riscv_0_axi_intc_1.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_mdm_1_2/sim/soc_intc_mdm_1_2.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_axi_uartlite_0_0/sim/soc_intc_axi_uartlite_0_0.vhd" \
+"../../../bd/soc_intc/ip/soc_intc_axi_gpio_0_0/sim/soc_intc_axi_gpio_0_0.vhd" \
+
+# Do not sort compile order
+nosort
